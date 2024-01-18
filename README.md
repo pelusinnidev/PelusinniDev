@@ -7,7 +7,7 @@ Hello 👋, I am an enthusiastic learner in the world of cross-platform applicat
 - 🌐 **Web Development:** Honing my skills in **HTML**, **CSS**, and **JavaScript** to create interactive web experiences.
 - ☕ **Java:** Building a strong foundation in Java, a key language for robust application development.
 - 🍏 **Swift:** Taking my first steps in Swift, aiming to master native app development for Apple devices.
-- 🤖 **Future Interests:** Eager to dive deeper into robotics, artificial intelligence, and ambitious engineering projects.
+- 🤖 **Future Interests:** Eager to dive deeper into robotics, artificial intelligence, cybersecurity and ambitious engineering projects.
 
 ## 🌱 Constant Growth
 Continuous learning is my mantra. I am always on the lookout for new technologies and trends in the software development world. Stay tuned for my future programming adventures!
