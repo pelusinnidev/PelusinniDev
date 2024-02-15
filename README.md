@@ -42,11 +42,11 @@ Feel free to reach out to me on any of these platforms:
   <a href="https://www.w3.org/TR/CSS/#css"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="50" height="50" alt="CSS3"/></a> &nbsp; &nbsp;
   <a href="https://developer.apple.com/swift/"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/swift-colored.svg" width="50" height="50" alt="Swift"/></a> &nbsp; &nbsp;
   <a href="https://git-scm.com/"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" width="50" height="50" alt="Git"/></a> &nbsp; &nbsp;
-  <a href="https://www.mysql.com/"><img src="https://cdn-icons-png.flaticon.com/512/2772/2772165.png" width="50" height="50" alt="SQL"/></a>
+  <a href="https://www.mysql.com/"><img src="https://www.svgrepo.com/show/331760/sql-database-generic.svg" width="50" height="50" alt="SQL"/></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="50" height="50" alt="GitHub"/></a> &nbsp; &nbsp;
+  <a href="https://github.com/"><img src="https://cdn.icon-icons.com/icons2/2157/PNG/512/github_git_hub_logo_icon_132878.png" width="50" height="50" alt="GitHub"/></a> &nbsp; &nbsp;
   <a href="https://colab.research.google.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/2560px-Google_Colaboratory_SVG_Logo.svg.png" width="50" height="50" alt="Google Colab"/></a> &nbsp; &nbsp;
   <a href="https://replit.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/2048px-New_Replit_Logo.svg.png" width="50" height="50" alt="Replit"/></a>
 </p>
