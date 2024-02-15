@@ -58,7 +58,7 @@ Feel free to reach out to me on any of these platforms:
   <a href="https://zed.dev/"><img src="https://styles.redditmedia.com/t5_75wel6/styles/communityIcon_bgkfioxyzxna1.jpg?format=pjpg&s=fa3e8325a9b53042a665b10577939635737fad79" width="50" height="50" alt="Zed"/></a>
 </p>
 
-<h2 align="center">📈 GitHub Activity</h2>
+## 📈 GitHub Activity</h2>
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=radical" alt="Your GitHub Stats">
 </p>
