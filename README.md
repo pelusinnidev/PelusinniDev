@@ -1,4 +1,4 @@
-![Hello Timelapse](https://assets-global.website-files.com/5e6a544cadf84b1393e2e022/6081985cdbe3b5361e2da1e2_hello-timelapse.gif)
+![Giphy Timelapse](https://developers.giphy.com/branch/master/static/api-512d36c09662682717108a38bbb5c57d.gif)
 
 # 🌟 Welcome to My GitHub Profile 🌟
 
