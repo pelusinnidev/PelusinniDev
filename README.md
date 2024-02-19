@@ -2,16 +2,18 @@
 
 # 🌟 Welcome to My GitHub Profile! 🌟
 
-<p align="justify">
-  👋 Hello! I'm deeply passionate about the world of cross-platform application development. Currently, I'm focusing on mastering iOS development and broadening my technical expertise     across various programming languages. My drive stems from a strong desire to learn and excel, pushing myself to tackle new challenges and continuously improve. I'm on a journey to not just develop software, but to build solutions that make a difference.
-</p>
+👋 Hello! I'm deeply passionate about the world of cross-platform application development. Currently, I'm focusing on mastering iOS development and broadening my technical expertise across various programming languages. My drive stems from a strong desire to learn and excel, pushing myself to tackle new challenges and continuously improve. I'm on a journey to not just develop software, but to build solutions that make a difference.
 
 ## 🚀 About Me
-- 📱 **iOS Development:** Fascinated by the Apple ecosystem, I am actively exploring iOS development.
-- 🌐 **Web Development:** Honing my skills in **HTML**, **CSS**, and **JavaScript** to create interactive web experiences.
-- ☕ **Java:** Building a strong foundation in Java, a key language for robust application development.
-- 🍏 **Swift:** Taking my first steps in Swift, aiming to master native app development for Apple devices.
-- 🤖 **Future Interests:** Eager to dive deeper into robotics, artificial intelligence, cybersecurity, and ambitious engineering projects.
+- 📱 **iOS Development:** Fascinated by the Apple ecosystem, I'm actively exploring iOS development to create innovative apps.
+- 🌐 **Web Development:** I'm honing my skills in **HTML**, **CSS**, and **JavaScript** to craft engaging and interactive web experiences.
+- ☕ **Java:** I'm building a strong foundation in Java, essential for robust application development and cross-platform solutions.
+- 🍏 **Swift:** I've embarked on learning Swift to master native app development for Apple devices, with a focus on performance and user experience.
+- 🤖 **Future Interests:** I'm eager to dive deeper into robotics, artificial intelligence, cybersecurity, and ambitious engineering projects, aiming to contribute to cutting-edge technology advancements.
+
+<p align="justify">
+I am currently engaged in several projects, blending personal passions with professional endeavors. Among these, I proudly lead initiatives such as <strong>Weekly Gathering</strong>, a Spanish-language podcast available on Apple Music and Spotify, and <strong>Ultimate Racing</strong> for racing and simracing enthusiasts. Additionally, I maintain a strong presence on Instagram through <strong>@ultimate_formula_official</strong> and <strong>@tustechnews</strong>, where I share insights and developments in the tech world. My work reflects my dedication to excellence, passion for continuous learning, and commitment to making a meaningful impact in the technology community.
+</p>
 
 ## 🌱 Constant Growth
 <p align="justify">
