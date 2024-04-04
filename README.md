@@ -1,4 +1,4 @@
-![Giphy Timelapse](https://developers.giphy.com/branch/master/static/api-512d36c09662682717108a38bbb5c57d.gif)
+![Giphy Timelapse](https://pbs.twimg.com/profile_banners/1753010031916732416/1712250308/1500x500)
 
 # 🌟 Welcome to My GitHub Profile! 🌟
 
