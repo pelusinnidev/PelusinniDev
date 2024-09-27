@@ -2,38 +2,27 @@
 
 # 🌟 Welcome to My GitHub Profile! 🌟
 
-👋 Hello! I'm deeply passionate about the world of cross-platform application development. Currently, I'm focusing on mastering iOS development and broadening my technical expertise across various programming languages. My drive stems from a strong desire to learn and excel, pushing myself to tackle new challenges and continuously improve. I'm on a journey to not just develop software, but to build solutions that make a difference.
+👋 Hi there! I'm a passionate mobile app developer with a special love for **iOS development**. I thrive in the world of tech, where innovation and learning are constant companions. While my primary focus is on **iOS**, I’m also fluent in **Android** and **Flutter** development, enabling me to create cross-platform apps with ease and creativity.
 
 ## 🚀 About Me
-- 📱 **iOS Development:** Fascinated by the Apple ecosystem, I'm actively exploring iOS development to create innovative apps.
-- 🌐 **Web Development:** I'm honing my skills in **HTML**, **CSS**, and **JavaScript** to craft engaging and interactive web experiences.
-- ☕ **Java:** I'm building a strong foundation in Java, essential for robust application development and cross-platform solutions.
-- 🍏 **Swift:** I've embarked on learning Swift to master native app development for Apple devices, with a focus on performance and user experience.
-- 🤖 **Future Interests:** I'm eager to dive deeper into robotics, artificial intelligence, cybersecurity, and ambitious engineering projects, aiming to contribute to cutting-edge technology advancements.
+- 📱 **Mobile Development**: iOS, Android, and Flutter development are my key areas of expertise, bringing ideas to life across platforms.
+- 🌍 **Web Development**: I also dive into **HTML**, **CSS**, and **JavaScript** for web-based projects, combining functionality with aesthetic design.
+- 💼 **Projects**:
+  - **iOS App**: Currently working on an innovative mobile app in **Swift**, focused on enhancing user experience.
+  - **Web Companion**: The web version of my **iOS app**, developed using **HTML**, **CSS**, and **JavaScript**.
+  - **Minecraft Project**: A fun and challenging project in **Java**, where I’m creating plugins and custom features for Minecraft.
 
-<p align="justify">
-I am currently engaged in several projects, blending personal passions with professional endeavors. Among these, I proudly lead initiatives such as <strong><a href="https://podcasts.apple.com/us/podcast/weekly-gathering/id1730561746">Weekly Gathering</a></strong>, a Spanish-language podcast available on Apple Music and Spotify, and <strong>Ultimate Racing</strong> for racing and simracing enthusiasts. Additionally, I maintain a strong presence on Instagram through <strong><a href="https://www.instagram.com/ultimate_formula_official">ultimate_formula_official</a></strong> and <strong><a href="https://www.instagram.com/tustechnews">tustechnews</a></strong>, where I share insights and developments in the tech world. My work reflects my dedication to excellence, passion for continuous learning, and commitment to making a meaningful impact in the technology community.
-</p>
+- 💡 **Interests**: I’m driven by my curiosity for **technology**, **startups**, and entrepreneurship, always exploring new trends and ideas.
 
-## 🌱 Constant Growth
-<p align="justify">
-  Continuous learning is my mantra. I am always on the lookout for new technologies and trends in the software development world. Stay tuned for my future programming adventures!
-</p>
+## 🌱 Continuous Growth
+Tech is always evolving, and so am I. Whether it's improving my current skills or diving into something entirely new, I'm always on the lookout for the next big challenge.
 
-## 👥 Collaboration and Learning
-<p align="justify">
-  I am open to collaborating and learning in a professional environment. If you are a company or an experienced developer looking for an enthusiastic learner, I would be thrilled to join exciting and challenging projects.
-</p>
+## 👥 Let's Collaborate
+I'm open to collaboration and eager to connect with like-minded individuals and teams. If you're looking for someone who loves to innovate and create, let's work together!
 
-## 📫 Contact Me
-Feel free to reach out to me on any of these platforms:
+## 📫 How to Reach Me
+Feel free to contact me on:
 <p align="center">
-  <a href="https://telegram.org">
-    <img src="https://img.shields.io/badge/Telegram-pelusinnidev-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
-  </a>
-  <a href="https://discord.gg/pelusinnidev">
-    <img src="https://img.shields.io/badge/Discord-pelusinnidev-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
-  </a>
   <a href="https://twitter.com/pelusinnidev">
     <img src="https://img.shields.io/badge/Twitter-pelusinnidev-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
   </a>
