@@ -1,4 +1,4 @@
-![Giphy Timelapse](https://pbs.twimg.com/profile_banners/1753010031916732416/1712250308/1500x500)
+![image-mesh-gradient-4](https://github.com/user-attachments/assets/7ecee7e5-dab3-4038-9391-89ad644c7e3e)
 
 # 🌟 Welcome to My GitHub Profile! 🌟
 
