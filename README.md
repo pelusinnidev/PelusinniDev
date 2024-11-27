@@ -24,10 +24,10 @@ I'm open to collaboration and eager to connect with like-minded individuals and 
 Feel free to contact me on:
 <p align="center">
   <a href="https://twitter.com/pelusinnidev">
-    <img src="https://img.shields.io/badge/Twitter-pelusinnidev-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
+    <img src="https://img.shields.io/badge/Twitter-PelusinniDev-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
   </a>
   <a href="https://github.com/pelusinnidev">
-    <img src="https://img.shields.io/badge/GitHub-Pelusinni-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+    <img src="https://img.shields.io/badge/GitHub-PelusinniDev-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
 </p>
 
