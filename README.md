@@ -1,27 +1,37 @@
-![image-mesh-gradient-4](https://github.com/user-attachments/assets/7ecee7e5-dab3-4038-9391-89ad644c7e3e)
+# Welcome to My GitHub Profile! 🌟  
 
-# 🌟 Welcome to My GitHub Profile! 🌟
+![header-image](https://github.com/user-attachments/assets/7ecee7e5-dab3-4038-9391-89ad644c7e3e)  
 
-👋 Hi there! I'm a passionate mobile app developer with a special love for **iOS development**. I thrive in the world of tech, where innovation and learning are constant companions. While my primary focus is on **iOS**, I’m also fluent in **Android** and **Flutter** development, enabling me to create cross-platform apps with ease and creativity.
+👋 Hi! I'm a passionate **Software Developer** with a special love for **iOS development**. My journey in the tech world is fueled by a drive to transform innovative ideas into visually interactive experiences that help individuals and organizations.  
 
-## 🚀 About Me
-- 📱 **Mobile Development**: iOS, Android, and Flutter development are my key areas of expertise, bringing ideas to life across platforms.
-- 🌍 **Web Development**: I also dive into **HTML**, **CSS**, and **JavaScript** for web-based projects, combining functionality with aesthetic design.
-- 💼 **Projects**:
-  - **iOS App**: Currently working on an innovative mobile app in **Swift**, focused on enhancing user experience.
-  - **Web Companion**: The web version of my **iOS app**, developed using **HTML**, **CSS**, and **JavaScript**.
-  - **Minecraft Project**: A fun and challenging project in **Java**, where I’m creating plugins and custom features for Minecraft.
+---
 
-- 💡 **Interests**: I’m driven by my curiosity for **technology**, **startups**, and entrepreneurship, always exploring new trends and ideas.
+## 🚀 About Me  
 
-## 🌱 Continuous Growth
-Tech is always evolving, and so am I. Whether it's improving my current skills or diving into something entirely new, I'm always on the lookout for the next big challenge.
+- 🌟 **Inspired by Creativity**: I thrive on the idea of turning ideas into **interactive solutions** that positively impact lives.  
+- 📱 **Mobile Development Expert**: Focused on **iOS** while exploring the potential of **Artificial Intelligence (AI)** and **Machine Learning (ML)** to enhance future applications.  
+- 🌍 **Cloud Enthusiast**: Experimenting with **Oracle Cloud** and **Ubuntu Server** to create scalable, reliable systems.  
+- 🎮 **Minecraft Innovator**: Developed custom servers and plugins, leveraging the cloud to create unique gaming experiences.  
+- 🏎️ **SimRacing Organizer**: Launched a **league** with a fully integrated website and a professional Discord community.  
+- 🚀 **Python Projects**: Crafted a highly professional project, [_Pol's Asteroids_](https://github.com/pelusinnidev/Pols-Asteroids), showcasing advanced game development.  
+- 💡 **Philosophy**: My programming ethos is rooted in **"Think Different"**—challenging norms and painting outside the lines.  
 
-## 👥 Let's Collaborate
-I'm open to collaboration and eager to connect with like-minded individuals and teams. If you're looking for someone who loves to innovate and create, let's work together!
+---
 
-## 📫 How to Reach Me
-Feel free to contact me on:
+## 🌱 Continuous Growth  
+
+Technology evolves constantly, and so do I. Whether it's diving into **AI/ML**, **iOS innovation**, or exploring the **cloud**, I am always eager to learn, create, and grow.  
+
+---
+
+## 👥 Collaborations  
+
+I'm open to collaborations with like-minded individuals and teams passionate about innovation. Whether it's brainstorming fresh ideas or tackling bold challenges, let's make it happen!  
+
+---
+
+## 📫 Connect with Me  
+
 <p align="center">
   <a href="https://twitter.com/pelusinnidev">
     <img src="https://img.shields.io/badge/Twitter-PelusinniDev-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
@@ -29,49 +39,67 @@ Feel free to contact me on:
   <a href="https://github.com/pelusinnidev">
     <img src="https://img.shields.io/badge/GitHub-PelusinniDev-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
+  <a href="https://www.linkedin.com/in/pelusinnidev/">
+    <img src="https://img.shields.io/badge/LinkedIn-PelusinniDev-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
 </p>
 
-## 💻 Skills & Technologies
+---
 
-### 📱 Mobile Development
+## 💻 Skills & Technologies  
+
+### 📱 Mobile Development  
 <p align="center">
-  <a href="https://developer.apple.com/swift/"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/swift-colored.svg" width="50" height="50" alt="Swift"/></a> &nbsp; &nbsp;
+  <a href="https://developer.apple.com/swift/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" width="50" height="50" alt="Swift"/></a> &nbsp; &nbsp;
   <a href="https://developer.apple.com/xcode/swiftui/"><img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" width="50" height="50" alt="SwiftUI"/></a> &nbsp; &nbsp;
-  <a href="https://developer.android.com/kotlin"><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" width="50" height="50" alt="Kotlin"/></a> &nbsp; &nbsp;
-  <a href="https://flutter.dev/"><img src="https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png" width="50" height="50" alt="Flutter"/></a> &nbsp; &nbsp;
-  <a href="https://developer.android.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Android_logo_2019.png" width="50" height="50" alt="Android"/></a>
+  <a href="https://developer.android.com/kotlin"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg" width="50" height="50" alt="Kotlin"/></a> &nbsp; &nbsp;
+  <a href="https://flutter.dev/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width="50" height="50" alt="Flutter"/></a> &nbsp; &nbsp;
+  <a href="https://developer.android.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg" width="50" height="50" alt="Android"/></a>
 </p>
 
-### 🌐 Web Development
+### 🌐 Web Development  
 <p align="center">
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="50" height="50" alt="HTML5"/></a> &nbsp; &nbsp;
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="50" height="50" alt="CSS3"/></a> &nbsp; &nbsp;
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="50" height="50" alt="JavaScript"/></a> &nbsp; &nbsp;
+  <a href="https://developer.mozilla.org/es/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="50" height="50" alt="HTML5"/></a> &nbsp; &nbsp;
+  <a href="https://developer.mozilla.org/es/docs/Web/CSS"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="50" height="50" alt="CSS3"/></a> &nbsp; &nbsp;
+  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="50" height="50" alt="JavaScript"/></a> &nbsp; &nbsp;
   <a href="https://www.php.net/"><img src="https://www.php.net/images/logos/new-php-logo.svg" width="50" height="50" alt="PHP"/></a>
 </p>
 
-### 🛠️ Database & Backend
+### 🐍 Python & Data  
 <p align="center">
-  <a href="https://www.mysql.com/"><img src="https://www.svgrepo.com/show/331760/sql-database-generic.svg" width="50" height="50" alt="MySQL"/></a> &nbsp; &nbsp;
-  <a href="https://www.xml.com"><img src="https://www.svgrepo.com/show/31053/xml.svg" width="50" height="50" alt="XML"/></a> &nbsp; &nbsp;
-  <a href="https://www.oracle.com/java/"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/java-colored.svg" width="50" height="50" alt="Java"/></a>
+  <a href="https://www.python.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" height="50" alt="Python"/></a> &nbsp; &nbsp;
+  <a href="https://www.mongodb.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" height="50" alt="MongoDB"/></a>
 </p>
 
-### 🎨 Design & Tools
+### 🐳 Containerization  
 <p align="center">
-  <a href="https://git-scm.com/"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" width="50" height="50" alt="Git"/></a> &nbsp; &nbsp;
-  <a href="https://www.figma.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" width="50" height="50" alt="Figma"/></a> &nbsp; &nbsp;
-  <a href="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png" width="50" height="50" alt="IntelliJ IDEA"/></a> &nbsp; &nbsp;
+  <a href="https://www.docker.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="50" height="50" alt="Docker"/></a>
+</p>
+
+### 🛠️ Databases & Backend  
+<p align="center">
+  <a href="https://www.mysql.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width="50" height="50" alt="MySQL"/></a> &nbsp; &nbsp;
+  <a href="https://www.xml.com"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/xml/xml-original.svg" width="50" height="50" alt="XML"/></a> &nbsp; &nbsp;
+  <a href="https://www.oracle.com/java/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="50" height="50" alt="Java"/></a>
+</p>
+
+### 🎨 Design & Tools  
+<p align="center">
+  <a href="https://git-scm.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" width="50" height="50" alt="Git"/></a> &nbsp; &nbsp;
+  <a href="https://www.figma.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg" width="50" height="50" alt="Figma"/></a> &nbsp; &nbsp;
+  <a href="https://www.jetbrains.com/idea/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" width="50" height="50" alt="IntelliJ IDEA"/></a> &nbsp; &nbsp;
   <a href="https://developer.apple.com/xcode/"><img src="https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-96x96_2x.png" width="50" height="50" alt="Xcode"/></a> &nbsp; &nbsp;
-  <a href="https://code.visualstudio.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" width="50" height="50" alt="Visual Studio Code"/></a>
+  <a href="https://code.visualstudio.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" width="50" height="50" alt="Visual Studio Code"/></a>
 </p>
 
+---
+
+## 📈 GitHub Activity  
+
 <p align="center">
-  <a href="https://colab.research.google.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/2560px-Google_Colaboratory_SVG_Logo.svg.png" width="50" height="50" alt="Google Colab"/></a> &nbsp; &nbsp;
-  <a href="https://replit.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/2048px-New_Replit_Logo.svg.png" width="50" height="50" alt="Replit"/></a>
+  <img src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=radical" alt="GitHub Stats">
 </p>
 
-## 📈 GitHub Activity
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=radical" alt="Your GitHub Stats">
-</p>
+---
+
+✨ Thank you for visiting my profile! Feel free to explore my projects and connect with me.  
