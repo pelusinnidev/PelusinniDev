@@ -1,102 +1,112 @@
-# Hello There! 🌟  
+# <div align="center">¡Hello World! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px" height="30px"></div>
+
+<div align="center">
+  
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=F7F7F7&center=true&vCenter=true&random=false&width=435&lines=Software+Developer;iOS+Development+Enthusiast;AI+%26+ML+Explorer;Cloud+Computing+Passionate)](https://git.io/typing-svg)
+
+</div>
+
+![Header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=300&section=header&text=PelusinniDev&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Software%20Developer%20|%20iOS%20Expert%20|%20AI%20Enthusiast&descAlignY=51&descAlign=62)
 
 ![IMG_0216](https://github.com/user-attachments/assets/0a2743f6-8868-4614-b917-4f657c206c1c)
 
-👋 Hi! I'm a passionate **Software Developer** with a special love for **iOS development**. My journey in the tech world is fueled by a drive to transform innovative ideas into visually interactive experiences that help individuals and organizations.  
-
----
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=PelusinniDev&style=flat-square&color=blue" alt="Profile views"/>
+</div>
 
 ## 🚀 About Me  
 
-- 🌟 **Inspired by Creativity**: I thrive on the idea of turning ideas into **interactive solutions** that positively impact lives.  
-- 📱 **Mobile Development Expert**: Focused on **iOS** while exploring the potential of **Artificial Intelligence (AI)** and **Machine Learning (ML)** to enhance future applications.  
-- 🌍 **Cloud Enthusiast**: Experimenting with **Oracle Cloud** and **Ubuntu Server** to create scalable, reliable systems.  
-- 🎮 **Minecraft Innovator**: Developed custom servers and plugins, leveraging the cloud to create unique gaming experiences.  
-- 🏎️ **SimRacing Organizer**: Launched a **league** with a fully integrated website and a professional Discord community.  
-- 🚀 **Python Projects**: Crafted a highly professional project, [_Pol's Asteroids_](https://github.com/pelusinnidev/Pols-Asteroids), showcasing advanced game development.  
-- 💡 **Philosophy**: My programming ethos is rooted in **"Think Different"**—challenging norms and painting outside the lines.  
+```yaml
+name: PelusinniDev
+located_in: Spain
+current_focus: iOS Development
+fields_of_interests:
+  [
+    "Mobile Development",
+    "Artificial Intelligence",
+    "Cloud Computing",
+    "Game Development",
+    "UI/UX"
+  ]
+hobbies: ["Gaming", "SimRacing", "Coding"]
+```
 
----
+<details>
+<summary>🌟 More About Me</summary>
+<br>
 
-## 🌱 Continuous Growth  
+- 🌟 **Inspired by Creativity**: Transforming innovative ideas into interactive solutions
+- 📱 **Mobile Development Expert**: iOS specialist exploring AI/ML integration
+- 🌍 **Cloud Enthusiast**: Working with Oracle Cloud and Ubuntu Server
+- 🎮 **Minecraft Innovator**: Custom server and plugin development
+- 🏎️ **SimRacing Organizer**: League management with integrated web platform
+- 🚀 **Game Developer**: Creator of [_Pol's Asteroids_](https://github.com/pelusinnidev/Pols-Asteroids)
+- 💡 **Philosophy**: "Think Different" - Breaking boundaries in software development
 
-Technology evolves constantly, and so do I. Whether it's diving into **AI/ML**, **iOS innovation**, or exploring the **cloud**, I am always eager to learn, create, and grow.  
+</details>
 
----
+## 💻 Tech Stack
 
-## 👥 Collaborations  
-
-I'm open to collaborations with like-minded individuals and teams passionate about innovation. Whether it's brainstorming fresh ideas or tackling bold challenges, let's make it happen!  
-
----
-
-## 📫 Connect with Me  
-
-<p align="center">
-  <a href="https://twitter.com/pelusinnidev">
-    <img src="https://img.shields.io/badge/Twitter-PelusinniDev-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
-  </a>
-  <a href="https://github.com/pelusinnidev">
-    <img src="https://img.shields.io/badge/GitHub-PelusinniDev-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  </a>
-</p>
-
----
-
-## 💻 Skills & Technologies  
+<div align="center">
 
 ### 📱 Mobile Development  
-<p align="center">
-  <a href="https://developer.apple.com/swift/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" width="50" height="50" alt="Swift"/></a> &nbsp; &nbsp;
-  <a href="https://developer.apple.com/xcode/swiftui/"><img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" width="50" height="50" alt="SwiftUI"/></a> &nbsp; &nbsp;
-  <a href="https://developer.android.com/kotlin"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg" width="50" height="50" alt="Kotlin"/></a> &nbsp; &nbsp;
-  <a href="https://flutter.dev/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width="50" height="50" alt="Flutter"/></a> &nbsp; &nbsp;
-  <a href="https://developer.android.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg" width="50" height="50" alt="Android"/></a>
-</p>
+![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-0D96F6?style=for-the-badge&logo=swift&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
-### 🌐 Web Development  
-<p align="center">
-  <a href="https://developer.mozilla.org/es/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="50" height="50" alt="HTML5"/></a> &nbsp; &nbsp;
-  <a href="https://developer.mozilla.org/es/docs/Web/CSS"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="50" height="50" alt="CSS3"/></a> &nbsp; &nbsp;
-  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="50" height="50" alt="JavaScript"/></a> &nbsp; &nbsp;
-  <a href="https://www.php.net/"><img src="https://www.php.net/images/logos/new-php-logo.svg" width="50" height="50" alt="PHP"/></a>
-</p>
+### 🌐 Web Development
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 
-### 🐍 Python & Data  
-<p align="center">
-  <a href="https://www.python.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" height="50" alt="Python"/></a> &nbsp; &nbsp;
-  <a href="https://www.mongodb.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" height="50" alt="MongoDB"/></a>
-</p>
+### 🐍 Python & Data
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
-### 🐳 Containerization  
-<p align="center">
-  <a href="https://www.docker.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="50" height="50" alt="Docker"/></a>
-</p>
+### 🛠️ Tools & Technologies
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Xcode](https://img.shields.io/badge/Xcode-147EFB?style=for-the-badge&logo=xcode&logoColor=white)
 
-### 🛠️ Databases & Backend  
-<p align="center">
-  <a href="https://www.mysql.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width="50" height="50" alt="MySQL"/></a> &nbsp; &nbsp;
-  <a href="https://www.xml.com"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/xml/xml-original.svg" width="50" height="50" alt="XML"/></a> &nbsp; &nbsp;
-  <a href="https://www.oracle.com/java/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="50" height="50" alt="Java"/></a>
-</p>
+</div>
 
-### 🎨 Design & Tools  
-<p align="center">
-  <a href="https://git-scm.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" width="50" height="50" alt="Git"/></a> &nbsp; &nbsp;
-  <a href="https://www.figma.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg" width="50" height="50" alt="Figma"/></a> &nbsp; &nbsp;
-  <a href="https://www.jetbrains.com/idea/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" width="50" height="50" alt="IntelliJ IDEA"/></a> &nbsp; &nbsp;
-  <a href="https://developer.apple.com/xcode/"><img src="https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-96x96_2x.png" width="50" height="50" alt="Xcode"/></a> &nbsp; &nbsp;
-  <a href="https://code.visualstudio.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" width="50" height="50" alt="Visual Studio Code"/></a>
-</p>
+## 📊 GitHub Stats
 
----
+<div align="center">
+  
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=PelusinniDev&theme=radical)](https://git.io/streak-stats)
 
-## 📈 GitHub Activity  
+<img src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=radical" alt="GitHub Stats">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=radical" alt="GitHub Stats">
-</p>
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=PelusinniDev&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+
+</div>
+
+## 🤝 Connect with Me
+
+<div align="center">
+  
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/pelusinnidev)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pelusinnidev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/pelusinnidev)
+
+</div>
 
 ---
 
-✨ Thank you for visiting my profile! Feel free to explore my projects and connect with me.  
+<div align="center">
+  
+### 🎵 Currently Vibing To
+[![Spotify](https://novatorem-navy-ten.vercel.app/api/spotify)](https://open.spotify.com/user/pelusinnidev)
+
+</div>
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=100&section=footer)
+
+<div align="center">
+  <img src="https://github.com/PelusinniDev/PelusinniDev/blob/output/github-contribution-grid-snake.svg" alt="snake">
+</div>
