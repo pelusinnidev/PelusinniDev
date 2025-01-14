@@ -1,6 +1,6 @@
-# Welcome to My GitHub Profile! 🌟  
+# Hello There! 🌟  
 
-![header-image](https://github.com/user-attachments/assets/7ecee7e5-dab3-4038-9391-89ad644c7e3e)  
+![IMG_0216](https://github.com/user-attachments/assets/0a2743f6-8868-4614-b917-4f657c206c1c)
 
 👋 Hi! I'm a passionate **Software Developer** with a special love for **iOS development**. My journey in the tech world is fueled by a drive to transform innovative ideas into visually interactive experiences that help individuals and organizations.  
 
