@@ -114,10 +114,6 @@ hobbies: ["Gaming", "SimRacing", "Coding"]
   <img src="https://img.shields.io/badge/-PelusinniDev-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
 
-<a href="https://linkedin.com/in/pelusinnidev" style="text-decoration: none; margin: 0 10px;">
-  <img src="https://img.shields.io/badge/-PelusinniDev-000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-</a>
-
 </div>
 
 <br>
