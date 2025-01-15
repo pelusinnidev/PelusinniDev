@@ -3,13 +3,202 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Personal Website</title>
-        <link rel="stylesheet" href="index_style.css">
+        <title>PelusinniDev | Software Developer</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="js/main.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
-        <div class="container">
-            <img src="https://media.tenor.com/W5qtl0HYoLYAAAAi/catscafe-penguin.gif" alt="My current project representation" class="project-image">
-            <p class="message">Currently working on something exciting!</p>
-        </div>
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="container nav-container">
+                <div class="logo">P</div>
+                <div class="nav-links">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#tech-stack">Tech Stack</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="hero" class="section">
+            <div class="container">
+                <h1>PelusinniDev</h1>
+                <div class="typing-text"></div>
+                <div class="scroll-indicator">
+                    <div class="mouse"></div>
+                    <p>Scroll to explore</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="lead">Inspired by Creativity, Driven by Innovation</p>
+                        <p>Mobile Development Expert specializing in iOS development, with a passion for integrating AI/ML solutions. Based in Spain, I transform innovative ideas into interactive solutions that push the boundaries of what's possible.</p>
+                        <div class="about-highlights">
+                            <div class="highlight">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>iOS Specialist</h3>
+                                <p>Expert in Swift & SwiftUI</p>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-brain"></i>
+                                <h3>AI Explorer</h3>
+                                <p>Machine Learning Integration</p>
+                            </div>
+                            <div class="highlight">
+                                <i class="fas fa-cloud"></i>
+                                <h3>Cloud Expert</h3>
+                                <p>Oracle Cloud & Ubuntu Server</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="section">
+            <div class="container">
+                <h2>Expertise</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                        <p>Creating intuitive and powerful iOS applications with Swift and SwiftUI</p>
+                    </div>
+                    <div class="expertise-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Artificial Intelligence</h3>
+                        <p>Implementing ML models and AI solutions in mobile applications</p>
+                    </div>
+                    <div class="expertise-card">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud Computing</h3>
+                        <p>Managing and deploying solutions on Oracle Cloud and Ubuntu Server</p>
+                    </div>
+                    <div class="expertise-card">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>Game Development</h3>
+                        <p>Creating engaging gaming experiences and custom Minecraft plugins</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400" alt="Pol's Asteroids">
+                        </div>
+                        <div class="project-content">
+                            <h3>Pol's Asteroids</h3>
+                            <p>A modern take on the classic Asteroids game</p>
+                            <div class="project-links">
+                                <a href="https://github.com/pelusinnidev/Pols-Asteroids" target="_blank" class="button">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400" alt="Bobbo App">
+                        </div>
+                        <div class="project-content">
+                            <h3>Bobbo App</h3>
+                            <p>iOS application for pet care and management</p>
+                            <div class="project-links">
+                                <a href="https://bobbo.framer.website" target="_blank" class="button">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tech-stack" class="section">
+            <div class="container">
+                <h2>Tech Stack</h2>
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h3>Mobile Development</h3>
+                        <div class="tech-items">
+                            <div class="tech-item"><i class="fab fa-swift"></i> Swift</div>
+                            <div class="tech-item"><i class="fab fa-apple"></i> SwiftUI</div>
+                            <div class="tech-item"><i class="fab fa-android"></i> Kotlin</div>
+                            <div class="tech-item"><i class="fas fa-mobile"></i> Flutter</div>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Web Development</h3>
+                        <div class="tech-items">
+                            <div class="tech-item"><i class="fab fa-html5"></i> HTML5</div>
+                            <div class="tech-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                            <div class="tech-item"><i class="fab fa-js"></i> JavaScript</div>
+                            <div class="tech-item"><i class="fab fa-php"></i> PHP</div>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Tools & Technologies</h3>
+                        <div class="tech-items">
+                            <div class="tech-item"><i class="fab fa-git-alt"></i> Git</div>
+                            <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
+                            <div class="tech-item"><i class="fas fa-code"></i> VS Code</div>
+                            <div class="tech-item"><i class="fab fa-apple"></i> Xcode</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <p>Interested in collaborating or have a project in mind? Let's talk!</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://twitter.com/pelusinnidev" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com/pelusinnidev" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
