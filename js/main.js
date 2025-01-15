@@ -1,18 +1,46 @@
 // Mobile menu handling
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
 
 menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    
+    // Animate nav items
+    if (navLinks.classList.contains('active')) {
+        navItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+    } else {
+        navItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-10px)';
+        });
+    }
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav')) {
-        navLinks.classList.remove('active');
+    if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
         menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        navItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-10px)';
+        });
     }
+});
+
+// Close menu when clicking on a link
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
 });
 
 // Typing animation for hero section
@@ -117,14 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScroll = window.pageYOffset;
         
         if (currentScroll <= 0) {
-            nav.style.transform = 'translateY(0)';
+            nav.style.transform = 'translateX(-50%)';
             return;
         }
         
         if (currentScroll > lastScroll && !navLinks.classList.contains('active')) {
-            nav.style.transform = 'translateY(-100%)';
+            nav.style.transform = 'translateX(-50%) translateY(-100%)';
+            nav.style.opacity = '0';
         } else {
-            nav.style.transform = 'translateY(0)';
+            nav.style.transform = 'translateX(-50%)';
+            nav.style.opacity = '1';
         }
         
         lastScroll = currentScroll;
