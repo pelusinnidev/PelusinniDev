@@ -35,36 +35,32 @@ body {
 
 .logo {
     margin-bottom: 3rem;
-    position: relative;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 3rem;
 }
 
 .logo-container {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
     border-radius: 50%;
     padding: 3px;
     background: linear-gradient(45deg, var(--primary-color), #333);
     position: relative;
     transition: var(--transition);
-    z-index: 1;
 }
 
-.logo::before {
+.logo-container::after {
     content: '';
     position: absolute;
-    inset: -15px;
-    background: linear-gradient(45deg, var(--primary-color), #333);
+    inset: -3px;
     border-radius: 50%;
-    filter: blur(15px);
+    background: linear-gradient(45deg, var(--primary-color), #333);
+    filter: blur(8px);
     opacity: 0;
     transition: var(--transition);
-    z-index: 0;
+    z-index: -1;
 }
 
-.logo:hover::before {
+.logo-container:hover::after {
     opacity: 0.5;
 }
 
@@ -201,7 +197,7 @@ h1 {
         background: linear-gradient(45deg, #ffffff, #cccccc);
     }
     
-    .logo::before {
+    .logo-container::after {
         background: linear-gradient(45deg, #ffffff, #cccccc);
     }
     
