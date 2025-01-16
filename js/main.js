@@ -53,16 +53,33 @@ const typingTexts = [
 ];
 
 let currentTextIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 let typingElement = document.querySelector('.typing-text');
 
-function changeText() {
-    typingElement.style.opacity = '0';
+function typeText() {
+    const currentText = typingTexts[currentTextIndex];
     
-    setTimeout(() => {
+    if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    
+    let typeSpeed = isDeleting ? 50 : 100;
+    
+    if (!isDeleting && charIndex === currentText.length) {
+        typeSpeed = 2000; // Pause at end
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
         currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
-        typingElement.textContent = typingTexts[currentTextIndex];
-        typingElement.style.opacity = '0.9';
-    }, 300);
+        typeSpeed = 500; // Pause before starting new word
+    }
+    
+    setTimeout(typeText, typeSpeed);
 }
 
 // Smooth scroll for navigation
@@ -113,11 +130,8 @@ document.querySelectorAll('.section').forEach(section => {
 
 // Initialize animations
 document.addEventListener('DOMContentLoaded', () => {
-    // Start text rotation with initial text
-    typingElement.textContent = typingTexts[0];
-    
-    // Change text every 3 seconds
-    setInterval(changeText, 3000);
+    // Start typing animation
+    setTimeout(typeText, 1000);
     
     // Initialize stagger animations
     document.querySelectorAll('.highlight, .expertise-card, .project-card, .tech-item').forEach(item => {

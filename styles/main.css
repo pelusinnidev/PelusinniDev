@@ -302,10 +302,11 @@ h3 {
 .hero-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 8) 0;
     min-height: 100vh;
-    position: relative;
 }
 
 .hero-content {
@@ -319,8 +320,13 @@ h3 {
 }
 
 .hero-text {
-    text-align: left;
-    flex: 1;
+    text-align: center;
+    margin-top: calc(var(--spacing-unit) * 2);
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-text h1 {
@@ -336,22 +342,22 @@ h3 {
 }
 
 .hero-image {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid var(--primary-color);
+    margin: 0 auto;
+    position: relative;
+    transition: var(--transition);
     box-shadow: var(--shadow);
-    animation: profileFadeIn 1s ease-out;
-    flex-shrink: 0;
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: var(--transition);
     transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
 .hero-image:hover img {
@@ -359,15 +365,16 @@ h3 {
 }
 
 .typing-text {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-color);
-    height: 1.5em;
-    margin-top: calc(var(--spacing-unit) * 2);
-    position: relative;
     opacity: 0.9;
-    line-height: 1.5;
-    transition: opacity 0.3s ease;
+    margin-top: calc(var(--spacing-unit));
+    min-height: 2rem;
+    display: inline-block;
+    position: relative;
+    padding-right: 4px;
+    white-space: nowrap;
 }
 
 @media (max-width: 768px) {
