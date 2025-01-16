@@ -136,8 +136,31 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
+// Welcome animation handling
+function handleWelcomeAnimation() {
+    const hasSeenWelcome = sessionStorage.getItem('hasSeenWelcome');
+    const welcomeOverlay = document.querySelector('.welcome-overlay');
+    
+    if (!hasSeenWelcome && welcomeOverlay) {
+        welcomeOverlay.style.display = 'flex';
+        sessionStorage.setItem('hasSeenWelcome', 'true');
+        
+        setTimeout(() => {
+            welcomeOverlay.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+            setTimeout(() => {
+                welcomeOverlay.style.display = 'none';
+            }, 500);
+        }, 2500);
+    } else if (welcomeOverlay) {
+        welcomeOverlay.style.display = 'none';
+    }
+}
+
 // Initialize animations
 document.addEventListener('DOMContentLoaded', () => {
+    // Handle welcome animation
+    handleWelcomeAnimation();
+    
     // Start typing animation
     setTimeout(typeText, 1000);
     
