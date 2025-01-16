@@ -4,8 +4,8 @@
     --background-color: #ffffff;
     --accent-color: #f5f5f7;
     --text-color: #1d1d1f;
-    --nav-bg: rgba(255, 255, 255, 0.7);
-    --nav-hover-bg: rgba(255, 255, 255, 0.85);
+    --nav-bg: #ffffff;
+    --nav-hover-bg: #f5f5f7;
     --divider-color: rgba(0, 0, 0, 0.1);
     --control-hover-bg: rgba(0, 0, 0, 0.05);
     --spacing-unit: 8px;
@@ -19,8 +19,8 @@
     --background-color: #1d1d1f;
     --accent-color: #2c2c2e;
     --text-color: #f5f5f7;
-    --nav-bg: rgba(45, 45, 45, 0.7);
-    --nav-hover-bg: rgba(45, 45, 45, 0.85);
+    --nav-bg: #1d1d1f;
+    --nav-hover-bg: #2c2c2e;
     --divider-color: rgba(255, 255, 255, 0.1);
     --control-hover-bg: rgba(255, 255, 255, 0.05);
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -52,8 +52,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
     border-radius: 100px;
@@ -168,89 +166,73 @@ body {
 /* Mobile Navigation */
 @media (max-width: 768px) {
     .nav {
-        position: fixed;
-        top: 10px;
-        left: 0;
-        right: 0;
-        width: calc(100% - 20px);
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        transform: none !important;
-        border-radius: 20px;
-        padding: calc(var(--spacing-unit)) calc(var(--spacing-unit) * 2);
-        background: var(--nav-bg);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        will-change: transform;
-        -webkit-transform: translateZ(0);
-        -moz-transform: translateZ(0);
-        -ms-transform: translateZ(0);
-        -o-transform: translateZ(0);
-        transform: translateZ(0);
-    }
-
-    .nav:hover {
-        transform: none !important;
-        background: var(--nav-hover-bg);
+        width: calc(100% - 30px);
+        padding: 8px 16px;
     }
 
     .nav-container {
         justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 0;
-        margin: 0 auto;
+    }
+
+    .current-page {
+        display: block;
+        font-weight: 500;
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: var(--transition);
+        margin-right: auto;
     }
 
     .nav-links {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100vh;
-        background: var(--background-color);
+        top: 80px;
+        left: 15px;
+        right: 15px;
+        background: var(--nav-bg);
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        display: none;
+        opacity: 0;
+        flex-direction: column;
+        gap: 10px;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        padding: 12px 16px;
+        width: 100%;
+        text-align: left;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        background: var(--control-hover-bg);
+    }
+
+    .menu-toggle {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: calc(var(--spacing-unit) * 3);
-        padding: calc(var(--spacing-unit) * 4);
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        transform: translateX(0);
-        background: var(--nav-bg);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-    }
-
-    .nav-links a {
-        font-size: 1.2rem;
-        padding: calc(var(--spacing-unit) * 1.5);
-        opacity: 0.9;
-        width: auto;
-        text-align: center;
-    }
-
-    .nav-links a:hover {
-        opacity: 1;
-        transform: translateY(-2px);
-    }
-
-    .menu-toggle {
-        display: block;
-        width: 24px;
-        height: 24px;
-        position: relative;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background: transparent;
         border: none;
-        background: none;
         cursor: pointer;
-        z-index: 1000;
-        padding: 0;
+        margin-left: 8px;
+        position: relative;
     }
 
     .menu-toggle span {
@@ -258,26 +240,13 @@ body {
         width: 24px;
         height: 2px;
         background: var(--text-color);
-        position: absolute;
-        left: 0;
+        margin: 2px 0;
         transition: all 0.3s ease;
-    }
-
-    .menu-toggle span:nth-child(1) {
-        top: 2px;
-    }
-
-    .menu-toggle span:nth-child(2) {
-        top: 11px;
-    }
-
-    .menu-toggle span:nth-child(3) {
-        top: 20px;
+        transform-origin: center;
     }
 
     .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg);
-        top: 11px;
+        transform: translateY(6px) rotate(45deg);
     }
 
     .menu-toggle.active span:nth-child(2) {
@@ -285,23 +254,41 @@ body {
     }
 
     .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg);
-        top: 11px;
+        transform: translateY(-6px) rotate(-45deg);
     }
 
     .nav-controls {
         display: flex;
         align-items: center;
-        gap: calc(var(--spacing-unit));
+        gap: 8px;
     }
+}
 
+@media (max-width: 480px) {
     .language-selector {
-        margin: 0;
-        background: transparent;
+        display: none;
     }
 
-    .theme-toggle {
-        margin-left: calc(var(--spacing-unit));
+    .nav-links .language-selector {
+        display: flex;
+        margin-top: 8px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .current-page {
+        max-width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Ocultar idiomas y tema en móvil */
+@media (max-width: 768px) {
+    .language-selector, .theme-toggle {
+        display: none;
     }
 }
 
@@ -915,10 +902,6 @@ h3 {
 
     .nav-links.active {
         background: var(--nav-bg);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         padding: calc(var(--spacing-unit) * 2);
     }
 }
@@ -1302,4 +1285,91 @@ h3 {
     .tools-animation i.fa-apple {
         margin-left: 2.5rem;
     }
+}
+
+/* Responsive Navigation Breakpoints */
+@media (max-width: 768px) {
+    .nav {
+        position: fixed;
+        top: 10px;
+        left: 0;
+        right: 0;
+        width: calc(100% - 20px);
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        transform: none !important;
+        border-radius: 20px;
+        padding: calc(var(--spacing-unit)) calc(var(--spacing-unit) * 2);
+        background: var(--nav-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-container {
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    /* Mostrar el menú hamburguesa y ocultar los enlaces */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Ocultar idiomas en pantallas más pequeñas */
+@media (max-width: 480px) {
+    .language-selector {
+        display: none;
+    }
+    
+    .nav-controls {
+        gap: calc(var(--spacing-unit) * 0.5);
+    }
+}
+
+/* Ocultar selector de tema en pantallas aún más pequeñas */
+@media (max-width: 360px) {
+    .theme-toggle {
+        display: none;
+    }
+
+    .nav {
+        padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+    }
+
+    /* Asegurar que el título de la página actual sea visible */
+    .current-page {
+        display: block !important;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-color);
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+/* Añadir clase para el título de la página actual */
+.current-page {
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.9;
+    transition: var(--transition);
+}
+
+.current-page:hover {
+    opacity: 1;
 } 

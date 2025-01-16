@@ -1,48 +1,113 @@
 // Navigation initialization function
 function initializeNavigation() {
-    // Mobile menu handling
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links a');
+    const currentPage = document.querySelector('.current-page');
+    const languageSelector = document.querySelector('.language-selector');
+    let isMenuOpen = false;
 
-    if (menuToggle && navLinks && navItems) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+    // Set initial current page
+    if (currentPage) {
+        const activeLink = document.querySelector('.nav-links a.active');
+        if (activeLink) {
+            currentPage.textContent = activeLink.textContent;
+            currentPage.href = activeLink.getAttribute('href');
+        }
+    }
+
+    function handleResponsiveNav() {
+        const windowWidth = window.innerWidth;
+        const navControls = document.querySelector('.nav-controls');
+        const langSelectorClone = languageSelector?.cloneNode(true);
+
+        if (windowWidth <= 480 && langSelectorClone && !navLinks.querySelector('.language-selector')) {
+            navLinks.appendChild(langSelectorClone);
             
-            // Animate nav items
-            if (navLinks.classList.contains('active')) {
+            // Set up language buttons in the cloned selector
+            const langButtons = langSelectorClone.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lang = e.target.dataset.lang;
+                    setLanguage(lang);
+                    langButtons.forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                });
+            });
+        } else if (windowWidth > 480) {
+            const mobileSelector = navLinks.querySelector('.language-selector');
+            if (mobileSelector) {
+                mobileSelector.remove();
+            }
+        }
+    }
+
+    function toggleMenu(open) {
+        isMenuOpen = open;
+        menuToggle.classList.toggle('active', open);
+        navLinks.classList.toggle('active', open);
+        
+        if (open) {
+            navLinks.style.display = 'flex';
+            setTimeout(() => {
+                navLinks.style.opacity = '1';
                 navItems.forEach((item, index) => {
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'translateY(0)';
-                    }, 100 * index);
+                    }, index * 50);
                 });
-            } else {
-                navItems.forEach(item => {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(-10px)';
-                });
-            }
+            }, 10);
+        } else {
+            navLinks.style.opacity = '0';
+            navItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(10px)';
+            });
+            setTimeout(() => {
+                if (!isMenuOpen) {
+                    navLinks.style.display = 'none';
+                }
+            }, 300);
+        }
+    }
+
+    if (menuToggle && navLinks && navItems) {
+        // Initial responsive setup
+        handleResponsiveNav();
+
+        // Handle window resize
+        window.addEventListener('resize', handleResponsiveNav);
+
+        // Toggle menu on button click
+        menuToggle.addEventListener('click', () => {
+            toggleMenu(!isMenuOpen);
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-                navItems.forEach(item => {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(-10px)';
-                });
+            if (isMenuOpen && !e.target.closest('.nav')) {
+                toggleMenu(false);
             }
         });
 
-        // Close menu when clicking on a link
+        // Handle navigation item clicks
         navItems.forEach(item => {
             item.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
+                const newText = item.textContent;
+                const newHref = item.getAttribute('href');
+                
+                if (currentPage) {
+                    currentPage.textContent = newText;
+                    currentPage.href = newHref;
+                }
+                
+                navItems.forEach(navItem => {
+                    navItem.classList.remove('active');
+                });
+                item.classList.add('active');
+                
+                toggleMenu(false);
             });
         });
     }
@@ -249,34 +314,27 @@ const translations = {
 };
 
 function setLanguage(lang) {
-    localStorage.setItem('language', lang);
+    const currentPage = document.querySelector('.current-page');
+    const activeLink = document.querySelector('.nav-links a.active');
     
-    // Update active button
+    if (currentPage && activeLink) {
+        const key = activeLink.getAttribute('data-key') || 'home';
+        currentPage.textContent = translations[lang][key];
+    }
+    
+    // Update active state
     languageButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
     
-    // Update navigation text
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        const key = link.getAttribute('href').replace('#', '');
-        if (translations[lang][key]) {
-            link.textContent = translations[lang][key];
-        }
-    });
-    
-    // Update other text content as needed
+    // Store selected language
+    localStorage.setItem('language', lang);
 }
 
-// Set initial language
-const savedLanguage = localStorage.getItem('language') || 'en';
-setLanguage(savedLanguage);
-
-// Language button click handlers
+// Initialize language buttons
 languageButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        setLanguage(lang);
+        setLanguage(btn.dataset.lang);
     });
 });
 
