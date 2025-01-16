@@ -330,24 +330,24 @@ h3 {
 /* Animaciones diferentes para cada barra */
 .tools-animation {
     display: flex;
-    gap: 3rem;
-    padding: 0 2rem;
+    gap: 2.5rem;
+    padding: 0;
     height: 100%;
     align-items: center;
     position: relative;
-    width: 200%;
+    width: 100%;
+    overflow: hidden;
 }
 
 .tools-animation-content {
     display: flex;
-    gap: 3rem;
-    padding: 0 2rem;
+    gap: 2.5rem;
+    padding: 0;
     height: 100%;
     align-items: center;
-    animation: none;
-    position: absolute;
-    left: 0;
-    width: 100%;
+    white-space: nowrap;
+    width: fit-content;
+    animation: slideTools 35s linear infinite;
 }
 
 .top-bar .tools-animation-content {
@@ -1160,6 +1160,7 @@ h3 {
     align-items: center;
     position: relative;
     width: 100%;
+    overflow: hidden;
 }
 
 .tools-animation-content {
@@ -1168,9 +1169,9 @@ h3 {
     padding: 0;
     height: 100%;
     align-items: center;
-    animation: slideTools 35s linear infinite;
     white-space: nowrap;
-    width: 100%;
+    width: fit-content;
+    animation: slideTools 35s linear infinite;
 }
 
 /* Hacer que la segunda barra vaya en dirección contraria */
@@ -1184,6 +1185,11 @@ h3 {
     opacity: 0.4;
     transition: all 0.4s ease;
     animation: floatIcon 3s ease-in-out infinite;
+}
+
+/* Espacio solo para el grupo de sistemas operativos */
+.tools-animation i.fa-apple {
+    margin-left: 4rem;
 }
 
 /* Delays para los iconos */
@@ -1234,5 +1240,9 @@ h3 {
     .animation-container::before,
     .animation-container::after {
         width: 100px;
+    }
+
+    .tools-animation i.fa-apple {
+        margin-left: 2.5rem;
     }
 } 
