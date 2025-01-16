@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | PelusinniDev</title>
+        <link rel="stylesheet" href="../styles/main.css">
+        <script src="../js/main.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- Include Navigation -->
+        <div id="nav-placeholder"></div>
+
+        <!-- Main Content -->
+        <main class="projects-page">
+            <section class="projects-hero">
+                <div class="container">
+                    <h1>My Projects</h1>
+                    <p class="subtitle">Explore my portfolio of work and personal projects</p>
+                </div>
+            </section>
+
+            <section class="projects-content section">
+                <div class="container">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../assets/images/placeholder.jpg" alt="Pol's Asteroids">
+                            </div>
+                            <div class="project-content">
+                                <h3>Pol's Asteroids</h3>
+                                <p>A modern take on the classic Asteroids game</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/pelusinnidev/Pols-Asteroids" target="_blank" class="button">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../assets/images/placeholder.jpg" alt="Bobbo App">
+                            </div>
+                            <div class="project-content">
+                                <h3>Bobbo App</h3>
+                                <p>iOS application for pet care and management</p>
+                                <div class="project-links">
+                                    <a href="https://bobbo.framer.website" target="_blank" class="button">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // Load navigation
+            fetch('../components/navigation.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                    // Reinitialize navigation functionality
+                    initializeNavigation();
+                });
+        </script>
+    </body>
+</html>

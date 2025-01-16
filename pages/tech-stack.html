@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tech Stack | PelusinniDev</title>
+        <link rel="stylesheet" href="../styles/main.css">
+        <script src="../js/main.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- Include Navigation -->
+        <div id="nav-placeholder"></div>
+
+        <!-- Main Content -->
+        <main class="tech-stack-page">
+            <section class="tech-stack-hero">
+                <div class="container">
+                    <h1>Tech Stack</h1>
+                    <p class="subtitle">The technologies and tools I work with</p>
+                </div>
+            </section>
+
+            <section class="tech-stack-content section">
+                <div class="container">
+                    <div class="tech-categories">
+                        <div class="tech-category">
+                            <h3>Mobile Development</h3>
+                            <div class="tech-items">
+                                <div class="tech-item"><i class="fab fa-swift"></i> Swift</div>
+                                <div class="tech-item"><i class="fab fa-apple"></i> SwiftUI</div>
+                                <div class="tech-item"><i class="fab fa-android"></i> Kotlin</div>
+                                <div class="tech-item"><i class="fas fa-mobile"></i> Flutter</div>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h3>Web Development</h3>
+                            <div class="tech-items">
+                                <div class="tech-item"><i class="fab fa-html5"></i> HTML5</div>
+                                <div class="tech-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                                <div class="tech-item"><i class="fab fa-js"></i> JavaScript</div>
+                                <div class="tech-item"><i class="fab fa-php"></i> PHP</div>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h3>Tools & Technologies</h3>
+                            <div class="tech-items">
+                                <div class="tech-item"><i class="fab fa-git-alt"></i> Git</div>
+                                <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
+                                <div class="tech-item"><i class="fas fa-code"></i> VS Code</div>
+                                <div class="tech-item"><i class="fab fa-apple"></i> Xcode</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // Load navigation
+            fetch('../components/navigation.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                    // Reinitialize navigation functionality
+                    initializeNavigation();
+                });
+        </script>
+    </body>
+</html>

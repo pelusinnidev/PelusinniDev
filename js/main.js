@@ -1,47 +1,55 @@
-// Mobile menu handling
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-const navItems = document.querySelectorAll('.nav-links a');
+// Navigation initialization function
+function initializeNavigation() {
+    // Mobile menu handling
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
 
-menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    
-    // Animate nav items
-    if (navLinks.classList.contains('active')) {
-        navItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, 100 * index);
+    if (menuToggle && navLinks && navItems) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Animate nav items
+            if (navLinks.classList.contains('active')) {
+                navItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 100 * index);
+                });
+            } else {
+                navItems.forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(-10px)';
+                });
+            }
         });
-    } else {
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                navItems.forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(-10px)';
+                });
+            }
+        });
+
+        // Close menu when clicking on a link
         navItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(-10px)';
+            item.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
         });
     }
-});
+}
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        navItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(-10px)';
-        });
-    }
-});
-
-// Close menu when clicking on a link
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-});
+// Initialize navigation when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeNavigation);
 
 // Typing animation for hero section
 const typingTexts = [

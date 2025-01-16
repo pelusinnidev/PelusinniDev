@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expertise | PelusinniDev</title>
+        <link rel="stylesheet" href="../styles/main.css">
+        <script src="../js/main.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- Include Navigation -->
+        <div id="nav-placeholder"></div>
+
+        <!-- Main Content -->
+        <main class="expertise-page">
+            <section class="expertise-hero">
+                <div class="container">
+                    <h1>My Expertise</h1>
+                    <p class="subtitle">Discover my areas of specialization and technical proficiency</p>
+                </div>
+            </section>
+
+            <section class="expertise-content section">
+                <div class="container">
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Mobile Development</h3>
+                            <p>Creating intuitive and powerful iOS applications with Swift and SwiftUI</p>
+                        </div>
+                        <div class="expertise-card">
+                            <i class="fas fa-robot"></i>
+                            <h3>Artificial Intelligence</h3>
+                            <p>Implementing ML models and AI solutions in mobile applications</p>
+                        </div>
+                        <div class="expertise-card">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud Computing</h3>
+                            <p>Managing and deploying solutions on Oracle Cloud and Ubuntu Server</p>
+                        </div>
+                        <div class="expertise-card">
+                            <i class="fas fa-gamepad"></i>
+                            <h3>Game Development</h3>
+                            <p>Creating engaging gaming experiences and custom Minecraft plugins</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // Load navigation
+            fetch('../components/navigation.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                    // Reinitialize navigation functionality
+                    initializeNavigation();
+                });
+        </script>
+    </body>
+</html>
