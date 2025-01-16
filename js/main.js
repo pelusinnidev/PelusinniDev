@@ -96,9 +96,13 @@ function initializeNavigation() {
             item.addEventListener('click', () => {
                 const newText = item.textContent;
                 const newHref = item.getAttribute('href');
+                const newIcon = item.getAttribute('data-icon');
                 
                 if (currentPage) {
-                    currentPage.textContent = newText;
+                    currentPage.innerHTML = `
+                        <i class="fas ${newIcon} current-icon"></i>
+                        <span>${newText}</span>
+                    `;
                     currentPage.href = newHref;
                 }
                 
@@ -221,13 +225,42 @@ function handleWelcomeAnimation() {
     }
 }
 
-// Initialize animations
+// Scroll to top functionality
+function initializeScrollToTop() {
+    const scrollButton = document.querySelector('.scroll-top');
+    const scrollThreshold = 400; // Show button after scrolling this many pixels
+
+    function toggleScrollButton() {
+        if (window.pageYOffset > scrollThreshold) {
+            scrollButton.classList.add('visible');
+        } else {
+            scrollButton.classList.remove('visible');
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    if (scrollButton) {
+        window.addEventListener('scroll', toggleScrollButton);
+        scrollButton.addEventListener('click', scrollToTop);
+    }
+}
+
+// Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Handle welcome animation
     handleWelcomeAnimation();
     
     // Start typing animation
     setTimeout(typeText, 1000);
+    
+    // Initialize scroll to top
+    initializeScrollToTop();
     
     // Initialize stagger animations
     document.querySelectorAll('.highlight, .expertise-card, .project-card, .tech-item').forEach(item => {
@@ -284,48 +317,36 @@ themeToggle.addEventListener('click', () => {
 });
 
 // Language handling
+const languageDropdown = document.querySelector('.language-dropdown');
+const currentLangButton = document.querySelector('.current-lang');
 const languageButtons = document.querySelectorAll('.lang-btn');
-const translations = {
-    en: {
-        home: 'Home',
-        about: 'About',
-        expertise: 'Expertise',
-        projects: 'Projects',
-        techStack: 'Tech Stack',
-        contact: 'Contact',
-        // Add more translations as needed
-    },
-    es: {
-        home: 'Inicio',
-        about: 'Sobre mí',
-        expertise: 'Experiencia',
-        projects: 'Proyectos',
-        techStack: 'Tecnologías',
-        contact: 'Contacto',
-    },
-    ca: {
-        home: 'Inici',
-        about: 'Sobre mi',
-        expertise: 'Experiència',
-        projects: 'Projectes',
-        techStack: 'Tecnologies',
-        contact: 'Contacte',
-    }
-};
+
+// Toggle language dropdown
+if (currentLangButton) {
+    currentLangButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!languageDropdown.contains(e.target)) {
+            languageDropdown.classList.remove('active');
+        }
+    });
+}
 
 function setLanguage(lang) {
-    const currentPage = document.querySelector('.current-page');
-    const activeLink = document.querySelector('.nav-links a.active');
-    
-    if (currentPage && activeLink) {
-        const key = activeLink.getAttribute('data-key') || 'home';
-        currentPage.textContent = translations[lang][key];
-    }
+    const currentLangSpan = currentLangButton.querySelector('span');
+    currentLangSpan.textContent = lang.toUpperCase();
     
     // Update active state
     languageButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
+    
+    // Close dropdown
+    languageDropdown.classList.remove('active');
     
     // Store selected language
     localStorage.setItem('language', lang);
@@ -333,7 +354,8 @@ function setLanguage(lang) {
 
 // Initialize language buttons
 languageButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         setLanguage(btn.dataset.lang);
     });
 });
