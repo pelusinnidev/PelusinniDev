@@ -55,7 +55,7 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
-    padding: calc(var(--spacing-unit)) calc(var(--spacing-unit) * 1.5);
+    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
     border-radius: 100px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     opacity: 0;
@@ -77,15 +77,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: calc(var(--spacing-unit) * 2);
+    gap: calc(var(--spacing-unit) * 1);
     width: 100%;
 }
 
 .nav-divider {
-    width: 1px;
-    height: 24px;
-    background: linear-gradient(to bottom, transparent, var(--divider-color), transparent);
-    margin: 0 calc(var(--spacing-unit));
+    display: none;
 }
 
 [data-theme="dark"] .nav-divider {
@@ -93,16 +90,7 @@ body {
 }
 
 .logo {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 0;
-    flex-shrink: 0;
+    display: none;
 }
 
 .logo img {
@@ -1098,7 +1086,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     cursor: pointer;
     animation: bounce 2s infinite;
     color: var(--text-color);
@@ -1112,11 +1100,11 @@ h3 {
 }
 
 .keep-exploring i {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .keep-exploring span {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 500;
 }
 
@@ -1138,10 +1126,9 @@ h3 {
     position: relative;
     overflow: hidden;
     background: var(--background-color);
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    left: 0;
+    right: 0;
+    margin: 0;
 }
 
 .animation-container::before,
@@ -1150,38 +1137,40 @@ h3 {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 150px;
+    width: 120px;
     z-index: 2;
     pointer-events: none;
 }
 
 .animation-container::before {
     left: 0;
-    background: linear-gradient(to right, var(--background-color), transparent);
+    background: linear-gradient(to right, var(--background-color) 0%, transparent 100%);
 }
 
 .animation-container::after {
     right: 0;
-    background: linear-gradient(to left, var(--background-color), transparent);
+    background: linear-gradient(to left, var(--background-color) 0%, transparent 100%);
 }
 
 .tools-animation {
     display: flex;
-    gap: 3rem;
-    padding: 0 2rem;
+    gap: 2.5rem;
+    padding: 0;
     height: 100%;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .tools-animation-content {
     display: flex;
-    gap: 3rem;
-    padding: 0 2rem;
+    gap: 2.5rem;
+    padding: 0;
     height: 100%;
     align-items: center;
     animation: slideTools 35s linear infinite;
     white-space: nowrap;
+    width: 100%;
 }
 
 /* Hacer que la segunda barra vaya en dirección contraria */
