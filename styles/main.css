@@ -35,6 +35,8 @@ body {
 
 .logo {
     margin-bottom: 3rem;
+    padding: 2rem;
+    position: relative;
 }
 
 .logo-container {
@@ -45,27 +47,47 @@ body {
     padding: 3px;
     background: linear-gradient(45deg, var(--primary-color), #333);
     position: relative;
-    transition: var(--transition);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.logo-container::before {
+    content: '';
+    position: absolute;
+    inset: -30px;
+    background: linear-gradient(45deg, var(--primary-color), #333);
+    border-radius: 50%;
+    z-index: -2;
+    opacity: 0;
+    filter: blur(25px);
+    transition: all 0.4s ease;
+    transform: scale(0.8);
 }
 
 .logo-container::after {
     content: '';
     position: absolute;
-    inset: -3px;
+    inset: -15px;
     border-radius: 50%;
     background: linear-gradient(45deg, var(--primary-color), #333);
-    filter: blur(8px);
+    filter: blur(15px);
     opacity: 0;
-    transition: var(--transition);
+    transition: all 0.4s ease;
     z-index: -1;
-}
-
-.logo-container:hover::after {
-    opacity: 0.5;
 }
 
 .logo-container:hover {
     transform: scale(1.05);
+}
+
+.logo-container:hover::before {
+    opacity: 0.3;
+    transform: scale(1);
+}
+
+.logo-container:hover::after {
+    opacity: 0.5;
+    transform: scale(1.02);
 }
 
 .logo-image {
@@ -134,11 +156,28 @@ body {
     font-size: 2.2rem;
     color: var(--text-color);
     opacity: 0.5;
-    transition: var(--transition);
+    transition: all 0.4s ease;
     width: 2.2rem;
     text-align: center;
     animation: floatIcon 3s ease-in-out infinite;
     position: relative;
+    z-index: 1;
+}
+
+.tools-animation i::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    background: var(--text-color);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 0.4s ease;
+    z-index: -1;
 }
 
 /* Animación de flotación para cada icono con delay */
@@ -163,6 +202,14 @@ body {
 .tools-animation i:hover {
     opacity: 1;
     transform: translateY(-8px);
+    text-shadow: 0 0 20px var(--text-color);
+}
+
+.tools-animation i:hover::after {
+    opacity: 0.15;
+    width: 4rem;
+    height: 4rem;
+    filter: blur(20px);
 }
 
 @keyframes floatIcon {
