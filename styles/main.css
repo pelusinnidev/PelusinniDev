@@ -287,12 +287,20 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    body {
+        min-height: 100dvh;
+    }
+
     .container {
         padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100dvh;
     }
 
     .logo {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         padding: 1rem;
     }
 
@@ -302,37 +310,28 @@ h1 {
     }
 
     .animation-container {
-        height: 130px;
-        padding: 15px 0;
-    }
-    
-    .tools-animation {
         height: 100px;
-        gap: 2.5rem;
-        animation: slideTools 35s linear infinite;
+        margin: 1rem 0;
+        padding: 10px 0;
     }
-    
+
+    .tools-animation {
+        gap: 2rem;
+        height: 80px;
+    }
+
     .tools-animation-content {
-        gap: 2.5rem;
+        gap: 2rem;
     }
-    
+
     .tools-animation i {
         font-size: 1.8rem;
         width: 1.8rem;
     }
 
-    .tools-animation i::after {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .tools-animation i:hover::after {
-        width: 3.5rem;
-        height: 3.5rem;
-    }
-
     h1 {
         font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .message {
@@ -343,22 +342,24 @@ h1 {
     .social-links {
         gap: 1rem;
     }
+}
 
-    .social-link {
-        font-size: 1.3rem;
-    }
-
-    @keyframes floatIcon {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
-    }
-
-    .animation-container::before,
-    .animation-container::after {
+@media (max-width: 480px) {
+    .logo-container {
         width: 100px;
+        height: 100px;
+    }
+
+    .tools-animation i {
+        font-size: 1.5rem;
+        width: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .message {
+        font-size: 0.9rem;
     }
 } 
