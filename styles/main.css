@@ -263,7 +263,7 @@ body {
 
 /* Sections */
 .section {
-    padding: calc(var(--spacing-unit) * 12) 0;
+    padding: calc(var(--spacing-unit) * 8) 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -294,39 +294,210 @@ h3 {
 
 /* Hero Section */
 #hero {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    position: relative;
+    padding-top: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: calc(var(--spacing-unit) * 8) 0;
     min-height: 100vh;
+    gap: 3rem;
+    padding: 60px 0;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos para las barras de iconos */
+.top-bar, .bottom-bar {
+    width: 100vw;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.top-bar {
+    margin-top: 40px;
+    background: linear-gradient(to bottom, var(--background-color) 0%, transparent 100%);
+}
+
+.bottom-bar {
+    margin-bottom: 40px;
+    background: linear-gradient(to top, var(--background-color) 0%, transparent 100%);
+}
+
+/* Animaciones diferentes para cada barra */
+.tools-animation {
     display: flex;
+    gap: 3rem;
+    padding: 0 2rem;
+    height: 100%;
     align-items: center;
-    justify-content: space-between;
-    gap: calc(var(--spacing-unit) * 8);
-    margin-bottom: calc(var(--spacing-unit) * 6);
-    max-width: 1000px;
+    position: relative;
+    width: 200%;
+}
+
+.tools-animation-content {
+    display: flex;
+    gap: 3rem;
+    padding: 0 2rem;
+    height: 100%;
+    align-items: center;
+    animation: none;
+    position: absolute;
+    left: 0;
     width: 100%;
+}
+
+.top-bar .tools-animation-content {
+    animation: slideToolsLeft 30s linear infinite;
+}
+
+.bottom-bar .tools-animation-content {
+    animation: slideToolsRight 35s linear infinite;
+}
+
+/* Estilos específicos para los iconos */
+.top-bar .tools-animation i {
+    font-size: 1.8rem;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.bottom-bar .tools-animation i {
+    font-size: 1.6rem;
+    opacity: 0.25;
+    animation: floatDown 4s ease-in-out infinite;
+}
+
+/* Delays para los iconos */
+.tools-animation i:nth-child(3n) { animation-delay: 0.5s; }
+.tools-animation i:nth-child(3n+1) { animation-delay: 1s; }
+.tools-animation i:nth-child(3n+2) { animation-delay: 1.5s; }
+
+/* Hover effects */
+.tools-animation i:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+/* Animaciones */
+@keyframes slideToolsLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes slideToolsRight {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes floatUp {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes floatDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+/* Gradientes en los bordes */
+.top-bar::before,
+.top-bar::after,
+.bottom-bar::before,
+.bottom-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.top-bar::before {
+    left: 0;
+    background: linear-gradient(to right, var(--background-color), transparent);
+}
+
+.top-bar::after {
+    right: 0;
+    background: linear-gradient(to left, var(--background-color), transparent);
+}
+
+.bottom-bar::before {
+    left: 0;
+    background: linear-gradient(to right, var(--background-color), transparent);
+}
+
+.bottom-bar::after {
+    right: 0;
+    background: linear-gradient(to left, var(--background-color), transparent);
+}
+
+/* Hover effects */
+.top-bar .tools-animation i:hover,
+.bottom-bar .tools-animation i:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 2rem 0;
+        gap: 2rem;
+    }
+
+    .top-bar, .bottom-bar {
+        height: 60px;
+    }
+
+    .top-bar .tools-animation i {
+        font-size: 1.5rem;
+    }
+
+    .bottom-bar .tools-animation i {
+        font-size: 1.3rem;
+    }
+
+    .top-bar::before,
+    .top-bar::after,
+    .bottom-bar::before,
+    .bottom-bar::after {
+        width: 100px;
+    }
+
+    .tools-animation-content {
+        gap: 2.5rem;
+        padding: 0 1.5rem;
+    }
 }
 
 .hero-text {
     text-align: center;
     margin-top: calc(var(--spacing-unit) * 2);
-    min-height: 80px;
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .hero-text h1 {
@@ -370,7 +541,7 @@ h3 {
     color: var(--text-color);
     opacity: 0.9;
     margin-top: calc(var(--spacing-unit));
-    min-height: 2rem;
+    min-height: 2.5rem;
     display: inline-block;
     position: relative;
     padding-right: 4px;
@@ -439,38 +610,11 @@ h3 {
 }
 
 .scroll-indicator {
-    position: absolute;
-    bottom: calc(var(--spacing-unit) * 4);
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+    display: none;
 }
 
 .mouse {
-    width: 30px;
-    height: 50px;
-    border: 2px solid currentColor;
-    border-radius: 15px;
-    margin: 0 auto calc(var(--spacing-unit) * 2);
-    position: relative;
-}
-
-.mouse::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 8px;
-    background: currentColor;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 8px;
-    border-radius: 2px;
-    animation: scroll 1.5s infinite;
-}
-
-@keyframes scroll {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    100% { transform: translate(-50%, 20px); opacity: 0; }
+    display: none;
 }
 
 /* About Section */
@@ -942,5 +1086,164 @@ h3 {
     
     .language-selector {
         background: var(--control-hover-bg);
+    }
+}
+
+/* Replace the old scroll indicator with new keep exploring indicator */
+.keep-exploring {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    color: var(--text-color);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    margin-top: 2rem;
+}
+
+.keep-exploring:hover {
+    opacity: 1;
+}
+
+.keep-exploring i {
+    font-size: 2rem;
+}
+
+.keep-exploring span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+.animation-container {
+    width: 100vw;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    background: var(--background-color);
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.animation-container::before,
+.animation-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.animation-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--background-color), transparent);
+}
+
+.animation-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--background-color), transparent);
+}
+
+.tools-animation {
+    display: flex;
+    gap: 3rem;
+    padding: 0 2rem;
+    height: 100%;
+    align-items: center;
+    position: relative;
+}
+
+.tools-animation-content {
+    display: flex;
+    gap: 3rem;
+    padding: 0 2rem;
+    height: 100%;
+    align-items: center;
+    animation: slideTools 35s linear infinite;
+    white-space: nowrap;
+}
+
+/* Hacer que la segunda barra vaya en dirección contraria */
+.hero-container .animation-container:nth-child(3) .tools-animation-content {
+    animation: slideToolsReverse 35s linear infinite;
+}
+
+.tools-animation i {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    opacity: 0.4;
+    transition: all 0.4s ease;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+/* Delays para los iconos */
+.tools-animation i:nth-child(3n) { animation-delay: 0.5s; }
+.tools-animation i:nth-child(3n+1) { animation-delay: 1s; }
+.tools-animation i:nth-child(3n+2) { animation-delay: 1.5s; }
+
+/* Efecto hover en los iconos */
+.tools-animation i:hover {
+    opacity: 1;
+    transform: translateY(-8px);
+    text-shadow: 0 0 20px var(--text-color);
+}
+
+@keyframes slideTools {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes slideToolsReverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .animation-container {
+        height: 60px;
+    }
+    
+    .tools-animation {
+        gap: 2rem;
+    }
+    
+    .tools-animation-content {
+        gap: 2rem;
+    }
+    
+    .tools-animation i {
+        font-size: 1.5rem;
+    }
+
+    .animation-container::before,
+    .animation-container::after {
+        width: 100px;
     }
 } 
