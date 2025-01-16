@@ -287,6 +287,20 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+
+    .logo-container {
+        width: 120px;
+        height: 120px;
+    }
+
     .animation-container {
         height: 130px;
         padding: 15px 0;
@@ -294,14 +308,57 @@ h1 {
     
     .tools-animation {
         height: 100px;
+        gap: 2.5rem;
+        animation: slideTools 35s linear infinite;
     }
     
+    .tools-animation-content {
+        gap: 2.5rem;
+    }
+    
+    .tools-animation i {
+        font-size: 1.8rem;
+        width: 1.8rem;
+    }
+
+    .tools-animation i::after {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .tools-animation i:hover::after {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .message {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-link {
+        font-size: 1.3rem;
+    }
+
     @keyframes floatIcon {
         0%, 100% {
             transform: translateY(0);
         }
         50% {
-            transform: translateY(-15px);
+            transform: translateY(-20px);
         }
+    }
+
+    .animation-container::before,
+    .animation-container::after {
+        width: 100px;
     }
 } 
