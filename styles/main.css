@@ -137,7 +137,7 @@ body {
 .tools-animation {
     display: flex;
     gap: 3rem;
-    animation: slideTools 35s linear infinite;
+    animation: slideTools 25s linear infinite;
     padding: 0 2rem;
     white-space: nowrap;
     height: 110px;
@@ -217,7 +217,7 @@ body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
 }
 
@@ -316,12 +316,14 @@ h1 {
     }
 
     .tools-animation {
-        gap: 2rem;
+        gap: 1.5rem;
         height: 80px;
+        padding: 0 1rem;
     }
 
     .tools-animation-content {
-        gap: 2rem;
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
 
     .tools-animation i {
@@ -361,5 +363,13 @@ h1 {
 
     .message {
         font-size: 0.9rem;
+    }
+
+    .tools-animation {
+        gap: 1rem;
+    }
+
+    .tools-animation-content {
+        gap: 1rem;
     }
 } 
