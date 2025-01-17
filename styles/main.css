@@ -555,7 +555,7 @@ h3 {
     align-items: center;
     white-space: nowrap;
     width: fit-content;
-    animation: slideTools 35s linear infinite;
+    animation: slideTools 50s linear infinite;
 }
 
 .top-bar .tools-animation-content {
@@ -2033,12 +2033,12 @@ h3 {
     align-items: center;
     white-space: nowrap;
     width: fit-content;
-    animation: slideTools 35s linear infinite;
+    animation: slideTools 50s linear infinite;
 }
 
 /* Hacer que la segunda barra vaya en dirección contraria */
 .hero-container .animation-container:nth-child(3) .tools-animation-content {
-    animation: slideToolsReverse 35s linear infinite;
+    animation: slideToolsReverse 50s linear infinite;
 }
 
 .tools-animation i {
@@ -2068,11 +2068,11 @@ h3 {
 
 @keyframes slideTools {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-33.33%); }
 }
 
 @keyframes slideToolsReverse {
-    0% { transform: translateX(-50%); }
+    0% { transform: translateX(-33.33%); }
     100% { transform: translateX(0); }
 }
 
