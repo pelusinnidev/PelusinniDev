@@ -34,8 +34,6 @@ class Navigation extends HTMLElement {
                     </button>
                     <div class="nav-links">
                         <a href="/index.html" data-key="home" data-icon="fa-home" data-i18n="nav.home">Home</a>
-                        <a href="/pages/about.html" data-key="about" data-icon="fa-user" data-i18n="nav.about">About</a>
-                        <a href="/pages/expertise.html" data-key="expertise" data-icon="fa-code" data-i18n="nav.expertise">Expertise</a>
                         <a href="/pages/projects.html" data-key="projects" data-icon="fa-project-diagram" data-i18n="nav.projects">Projects</a>
                         <a href="/pages/tech-stack.html" data-key="techStack" data-icon="fa-layer-group" data-i18n="nav.techStack">Tech Stack</a>
                         <a href="/pages/contact.html" data-key="contact" data-icon="fa-envelope" data-i18n="nav.contact">Contact</a>
