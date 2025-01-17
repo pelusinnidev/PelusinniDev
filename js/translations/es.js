@@ -55,12 +55,12 @@ const translations = {
     },
     techStack: {
         title: 'Stack Tecnológico',
-        intro: 'Tecnologías con las que trabajo y aprendo continuamente.',
+        intro: 'Tecnologías con las que trabajo',
         filters: {
             all: 'Todo',
             mobile: 'Móvil',
             web: 'Web',
-            backend: 'Backend',
+            python: 'Python & Datos',
             tools: 'Herramientas'
         }
     },

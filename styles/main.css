@@ -1378,9 +1378,12 @@ h3 {
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: calc(var(--spacing-unit) * 2);
     padding: 0 calc(var(--spacing-unit) * 2);
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .tech-item {
@@ -1388,15 +1391,14 @@ h3 {
     border-radius: var(--border-radius);
     padding: calc(var(--spacing-unit) * 2);
     text-align: center;
-    transition: var(--transition);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease forwards;
-}
-
-.tech-item.visible {
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
+    aspect-ratio: 1;
 }
 
 .tech-item.filtered-out {
@@ -1407,6 +1409,7 @@ h3 {
     font-size: 2rem;
     margin-bottom: var(--spacing-unit);
     color: var(--text-color);
+    transition: transform 0.3s ease;
 }
 
 .tech-item span {
@@ -1421,31 +1424,31 @@ h3 {
     box-shadow: var(--shadow);
 }
 
-@media (max-width: 1200px) {
-    .tech-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
+.tech-item:hover i {
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
     .tech-grid {
-        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-unit);
+        max-width: 500px;
     }
 
     .tech-filter {
         gap: var(--spacing-unit);
+        padding: 0 var(--spacing-unit);
     }
 
     .filter-btn {
-        padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+        padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit));
         font-size: 0.85rem;
     }
 }
 
 @media (max-width: 480px) {
     .tech-grid {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        max-width: 300px;
     }
 
     .tech-item {
@@ -1453,11 +1456,16 @@ h3 {
     }
 
     .tech-item i {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .tech-item span {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .tech-filter {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 

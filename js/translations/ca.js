@@ -55,12 +55,12 @@ const translations = {
     },
     techStack: {
         title: 'Stack Tecnològic',
-        intro: 'Tecnologies amb les quals treballo i aprenc contínuament.',
+        intro: 'Tecnologies amb les que treballo',
         filters: {
             all: 'Tot',
             mobile: 'Mòbil',
             web: 'Web',
-            backend: 'Backend',
+            python: 'Python & Dades',
             tools: 'Eines'
         }
     },

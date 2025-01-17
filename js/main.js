@@ -423,7 +423,6 @@ function initializeTechStack() {
             { name: 'Swift', icon: 'fab fa-swift' },
             { name: 'SwiftUI', icon: 'fab fa-apple' },
             { name: 'Kotlin', icon: 'fab fa-android' },
-            { name: 'Flutter', icon: 'fas fa-mobile-alt' },
             { name: 'Android', icon: 'fab fa-android' }
         ],
         web: [
@@ -440,17 +439,18 @@ function initializeTechStack() {
         ],
         tools: [
             { name: 'Git', icon: 'fab fa-git-alt' },
-            { name: 'Docker', icon: 'fab fa-docker' },
-            { name: 'VS Code', icon: 'fas fa-code' },
-            { name: 'Xcode', icon: 'fab fa-apple' }
+            { name: 'Docker', icon: 'fab fa-docker' }
         ]
     };
 
-    // Create tech items
+    // Limpiar el grid existente
+    techGrid.innerHTML = '';
+
+    // Create and place tech items
     Object.entries(techStack).forEach(([category, items]) => {
         items.forEach(tech => {
             const techItem = document.createElement('div');
-            techItem.className = 'tech-item';
+            techItem.className = 'tech-item visible';
             techItem.dataset.category = category;
             techItem.innerHTML = `
                 <i class="${tech.icon}"></i>
@@ -475,8 +475,10 @@ function initializeTechStack() {
             techItems.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
                     item.classList.remove('filtered-out');
+                    item.classList.add('visible');
                 } else {
                     item.classList.add('filtered-out');
+                    item.classList.remove('visible');
                 }
             });
         });

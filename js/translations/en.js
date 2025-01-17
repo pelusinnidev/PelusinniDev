@@ -55,12 +55,12 @@ const translations = {
     },
     techStack: {
         title: 'Tech Stack',
-        intro: 'Technologies I work with and continuously learn about.',
+        intro: 'Technologies I work with',
         filters: {
             all: 'All',
             mobile: 'Mobile',
             web: 'Web',
-            backend: 'Backend',
+            python: 'Python & Data',
             tools: 'Tools'
         }
     },
