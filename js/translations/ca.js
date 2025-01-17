@@ -25,12 +25,12 @@ const translations = {
         keepExploring: 'Segueix Explorant'
     },
     expertise: {
-        title: 'La Meva Trajectòria en Tecnologia',
+        title: 'El Meu Viatge en la Tecnologia',
         intro: 'Actualment en un camí d\'aprenentatge continu, centrant-me en el desenvolupament mòbil mentre exploro diverses àrees del desenvolupament de programari.',
         cards: {
             mobile: {
                 title: 'Desenvolupament Mòbil',
-                description: 'Centrat en el desenvolupament niat d\'iOS amb Swift i SwiftUI, mentre exploro el desenvolupament natiu d\'Android amb Kotlin.'
+                description: 'Centrat en el desenvolupament natiu d\'iOS amb Swift i SwiftUI, mentre exploro el desenvolupament natiu d\'Android amb Kotlin.'
             },
             backend: {
                 title: 'Desenvolupament Backend',
@@ -42,22 +42,22 @@ const translations = {
             },
             ai: {
                 title: 'IA i Machine Learning',
-                description: 'Actualment embarcat en un emocionant viatge cap a la IA i ML a través de cursos oficials en línia.'
+                description: 'Actualment embarcant-me en un emocionant viatge cap a la IA i ML a través de cursos en línia oficials.'
             }
         }
     },
     projects: {
         title: 'Projectes Destacats',
-        intro: 'Una selecció dels meus projectes més significatius, cadascun representant un repte i solució únics.',
+        intro: 'Una selecció dels meus projectes més significatius, cadascun representant un repte i solució única.',
         viewProject: 'Veure Projecte',
-        inDevelopment: 'En Desenvolupament',
+        inDevelopment: 'En desenvolupament',
         completed: 'Completat'
     },
     techStack: {
-        title: 'Stack Tecnològic',
+        title: 'Tecnologies',
         intro: 'Tecnologies amb les quals treballo i aprenc contínuament.',
         filters: {
-            all: 'Tot',
+            all: 'Totes',
             mobile: 'Mòbil',
             web: 'Web',
             backend: 'Backend',
@@ -65,19 +65,21 @@ const translations = {
         }
     },
     contact: {
-        title: 'Contacte',
-        intro: 'No dubtis en contactar-me per a col·laboracions o simplement per saludar',
-        form: {
-            name: 'Nom',
-            email: 'Correu',
-            message: 'Missatge',
-            send: 'Enviar Missatge'
+        title: 'Connectem',
+        intro: 'Segueix el meu viatge i creem alguna cosa increïble junts',
+        social: {
+            twitter: 'Segueix-me a Twitter',
+            github: 'Visita el meu GitHub',
+            linkedin: 'Connecta a LinkedIn'
         }
+    },
+    footer: {
+        copyright: '© 2025 Pelusinni'
     },
     quote: {
         explanation: {
-            p1: 'Aquesta icònica frase ha estat la meva guia durant tot el meu viatge en la tecnologia i el creixement personal. Representa més que només innovació; es tracta de desafiar la saviesa convencional i trobar perspectives úniques en tot el que fem.',
-            p2: 'Com a desenvolupador i entusiasta de la tecnologia, crec que pensar diferent no es tracta només de crear noves solucions, sinó de reimaginar les preguntes mateixes. Ja sigui desenvolupant aplicacions iOS, explorant les possibilitats de la IA o aprenent noves tecnologies, sempre m\'esforço per abordar els reptes des d\'angles inesperats.',
+            p1: 'Aquesta frase icònica ha estat la meva guia durant tot el meu viatge en la tecnologia i el creixement personal. Representa més que només innovació; es tracta de desafiar la saviesa convencional i trobar perspectives úniques en tot el que fem.',
+            p2: 'Com a desenvolupador i entusiasta de la tecnologia, crec que pensar diferent no es tracta només de crear noves solucions, sinó de reimaginar les preguntes mateixes. Ja sigui desenvolupant aplicacions iOS, explorant possibilitats d\'IA o aprenent noves tecnologies, sempre m\'esforço per abordar els reptes des d\'angles inesperats.',
             p3: 'Aquesta mentalitat m\'ha portat a explorar diverses àrees de la tecnologia, des del desenvolupament mòbil fins a la intel·ligència artificial, sempre buscant superar límits i descobrir noves possibilitats.'
         }
     }

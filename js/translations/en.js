@@ -65,14 +65,16 @@ const translations = {
         }
     },
     contact: {
-        title: 'Get in Touch',
-        intro: 'Feel free to reach out for collaborations or just a friendly hello',
-        form: {
-            name: 'Name',
-            email: 'Email',
-            message: 'Message',
-            send: 'Send Message'
+        title: 'Let\'s Connect',
+        intro: 'Follow my journey and let\'s create something amazing together',
+        social: {
+            twitter: 'Follow me on Twitter',
+            github: 'Check my GitHub',
+            linkedin: 'Connect on LinkedIn'
         }
+    },
+    footer: {
+        copyright: '© 2025 Pelusinni'
     },
     quote: {
         explanation: {
