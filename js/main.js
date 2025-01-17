@@ -1,3 +1,5 @@
+import i18n from './i18n.js';
+
 // Navigation initialization function
 function initializeNavigation() {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -11,7 +13,7 @@ function initializeNavigation() {
     if (currentPage) {
         const activeLink = document.querySelector('.nav-links a.active');
         if (activeLink) {
-            currentPage.textContent = activeLink.textContent;
+            currentPage.textContent = i18n.t(`nav.${activeLink.dataset.key}`);
             currentPage.href = activeLink.getAttribute('href');
         }
     }
@@ -29,9 +31,7 @@ function initializeNavigation() {
             langButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const lang = e.target.dataset.lang;
-                    setLanguage(lang);
-                    langButtons.forEach(b => b.classList.remove('active'));
-                    e.target.classList.add('active');
+                    i18n.setLanguage(lang);
                 });
             });
         } else if (windowWidth > 480) {
@@ -94,7 +94,8 @@ function initializeNavigation() {
         // Handle navigation item clicks
         navItems.forEach(item => {
             item.addEventListener('click', () => {
-                const newText = item.textContent;
+                const key = item.dataset.key;
+                const newText = i18n.t(`nav.${key}`);
                 const newHref = item.getAttribute('href');
                 const newIcon = item.getAttribute('data-icon');
                 
@@ -118,31 +119,19 @@ function initializeNavigation() {
 }
 
 // Initialize navigation when DOM is loaded
-document.addEventListener('DOMContentLoaded', initializeNavigation);
+document.addEventListener('DOMContentLoaded', () => {
+    initializeNavigation();
+    i18n.translatePage();
+});
 
 // Typing animation for hero section
-const typingTexts = [
-    'iOS Developer',
-    'Apple Ecosystem Enthusiast',
-    'AI/ML Explorer',
-    'Cloud Computing Enthusiast',
-    'Mobile Development Lover',
-    'Python Learner',
-    'Creative Mind',
-    'Minimalistic Design Lover',
-    'Tech Explorer',
-    'Robotics Enthusiast',
-    'Web Development Curious',
-    'Minecraft Development Enthusiast'
-];
-
 let currentTextIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 let typingElement = document.querySelector('.typing-text');
 
 function typeText() {
-    const currentText = typingTexts[currentTextIndex];
+    const currentText = window.typingTexts[currentTextIndex];
     
     if (isDeleting) {
         typingElement.textContent = currentText.substring(0, charIndex - 1);
@@ -159,20 +148,22 @@ function typeText() {
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
+        currentTextIndex = (currentTextIndex + 1) % window.typingTexts.length;
         typeSpeed = 500; // Pause before starting new word
     }
     
     setTimeout(typeText, typeSpeed);
 }
 
+// Start typing animation if element exists
+if (typingElement) {
+    typeText();
+}
+
 // Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
-        
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         const navHeight = document.querySelector('.nav').offsetHeight;
@@ -207,7 +198,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections and cards
+// Observe all sections
 document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
@@ -232,10 +223,13 @@ function handleWelcomeAnimation() {
     }
 }
 
+// Initialize welcome animation
+handleWelcomeAnimation();
+
 // Scroll to top functionality
 function initializeScrollToTop() {
     const scrollButton = document.querySelector('.scroll-top');
-    const scrollThreshold = 400; // Show button after scrolling this many pixels
+    const scrollThreshold = 400;
 
     function toggleScrollButton() {
         if (window.pageYOffset > scrollThreshold) {
@@ -245,133 +239,35 @@ function initializeScrollToTop() {
         }
     }
 
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
     if (scrollButton) {
         window.addEventListener('scroll', toggleScrollButton);
-        scrollButton.addEventListener('click', scrollToTop);
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
 }
 
-// Initialize all functionality when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Handle welcome animation
-    handleWelcomeAnimation();
-    
-    // Start typing animation
-    setTimeout(typeText, 1000);
-    
-    // Initialize scroll to top
-    initializeScrollToTop();
-    
-    // Initialize stagger animations
-    document.querySelectorAll('.highlight, .expertise-card, .project-card, .tech-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
-    
-    // Show navigation on scroll up, hide on scroll down
-    let lastScroll = 0;
-    const nav = document.querySelector('.nav');
-    
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            nav.style.transform = 'translateX(-50%)';
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !navLinks.classList.contains('active')) {
-            nav.style.transform = 'translateX(-50%) translateY(-100%)';
-            nav.style.opacity = '0';
-        } else {
-            nav.style.transform = 'translateX(-50%)';
-            nav.style.opacity = '1';
-        }
-        
-        lastScroll = currentScroll;
-    });
-});
-
-// Theme handling
-const themeToggle = document.querySelector('.theme-toggle');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+// Initialize scroll to top
+initializeScrollToTop();
 
 // Set initial theme
 function setInitialTheme() {
     const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
     if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    } else if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+        document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+    } else if (prefersDark) {
+        document.body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
     }
 }
 
-// Toggle theme
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-});
-
-// Language handling
-const languageDropdown = document.querySelector('.language-dropdown');
-const currentLangButton = document.querySelector('.current-lang');
-const languageButtons = document.querySelectorAll('.lang-btn');
-
-// Toggle language dropdown
-if (currentLangButton) {
-    currentLangButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        languageDropdown.classList.toggle('active');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!languageDropdown.contains(e.target)) {
-            languageDropdown.classList.remove('active');
-        }
-    });
-}
-
-function setLanguage(lang) {
-    const currentLangSpan = currentLangButton.querySelector('span');
-    currentLangSpan.textContent = lang.toUpperCase();
-    
-    // Update active state
-    languageButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-    
-    // Close dropdown
-    languageDropdown.classList.remove('active');
-    
-    // Store selected language
-    localStorage.setItem('language', lang);
-}
-
-// Initialize language buttons
-languageButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        setLanguage(btn.dataset.lang);
-    });
-});
-
 // Initialize theme
-document.addEventListener('DOMContentLoaded', () => {
-    setInitialTheme();
-    // ... existing initialization code ...
-});
+setInitialTheme();
 
 // Projects Slider functionality
 function initializeProjectsSlider() {

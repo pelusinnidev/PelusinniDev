@@ -2229,32 +2229,29 @@ h3 {
 
 .language-dropdown {
     position: relative;
-    margin-right: 8px;
+    display: inline-block;
 }
 
 .current-lang {
     background: none;
     border: none;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text-color);
-    cursor: pointer;
-    border-radius: 100px;
-    transition: var(--transition);
-    opacity: 0.8;
+    padding: 8px 12px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
 }
 
 .current-lang:hover {
-    opacity: 1;
     background: var(--control-hover-bg);
 }
 
 .current-lang i {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     transition: transform 0.3s ease;
 }
 
@@ -2265,60 +2262,63 @@ h3 {
 .language-options {
     position: absolute;
     top: 100%;
-    right: 0;
-    margin-top: 4px;
+    left: 0;
     background: var(--nav-bg);
     border-radius: 12px;
-    padding: 4px;
+    padding: 8px;
+    margin-top: 8px;
     box-shadow: var(--shadow);
-    display: none;
-    flex-direction: column;
-    gap: 2px;
-    min-width: 80px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    min-width: 100px;
 }
 
 .language-dropdown.active .language-options {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .lang-btn {
     background: none;
     border: none;
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    width: 100%;
+    padding: 8px 16px;
+    text-align: left;
     color: var(--text-color);
+    font-weight: 500;
     cursor: pointer;
     border-radius: 8px;
     transition: var(--transition);
-    opacity: 0.6;
-    text-align: center;
-    width: 100%;
+    opacity: 0.7;
 }
 
 .lang-btn.active {
-    background: var(--background-color);
+    background: var(--control-hover-bg);
     opacity: 1;
 }
 
 .lang-btn:hover:not(.active) {
-    opacity: 0.8;
-    background: var(--control-hover-bg);
+    background: var(--nav-hover-bg);
+    opacity: 0.9;
 }
 
 @media (max-width: 768px) {
     .language-dropdown {
-        margin-right: 4px;
+        margin-right: 8px;
     }
 
     .current-lang {
-        padding: 4px 8px;
+        padding: 6px 10px;
     }
 }
 
 @media (max-width: 360px) {
     .language-dropdown {
-        margin-right: 2px;
+        margin-right: 4px;
     }
 }
 

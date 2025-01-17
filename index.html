@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PelusinniDev | Software Developer</title>
         <link rel="stylesheet" href="styles/main.css">
-        <script src="components/navigation.js" defer></script>
-        <script src="js/main.js" defer></script>
+        <script src="components/navigation.js" type="module" defer></script>
+        <script src="js/main.js" type="module" defer></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
@@ -126,7 +126,7 @@
                 <!-- Keep Exploring Indicator -->
                 <div class="keep-exploring">
                     <i class="fas fa-hand-point-down"></i>
-                    <span>Keep Exploring</span>
+                    <span data-i18n="hero.keepExploring">Keep Exploring</span>
                 </div>
             </div>
         </section>
@@ -154,8 +154,8 @@
         <section id="expertise" class="section">
             <div class="container expertise-container">
                 <div class="expertise-header">
-                    <h2>My Journey in Tech</h2>
-                    <p class="expertise-intro">Currently on a continuous learning path, focusing on mobile development while exploring various areas of software development.</p>
+                    <h2 data-i18n="expertise.title">My Journey in Tech</h2>
+                    <p class="expertise-intro" data-i18n="expertise.intro">Currently on a continuous learning path, focusing on mobile development while exploring various areas of software development.</p>
                 </div>
                 
                 <div class="expertise-grid">
@@ -164,8 +164,8 @@
                         <div class="expertise-icon">
                             <i class="fab fa-apple"></i>
                         </div>
-                        <h3>Mobile Development</h3>
-                        <p>Focused on native iOS development with Swift and SwiftUI, while exploring native Android development with Kotlin.</p>
+                        <h3 data-i18n="expertise.cards.mobile.title">Mobile Development</h3>
+                        <p data-i18n="expertise.cards.mobile.description">Focused on native iOS development with Swift and SwiftUI, while exploring native Android development with Kotlin.</p>
                         <div class="tech-tags">
                             <span><i class="fab fa-swift"></i> Swift</span>
                             <span><i class="fab fa-apple"></i> SwiftUI</span>
@@ -178,8 +178,8 @@
                         <div class="expertise-icon">
                             <i class="fas fa-server"></i>
                         </div>
-                        <h3>Backend Development</h3>
-                        <p>Experience with Java Spring Boot for backend services, along with both SQL and NoSQL databases.</p>
+                        <h3 data-i18n="expertise.cards.backend.title">Backend Development</h3>
+                        <p data-i18n="expertise.cards.backend.description">Experience with Java Spring Boot for backend services, along with both SQL and NoSQL databases.</p>
                         <div class="tech-tags">
                             <span><i class="fab fa-java"></i> Java | Spring Boot</span>
                             <span><i class="fas fa-database"></i> MySQL</span>
@@ -192,8 +192,8 @@
                         <div class="expertise-icon">
                             <i class="fas fa-cloud"></i>
                         </div>
-                        <h3>Cloud & Infrastructure</h3>
-                        <p>Hands-on experience with cloud platforms and Linux server management for personal projects.</p>
+                        <h3 data-i18n="expertise.cards.cloud.title">Cloud & Infrastructure</h3>
+                        <p data-i18n="expertise.cards.cloud.description">Hands-on experience with cloud platforms and Linux server management for personal projects.</p>
                         <div class="tech-tags">
                             <span><i class="fab fa-aws"></i> AWS</span>
                             <span><i class="fas fa-cloud"></i> Oracle Cloud</span>
@@ -206,8 +206,8 @@
                         <div class="expertise-icon">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3>AI & Machine Learning</h3>
-                        <p>Currently embarking on an exciting journey into AI and ML through official online courses.</p>
+                        <h3 data-i18n="expertise.cards.ai.title">AI & Machine Learning</h3>
+                        <p data-i18n="expertise.cards.ai.description">Currently embarking on an exciting journey into AI and ML through official online courses.</p>
                         <div class="tech-tags">
                             <span><i class="fab fa-python"></i> Python</span>
                             <span><i class="fas fa-robot"></i> ML</span>
@@ -222,8 +222,8 @@
         <section id="projects" class="section">
             <div class="container projects-container">
                 <div class="projects-header">
-                    <h2>Featured Projects</h2>
-                    <p class="projects-intro">A selection of my most significant projects, each representing a unique challenge and solution.</p>
+                    <h2 data-i18n="projects.title">Featured Projects</h2>
+                    <p class="projects-intro" data-i18n="projects.intro">A selection of my most significant projects, each representing a unique challenge and solution.</p>
                 </div>
 
                 <div class="projects-slider">
@@ -248,7 +248,8 @@
                                     <span><i class="fas fa-database"></i> CoreData</span>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://bobbo.framer.website" target="_blank" class="button-outline"><i class="fas fa-globe"></i> Website</a>
+                                    <a href="#" class="button-outline" data-i18n="projects.viewProject">View Project</a>
+                                    <span class="status-badge" data-i18n="projects.inDevelopment">In Development</span>
                                 </div>
                             </div>
                         </div>
@@ -327,139 +328,44 @@
         <section id="tech-stack" class="section">
             <div class="container tech-stack-container">
                 <div class="tech-stack-header">
-                    <h2>Tech Stack</h2>
-                    <p class="tech-stack-intro">A curated collection of technologies I work with to bring ideas to life.</p>
+                    <h2 data-i18n="techStack.title">Tech Stack</h2>
+                    <p class="tech-stack-intro" data-i18n="techStack.intro">Technologies I work with and continuously learn about.</p>
                 </div>
 
-                <!-- Filter Navigation -->
                 <div class="tech-filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile</button>
-                    <button class="filter-btn" data-filter="backend">Backend</button>
-                    <button class="filter-btn" data-filter="frontend">Frontend</button>
-                    <button class="filter-btn" data-filter="database">Database</button>
-                    <button class="filter-btn" data-filter="tools">Tools</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="techStack.filters.all">All</button>
+                    <button class="filter-btn" data-filter="mobile" data-i18n="techStack.filters.mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="web" data-i18n="techStack.filters.web">Web</button>
+                    <button class="filter-btn" data-filter="backend" data-i18n="techStack.filters.backend">Backend</button>
+                    <button class="filter-btn" data-filter="tools" data-i18n="techStack.filters.tools">Tools</button>
                 </div>
 
-                <!-- Tech Grid -->
                 <div class="tech-grid">
-                    <!-- Mobile Development -->
-                    <div class="tech-item" data-category="mobile">
-                        <i class="fab fa-swift"></i>
-                        <span>Swift</span>
-                    </div>
-                    <div class="tech-item" data-category="mobile">
-                        <i class="fab fa-apple"></i>
-                        <span>SwiftUI</span>
-                    </div>
-                    <div class="tech-item" data-category="mobile">
-                        <i class="fab fa-android"></i>
-                        <span>Android</span>
-                    </div>
-
-                    <!-- Backend Development -->
-                    <div class="tech-item" data-category="backend">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
-                    </div>
-                    <div class="tech-item" data-category="backend">
-                        <i class="fab fa-java"></i>
-                        <span>Java</span>
-                    </div>
-                    <div class="tech-item" data-category="backend">
-                        <i class="fab fa-php"></i>
-                        <span>PHP</span>
-                    </div>
-                    <div class="tech-item" data-category="backend">
-                        <i class="fab fa-laravel"></i>
-                        <span>Laravel</span>
-                    </div>
-
-                    <!-- Frontend Development -->
-                    <div class="tech-item" data-category="frontend">
-                        <i class="fab fa-html5"></i>
-                        <span>HTML5</span>
-                    </div>
-                    <div class="tech-item" data-category="frontend">
-                        <i class="fab fa-css3-alt"></i>
-                        <span>CSS3</span>
-                    </div>
-                    <div class="tech-item" data-category="frontend">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <!-- Database -->
-                    <div class="tech-item" data-category="database">
-                        <i class="fas fa-database"></i>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="tech-item" data-category="database">
-                        <i class="fas fa-database"></i>
-                        <span>MySQL</span>
-                    </div>
-
-                    <!-- Tools -->
-                    <div class="tech-item" data-category="tools">
-                        <i class="fab fa-git-alt"></i>
-                        <span>Git</span>
-                    </div>
-                    <div class="tech-item" data-category="tools">
-                        <i class="fab fa-docker"></i>
-                        <span>Docker</span>
-                    </div>
-                    <div class="tech-item" data-category="tools">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </div>
+                    <!-- Tech items will be dynamically added here -->
                 </div>
             </div>
         </section>
 
-        <!-- Social Links Section -->
-        <section id="social" class="section">
-            <div class="container social-container">
-                <div class="social-content">
-                    <h2>Let's Connect</h2>
-                    <p class="social-intro">Follow my journey and let's create something amazing together.</p>
-                    <div class="social-links">
-                        <a href="https://twitter.com/pelusinnidev" target="_blank" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                            <span>X</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/pol-hernàndez-319518299" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/pelusinnidev" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container contact-container">
+                <div class="contact-content">
+                    <h2 data-i18n="contact.title">Get in Touch</h2>
+                    <p class="contact-intro" data-i18n="contact.intro">Feel free to reach out for collaborations or just a friendly hello</p>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required data-i18n-placeholder="contact.form.name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required data-i18n-placeholder="contact.form.email">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required data-i18n-placeholder="contact.form.message"></textarea>
+                        </div>
+                        <button type="submit" class="button-outline" data-i18n="contact.form.send">Send Message</button>
+                    </form>
                 </div>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer class="site-footer">
-            <div class="container footer-container">
-                <div class="footer-content">
-                    <div class="footer-copyright">
-                        <span>&copy; 2025 Pelusinni</span>
-                    </div>
-                    <div class="footer-social">
-                        <a href="https://github.com/PelusinniDev" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/pelusinni" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/pelusinnidev" target="_blank" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </body>
 </html>
