@@ -73,6 +73,13 @@ const translations = {
             message: 'Message',
             send: 'Send Message'
         }
+    },
+    quote: {
+        explanation: {
+            p1: 'This iconic phrase has been my guiding light throughout my journey in technology and personal growth. It represents more than just innovation; it\'s about challenging conventional wisdom and finding unique perspectives in everything we do.',
+            p2: 'As a developer and technology enthusiast, I believe that thinking differently isn\'t just about creating new solutions—it\'s about reimagining the questions themselves. Whether I\'m developing iOS applications, exploring AI possibilities, or learning new technologies, I always strive to approach challenges from unexpected angles.',
+            p3: 'This mindset has led me to explore diverse areas of technology, from mobile development to artificial intelligence, always seeking to push boundaries and discover new possibilities.'
+        }
     }
 };
 

@@ -73,6 +73,13 @@ const translations = {
             message: 'Mensaje',
             send: 'Enviar Mensaje'
         }
+    },
+    quote: {
+        explanation: {
+            p1: 'Esta icónica frase ha sido mi guía durante todo mi viaje en la tecnología y el crecimiento personal. Representa más que solo innovación; se trata de desafiar la sabiduría convencional y encontrar perspectivas únicas en todo lo que hacemos.',
+            p2: 'Como desarrollador y entusiasta de la tecnología, creo que pensar diferente no se trata solo de crear nuevas soluciones, sino de reimaginar las preguntas mismas. Ya sea desarrollando aplicaciones iOS, explorando las posibilidades de la IA o aprendiendo nuevas tecnologías, siempre me esfuerzo por abordar los desafíos desde ángulos inesperados.',
+            p3: 'Esta mentalidad me ha llevado a explorar diversas áreas de la tecnología, desde el desarrollo móvil hasta la inteligencia artificial, siempre buscando superar límites y descubrir nuevas posibilidades.'
+        }
     }
 };
 
