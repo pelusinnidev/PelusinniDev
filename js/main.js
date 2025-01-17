@@ -477,4 +477,46 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize projects slider
     initializeProjectsSlider();
+});
+
+// Tech Stack Filter functionality
+function initializeTechStackFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const techItems = document.querySelectorAll('.tech-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.dataset.filter;
+
+            // Filter items
+            techItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.classList.remove('hide');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        item.classList.add('hide');
+                    }
+                }, 300);
+            });
+        });
+    });
+}
+
+// Initialize all functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // ... existing initialization code ...
+    
+    // Initialize tech stack filter
+    initializeTechStackFilter();
 }); 
