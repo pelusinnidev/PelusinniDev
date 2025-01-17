@@ -25,8 +25,8 @@ const translations = {
         keepExploring: 'Sigue Explorando'
     },
     expertise: {
-        title: 'Mi Viaje en la Tecnología',
-        intro: 'Actualmente en un camino de aprendizaje continuo, centrándome en el desarrollo móvil mientras exploro varias áreas del desarrollo de software.',
+        title: 'Mi Trayectoria en Tecnología',
+        intro: 'Actualmente en un camino de aprendizaje continuo, centrándome en el desarrollo móvil mientras exploro diversas áreas del desarrollo de software.',
         cards: {
             mobile: {
                 title: 'Desarrollo Móvil',
@@ -42,22 +42,22 @@ const translations = {
             },
             ai: {
                 title: 'IA y Machine Learning',
-                description: 'Actualmente embarcándome en un emocionante viaje hacia la IA y ML a través de cursos online oficiales.'
+                description: 'Actualmente embarcado en un emocionante viaje hacia la IA y ML a través de cursos oficiales en línea.'
             }
         }
     },
     projects: {
         title: 'Proyectos Destacados',
-        intro: 'Una selección de mis proyectos más significativos, cada uno representando un desafío y solución única.',
+        intro: 'Una selección de mis proyectos más significativos, cada uno representando un desafío y solución únicos.',
         viewProject: 'Ver Proyecto',
         inDevelopment: 'En Desarrollo',
         completed: 'Completado'
     },
     techStack: {
-        title: 'Tecnologías',
+        title: 'Stack Tecnológico',
         intro: 'Tecnologías con las que trabajo y aprendo continuamente.',
         filters: {
-            all: 'Todas',
+            all: 'Todo',
             mobile: 'Móvil',
             web: 'Web',
             backend: 'Backend',
@@ -65,21 +65,19 @@ const translations = {
         }
     },
     contact: {
-        title: 'Conectemos',
-        intro: 'Sigue mi viaje y creemos algo increíble juntos',
-        social: {
-            twitter: 'Sígueme en Twitter',
-            github: 'Visita mi GitHub',
-            linkedin: 'Conecta en LinkedIn'
+        title: 'Contacto',
+        intro: 'No dudes en contactarme para colaboraciones o simplemente para saludar',
+        form: {
+            name: 'Nombre',
+            email: 'Correo',
+            message: 'Mensaje',
+            send: 'Enviar Mensaje'
         }
-    },
-    footer: {
-        copyright: '© 2025 Pelusinni'
     },
     quote: {
         explanation: {
-            p1: 'Esta frase icónica ha sido mi guía durante todo mi viaje en la tecnología y el crecimiento personal. Representa más que solo innovación; se trata de desafiar la sabiduría convencional y encontrar perspectivas únicas en todo lo que hacemos.',
-            p2: 'Como desarrollador y entusiasta de la tecnología, creo que pensar diferente no se trata solo de crear nuevas soluciones, sino de reimaginar las preguntas mismas. Ya sea desarrollando aplicaciones iOS, explorando posibilidades de IA o aprendiendo nuevas tecnologías, siempre me esfuerzo por abordar los desafíos desde ángulos inesperados.',
+            p1: 'Esta icónica frase ha sido mi guía durante todo mi viaje en la tecnología y el crecimiento personal. Representa más que solo innovación; se trata de desafiar la sabiduría convencional y encontrar perspectivas únicas en todo lo que hacemos.',
+            p2: 'Como desarrollador y entusiasta de la tecnología, creo que pensar diferente no se trata solo de crear nuevas soluciones, sino de reimaginar las preguntas mismas. Ya sea desarrollando aplicaciones iOS, explorando las posibilidades de la IA o aprendiendo nuevas tecnologías, siempre me esfuerzo por abordar los desafíos desde ángulos inesperados.',
             p3: 'Esta mentalidad me ha llevado a explorar diversas áreas de la tecnología, desde el desarrollo móvil hasta la inteligencia artificial, siempre buscando superar límites y descubrir nuevas posibilidades.'
         }
     }
