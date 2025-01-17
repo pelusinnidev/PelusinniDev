@@ -1644,4 +1644,62 @@ h3 {
     .language-dropdown {
         margin-right: 2px;
     }
+}
+
+/* Personal Quote Section */
+.quote-container {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.quote-content {
+    text-align: center;
+}
+
+.main-quote {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.quote-attribution {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.quote-explanation {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.quote-explanation p {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.quote-explanation p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .main-quote {
+        font-size: 2.5rem;
+    }
+    
+    .quote-attribution {
+        font-size: 1rem;
+    }
+    
+    .quote-explanation p {
+        font-size: 1rem;
+    }
 } 

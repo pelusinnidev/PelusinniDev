@@ -123,10 +123,17 @@ document.addEventListener('DOMContentLoaded', initializeNavigation);
 // Typing animation for hero section
 const typingTexts = [
     'iOS Developer',
-    'Creative Problem Solver',
-    'AI & ML Enthusiast',
-    'Cloud Architecture Expert',
-    'Game Development Lover'
+    'Apple Ecosystem Enthusiast',
+    'AI/ML Explorer',
+    'Cloud Computing Enthusiast',
+    'Mobile Development Lover',
+    'Python Learner',
+    'Creative Mind',
+    'Minimalistic Design Lover',
+    'Tech Explorer',
+    'Robotics Enthusiast',
+    'Web Development Curious',
+    'Minecraft Development Enthusiast'
 ];
 
 let currentTextIndex = 0;
