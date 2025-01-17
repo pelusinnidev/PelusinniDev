@@ -424,32 +424,24 @@ body {
 
 /* Sections */
 .section {
-    padding: calc(var(--spacing-unit) * 6) 0;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    padding: calc(var(--spacing-unit) * 10) 0;
     position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Section Divider */
-.section:not(:last-child)::after {
+/* Only add divider to sections that are not the projects section */
+.section:not(:last-child):not(#projects)::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1200px;
     height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        var(--divider-color) 20%,
-        var(--divider-color) 80%,
-        transparent 100%
-    );
+    background: var(--divider-color);
     opacity: 0.5;
 }
 
@@ -1050,6 +1042,7 @@ h3 {
 /* Projects Section */
 .projects-container {
     padding: calc(var(--spacing-unit) * 4) 0;
+    position: relative;
 }
 
 .projects-header {
