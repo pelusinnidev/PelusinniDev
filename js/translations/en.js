@@ -80,6 +80,9 @@ const translations = {
             p2: 'As a developer and technology enthusiast, I believe that thinking differently isn\'t just about creating new solutions—it\'s about reimagining the questions themselves. Whether I\'m developing iOS applications, exploring AI possibilities, or learning new technologies, I always strive to approach challenges from unexpected angles.',
             p3: 'This mindset has led me to explore diverse areas of technology, from mobile development to artificial intelligence, always seeking to push boundaries and discover new possibilities.'
         }
+    },
+    footer: {
+        copyright: '© 2025'
     }
 };
 

@@ -80,6 +80,9 @@ const translations = {
             p2: 'Com a desenvolupador i entusiasta de la tecnologia, crec que pensar diferent no es tracta només de crear noves solucions, sinó de reimaginar les preguntes mateixes. Ja sigui desenvolupant aplicacions iOS, explorant les possibilitats de la IA o aprenent noves tecnologies, sempre m\'esforço per abordar els reptes des d\'angles inesperats.',
             p3: 'Aquesta mentalitat m\'ha portat a explorar diverses àrees de la tecnologia, des del desenvolupament mòbil fins a la intel·ligència artificial, sempre buscant superar límits i descobrir noves possibilitats.'
         }
+    },
+    footer: {
+        copyright: '© 2025'
     }
 };
 

@@ -80,6 +80,9 @@ const translations = {
             p2: 'Como desarrollador y entusiasta de la tecnología, creo que pensar diferente no se trata solo de crear nuevas soluciones, sino de reimaginar las preguntas mismas. Ya sea desarrollando aplicaciones iOS, explorando las posibilidades de la IA o aprendiendo nuevas tecnologías, siempre me esfuerzo por abordar los desafíos desde ángulos inesperados.',
             p3: 'Esta mentalidad me ha llevado a explorar diversas áreas de la tecnología, desde el desarrollo móvil hasta la inteligencia artificial, siempre buscando superar límites y descubrir nuevas posibilidades.'
         }
+    },
+    footer: {
+        copyright: '© 2025'
     }
 };
 
