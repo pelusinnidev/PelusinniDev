@@ -380,6 +380,7 @@ function initializeProjectsSlider() {
     const dotsContainer = document.querySelector('.slider-dots');
     const prevButton = document.querySelector('.slider-button.prev');
     const nextButton = document.querySelector('.slider-button.next');
+
     let currentSlide = 0;
 
     // Create dots
@@ -393,9 +394,13 @@ function initializeProjectsSlider() {
 
     function updateSlides() {
         slides.forEach((slide, index) => {
-            slide.classList.remove('active');
+            slide.classList.remove('active', 'prev', 'next');
             if (index === currentSlide) {
                 slide.classList.add('active');
+            } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
+                slide.classList.add('prev');
+            } else if (index === (currentSlide + 1) % slides.length) {
+                slide.classList.add('next');
             }
         });
 
@@ -449,6 +454,9 @@ function initializeProjectsSlider() {
             }
         }
     }
+
+    // Initialize first state
+    updateSlides();
 
     // Auto-advance every 5 seconds
     let autoAdvance = setInterval(nextSlide, 5000);
