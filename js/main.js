@@ -492,24 +492,34 @@ function initializeTechStackFilter() {
 
             const filter = button.dataset.filter;
 
-            // Filter items
+            // First, mark items that will be filtered out
             techItems.forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    if (filter === 'all' || item.dataset.category === filter) {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.classList.remove('filtered-out');
+                    setTimeout(() => {
                         item.classList.remove('hide');
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
+                    }, 50);
+                } else {
+                    item.classList.add('filtered-out');
+                    setTimeout(() => {
                         item.classList.add('hide');
-                    }
-                }, 300);
+                    }, 500);
+                }
             });
+
+            // After animation, update grid layout
+            setTimeout(() => {
+                const visibleItems = document.querySelectorAll('.tech-item:not(.filtered-out)');
+                visibleItems.forEach((item, index) => {
+                    item.style.order = index;
+                });
+            }, 50);
         });
+    });
+
+    // Initialize with all items visible
+    techItems.forEach((item, index) => {
+        item.style.order = index;
     });
 }
 
