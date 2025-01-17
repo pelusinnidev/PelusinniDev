@@ -1397,48 +1397,34 @@ h3 {
     flex-direction: column;
     align-items: center;
     gap: calc(var(--spacing-unit));
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 1;
-    transform: scale(1);
+    transition: transform 0.3s ease;
     width: 150px;
-    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.tech-item.hide {
-    opacity: 0;
-    transform: scale(0.8);
-    position: absolute;
-    pointer-events: none;
+.tech-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .tech-item.filtered-out {
-    opacity: 0;
-    transform: scale(0.8);
-    position: absolute;
-    pointer-events: none;
+    display: none;
 }
 
 .tech-item i {
     font-size: 2rem;
     color: var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.tech-item:hover i {
-    transform: scale(1.2);
 }
 
 .tech-item span {
     font-size: 0.9rem;
     color: var(--text-color);
     font-weight: 500;
-    transition: all 0.3s ease;
 }
 
 .tech-item:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow);
-    border-color: var(--primary-color);
 }
 
 @media (max-width: 1200px) {
