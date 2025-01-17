@@ -411,4 +411,81 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize tech stack filter
     initializeTechStackFilter();
+});
+
+// Initialize tech stack grid
+function initializeTechStack() {
+    const techGrid = document.querySelector('.tech-grid');
+    if (!techGrid) return;
+
+    const techStack = {
+        mobile: [
+            { name: 'Swift', icon: 'fab fa-swift' },
+            { name: 'SwiftUI', icon: 'fab fa-apple' },
+            { name: 'Kotlin', icon: 'fab fa-android' },
+            { name: 'Flutter', icon: 'fas fa-mobile-alt' },
+            { name: 'Android', icon: 'fab fa-android' }
+        ],
+        web: [
+            { name: 'HTML5', icon: 'fab fa-html5' },
+            { name: 'CSS3', icon: 'fab fa-css3-alt' },
+            { name: 'JavaScript', icon: 'fab fa-js' },
+            { name: 'PHP', icon: 'fab fa-php' },
+            { name: 'Laravel', icon: 'fab fa-laravel' }
+        ],
+        python: [
+            { name: 'Python', icon: 'fab fa-python' },
+            { name: 'MongoDB', icon: 'fas fa-database' },
+            { name: 'MySQL', icon: 'fas fa-database' }
+        ],
+        tools: [
+            { name: 'Git', icon: 'fab fa-git-alt' },
+            { name: 'Docker', icon: 'fab fa-docker' },
+            { name: 'VS Code', icon: 'fas fa-code' },
+            { name: 'Xcode', icon: 'fab fa-apple' }
+        ]
+    };
+
+    // Create tech items
+    Object.entries(techStack).forEach(([category, items]) => {
+        items.forEach(tech => {
+            const techItem = document.createElement('div');
+            techItem.className = 'tech-item';
+            techItem.dataset.category = category;
+            techItem.innerHTML = `
+                <i class="${tech.icon}"></i>
+                <span>${tech.name}</span>
+            `;
+            techGrid.appendChild(techItem);
+        });
+    });
+
+    // Initialize filter buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.filter;
+            
+            // Update active button
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter tech items
+            const techItems = document.querySelectorAll('.tech-item');
+            techItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.classList.remove('filtered-out');
+                } else {
+                    item.classList.add('filtered-out');
+                }
+            });
+        });
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initializeNavigation();
+    initializeTechStack();
+    i18n.translatePage();
 }); 
