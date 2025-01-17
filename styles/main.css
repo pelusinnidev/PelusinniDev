@@ -416,12 +416,62 @@ body {
 
 /* Sections */
 .section {
-    padding: calc(var(--spacing-unit) * 8) 0;
-    min-height: 100vh;
+    padding: calc(var(--spacing-unit) * 6) 0;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     background-color: var(--background-color);
     color: var(--text-color);
+    position: relative;
+}
+
+/* Section Divider */
+.section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1000px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--divider-color) 20%,
+        var(--divider-color) 80%,
+        transparent 100%
+    );
+    opacity: 0.5;
+}
+
+/* Hero Section specific */
+#hero {
+    padding-top: 0;
+    min-height: 100vh;
+}
+
+/* Adjust container padding */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 calc(var(--spacing-unit) * 3);
+}
+
+/* Quote section specific adjustments */
+.quote-container {
+    padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2);
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: calc(var(--spacing-unit) * 4) 0;
+        min-height: auto;
+    }
+
+    .section:not(:last-child)::after {
+        width: 90%;
+    }
 }
 
 /* Typography */
@@ -446,13 +496,6 @@ h3 {
 }
 
 /* Hero Section */
-#hero {
-    padding-top: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
 .hero-container {
     position: relative;
     display: flex;
