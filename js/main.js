@@ -259,10 +259,13 @@ function setInitialTheme() {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedTheme) {
-        document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+        document.documentElement.setAttribute('data-theme', savedTheme);
     } else if (prefersDark) {
-        document.body.classList.add('dark-theme');
+        document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
     }
 }
 
