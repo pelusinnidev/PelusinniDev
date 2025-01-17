@@ -213,11 +213,11 @@ function handleWelcomeAnimation() {
         sessionStorage.setItem('hasSeenWelcome', 'true');
         
         setTimeout(() => {
-            welcomeOverlay.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+            welcomeOverlay.style.animation = 'fadeOut 0.25s ease-in-out forwards';
             setTimeout(() => {
                 welcomeOverlay.style.display = 'none';
-            }, 500);
-        }, 2500);
+            }, 250);
+        }, 1250);
     } else if (welcomeOverlay) {
         welcomeOverlay.style.display = 'none';
     }
