@@ -78,7 +78,7 @@ struct Developer {
 
 <br>
 
-## 📊 GitHub Stats
+## 📊 GitHub Stats (on public repositories)
 
 <div align="center">
 
