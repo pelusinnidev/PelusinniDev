@@ -280,7 +280,8 @@
                     <p class="projects-intro" data-i18n="projects.intro">A selection of my most significant projects, each representing a unique challenge and solution.</p>
                 </div>
 
-                <div class="projects-slider">
+                <!-- Desktop Projects Slider -->
+                <div class="projects-slider desktop-only">
                     <!-- Bobbo App -->
                     <div class="project-slide active">
                         <div class="project-content">
@@ -288,12 +289,18 @@
                                 <img src="assets/images/projects/bobbo-wallpaper.png" alt="Bobbo App" class="grayscale">
                             </div>
                             <div class="project-info">
-                                <div class="project-categories">
-                                    <span>iOS App</span>
-                                    <span>Healthcare</span>
-                                    <span>Pets</span>
+                                <div class="project-header">
+                                    <div class="project-title-group">
+                                        <h3 data-i18n="projects.items.bobbo.title">Bobbo</h3>
+                                        <div class="project-status status-beta">
+                                            <i class="fas fa-flask"></i>
+                                            <span>Beta Testing</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://bobbo.framer.website" target="_blank" class="button-outline"><i class="fas fa-globe"></i> View Website</a>
+                                    </div>
                                 </div>
-                                <h3 data-i18n="projects.items.bobbo.title">Bobbo</h3>
                                 <p class="project-tagline" data-i18n="projects.items.bobbo.tagline">Making pet care simple and enjoyable</p>
                                 <p class="project-description" data-i18n="projects.items.bobbo.description">A veterinary app designed to simplify pet care and enhance the lives of our beloved companions, just as they enhance ours.</p>
                                 <div class="project-tech">
@@ -302,8 +309,8 @@
                                     <span><i class="fas fa-database"></i> CoreData</span>
                                 </div>
                                 <div class="project-links">
-                                    <a href="#" class="button-outline" data-i18n="projects.viewProject">View Project</a>
-                                    <span class="status-badge" data-i18n="projects.inDevelopment">In Development</span>
+                                    <a href="https://testflight.apple.com/join/x1k5cdNe" target="_blank" class="button-outline"><i class="fab fa-app-store-ios"></i> Join Beta</a>
+                                    <a href="#" class="button-outline"><i class="fas fa-book"></i> Documentation</a>
                                 </div>
                             </div>
                         </div>
@@ -316,12 +323,18 @@
                                 <img src="assets/images/projects/asteroids-wallpaper.png" alt="Pelusinni's Asteroids" class="grayscale">
                             </div>
                             <div class="project-info">
-                                <div class="project-categories">
-                                    <span>Game</span>
-                                    <span>Template</span>
-                                    <span>Educational</span>
+                                <div class="project-header">
+                                    <div class="project-title-group">
+                                        <h3 data-i18n="projects.items.asteroids.title">Pelusinni's Asteroids</h3>
+                                        <div class="project-status status-released">
+                                            <i class="fas fa-rocket"></i>
+                                            <span>Released</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" target="_blank" class="button-outline"><i class="fas fa-play"></i> Play Now</a>
+                                    </div>
                                 </div>
-                                <h3 data-i18n="projects.items.asteroids.title">Pelusinni's Asteroids</h3>
                                 <p class="project-tagline" data-i18n="projects.items.asteroids.tagline">Reimagining a classic for new generations</p>
                                 <p class="project-description" data-i18n="projects.items.asteroids.description">A modern take on the classic Asteroids game, designed as both a playable game and an educational template for aspiring developers.</p>
                                 <div class="project-tech">
@@ -344,12 +357,18 @@
                                 <img src="assets/images/projects/mycosmo-wallpaper.png" alt="My Cosmo" class="grayscale">
                             </div>
                             <div class="project-info">
-                                <div class="project-categories">
-                                    <span>iOS App</span>
-                                    <span>Astronomy</span>
-                                    <span>Coming Soon</span>
+                                <div class="project-header">
+                                    <div class="project-title-group">
+                                        <h3 data-i18n="projects.items.mycosmo.title">My Cosmo</h3>
+                                        <div class="project-status status-development">
+                                            <i class="fas fa-code-branch"></i>
+                                            <span>In Development</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-actions">
+                                        <span class="button-outline"><i class="fas fa-clock"></i> Coming Soon</span>
+                                    </div>
                                 </div>
-                                <h3 data-i18n="projects.items.mycosmo.title">My Cosmo</h3>
                                 <p class="project-tagline" data-i18n="projects.items.mycosmo.tagline">Be your universe.</p>
                                 <p class="project-description" data-i18n="projects.items.mycosmo.description">An upcoming native iOS astronomy application that will bring the wonders of the cosmos to your fingertips. Built with Swift and SwiftUI. Stay tuned for an astronomical experience.</p>
                                 <div class="project-tech">
@@ -357,16 +376,105 @@
                                     <span><i class="fab fa-apple"></i> SwiftUI</span>
                                     <span><i class="fas fa-mobile-alt"></i> iOS</span>
                                 </div>
-                                <div class="project-links coming-soon">
-                                    <span class="status-badge">Coming Soon</span>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slider Navigation -->
-                <div class="slider-nav">
+                <!-- Mobile Projects Grid -->
+                <div class="mobile-projects">
+                    <!-- Bobbo App -->
+                    <div class="mobile-project-card">
+                        <div class="mobile-project-image">
+                            <img src="assets/images/projects/bobbo-wallpaper.png" alt="Bobbo App" class="grayscale">
+                        </div>
+                        <div class="mobile-project-info">
+                            <div class="project-header">
+                                <div class="project-title-group">
+                                    <h3 data-i18n="projects.items.bobbo.title">Bobbo</h3>
+                                    <div class="project-status status-beta">
+                                        <i class="fas fa-flask"></i>
+                                        <span>Beta Testing</span>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://bobbo.framer.website" target="_blank" class="button-outline"><i class="fas fa-globe"></i> View Website</a>
+                                </div>
+                            </div>
+                            <p class="mobile-project-tagline" data-i18n="projects.items.bobbo.tagline">Making pet care simple and enjoyable</p>
+                            <div class="mobile-project-tech">
+                                <span><i class="fab fa-swift"></i> Swift</span>
+                                <span><i class="fab fa-apple"></i> SwiftUI</span>
+                                <span><i class="fas fa-database"></i> CoreData</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://testflight.apple.com/join/x1k5cdNe" target="_blank" class="button-outline"><i class="fab fa-app-store-ios"></i> Join Beta</a>
+                                <a href="#" class="button-outline"><i class="fas fa-book"></i> Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Asteroids Game -->
+                    <div class="mobile-project-card">
+                        <div class="mobile-project-image">
+                            <img src="assets/images/projects/asteroids-wallpaper.png" alt="Pelusinni's Asteroids" class="grayscale">
+                        </div>
+                        <div class="mobile-project-info">
+                            <div class="project-header">
+                                <div class="project-title-group">
+                                    <h3 data-i18n="projects.items.asteroids.title">Pelusinni's Asteroids</h3>
+                                    <div class="project-status status-released">
+                                        <i class="fas fa-rocket"></i>
+                                        <span>Released</span>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" target="_blank" class="button-outline"><i class="fas fa-play"></i> Play Now</a>
+                                </div>
+                            </div>
+                            <p class="mobile-project-tagline" data-i18n="projects.items.asteroids.tagline">Reimagining a classic for new generations</p>
+                            <div class="mobile-project-tech">
+                                <span><i class="fab fa-python"></i> Python</span>
+                                <span><i class="fas fa-gamepad"></i> Pygame</span>
+                                <span><i class="fas fa-database"></i> MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" target="_blank" class="button-outline"><i class="fab fa-github"></i> Repository</a>
+                                <a href="https://pelusinni.craft.me/AsteroidsGame" target="_blank" class="button-outline"><i class="fas fa-book"></i> Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- My Cosmo -->
+                    <div class="mobile-project-card">
+                        <div class="mobile-project-image">
+                            <img src="assets/images/projects/mycosmo-wallpaper.png" alt="My Cosmo" class="grayscale">
+                        </div>
+                        <div class="mobile-project-info">
+                            <div class="project-header">
+                                <div class="project-title-group">
+                                    <h3 data-i18n="projects.items.mycosmo.title">My Cosmo</h3>
+                                    <div class="project-status status-development">
+                                        <i class="fas fa-code-branch"></i>
+                                        <span>In Development</span>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <span class="button-outline"><i class="fas fa-clock"></i> Coming Soon</span>
+                                </div>
+                            </div>
+                            <p class="mobile-project-tagline" data-i18n="projects.items.mycosmo.tagline">Be your universe.</p>
+                            <div class="mobile-project-tech">
+                                <span><i class="fab fa-swift"></i> Swift</span>
+                                <span><i class="fab fa-apple"></i> SwiftUI</span>
+                                <span><i class="fas fa-mobile-alt"></i> iOS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation (Desktop Only) -->
+                <div class="slider-nav desktop-only">
                     <button class="slider-button prev" aria-label="Previous project">
                         <i class="fas fa-chevron-left"></i>
                     </button>
@@ -386,18 +494,17 @@
                         <img src="assets/images/profile/my-notion-face-portrait.png" alt="Pelusinni" class="footer-avatar">
                         <span class="footer-name">Pelusinni</span>
                     </div>
-                    <div class="footer-social">
+                    <!-- <div class="footer-social">
                         <a href="https://twitter.com/PelusinniDev" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-twitter"></i>
                         </a>
                         <a href="https://github.com/pelusinnidev" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/pol-hernàndez-319518299" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
+                    </div> -->
+                    <div class="footer-copyright">
+                        <span data-i18n="footer.copyright">© 2025 Pelusinni</span>
                     </div>
-                    <span class="footer-name" data-i18n="footer.copyright">© 2025 Pelusinni</span>
                 </div>
             </div>
         </footer>
