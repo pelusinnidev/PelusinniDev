@@ -51,7 +51,24 @@ const translations = {
         intro: 'A selection of my most significant projects, each representing a unique challenge and solution.',
         viewProject: 'View Project',
         inDevelopment: 'In Development',
-        completed: 'Completed'
+        completed: 'Completed',
+        items: {
+            bobbo: {
+                title: 'Bobbo',
+                tagline: 'Making pet care simple and enjoyable',
+                description: 'A veterinary app designed to simplify pet care and enhance the lives of our beloved companions, just as they enhance ours.'
+            },
+            asteroids: {
+                title: 'Pelusinni\'s Asteroids',
+                tagline: 'Reimagining a classic for new generations',
+                description: 'A modern take on the classic Asteroids game, designed as both a playable game and an educational template for aspiring developers.'
+            },
+            mycosmo: {
+                title: 'My Cosmo',
+                tagline: 'Be your universe.',
+                description: 'An upcoming native iOS astronomy application that will bring the wonders of the cosmos to your fingertips. Built with Swift and SwiftUI. Stay tuned for an astronomical experience.'
+            }
+        }
     },
     techStack: {
         title: 'Tech Stack',

@@ -50,8 +50,25 @@ const translations = {
         title: 'Projectes Destacats',
         intro: 'Una selecció dels meus projectes més significatius, cadascun representant un repte i solució únics.',
         viewProject: 'Veure Projecte',
-        inDevelopment: 'En Desenvolupament',
-        completed: 'Completat'
+        inDevelopment: 'En desenvolupament',
+        completed: 'Completat',
+        items: {
+            bobbo: {
+                title: '"Bobbo"',
+                tagline: '"Making pet care simple and enjoyable"',
+                description: 'Una aplicació veterinària dissenyada per simplificar la cura de les mascotes i millorar la vida dels nostres estimats companys, tal com ells milloren la nostra.'
+            },
+            asteroids: {
+                title: '"Pelusinni\'s Asteroids"',
+                tagline: '"Reimagining a classic for new generations"',
+                description: 'Una versió moderna del clàssic joc Asteroids, dissenyat tant com a joc jugable com a plantilla educativa per a desenvolupadors aspirants.'
+            },
+            mycosmo: {
+                title: '"My Cosmo"',
+                tagline: '"Be your universe."',
+                description: 'Una propera aplicació nativa d\'iOS que portarà les meravelles del cosmos als teus dits. Construïda amb Swift i SwiftUI. Mantén-te atent per a una experiència astronòmica.'
+            }
+        }
     },
     techStack: {
         title: 'Stack Tecnològic',
