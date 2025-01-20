@@ -23,7 +23,6 @@ class Navigation extends HTMLElement {
                             <i class="fas fa-sun light-icon"></i>
                             <i class="fas fa-moon dark-icon"></i>
                         </button>
-                        <div class="nav-divider"></div>
                         <div class="language-dropdown">
                             <button class="current-lang" aria-label="Select language">
                                 <span>${i18n.currentLang.toUpperCase()}</span>
@@ -36,29 +35,37 @@ class Navigation extends HTMLElement {
                             </div>
                         </div>
                     </div>
-                    <button class="menu-toggle" aria-label="Toggle menu">
+
+                    <div class="nav-center">
+                        <div class="nav-divider"></div>
+                        <div class="nav-links">
+                            <a href="${basePath}index.html" data-key="home">
+                                <span data-i18n="nav.home">Home</span>
+                            </a>
+                            <a href="${basePath}pages/projects.html" data-key="projects">
+                                <span data-i18n="nav.projects">Projects</span>
+                            </a>
+                            <a href="${basePath}pages/tech-stack.html" data-key="techStack">
+                                <span data-i18n="nav.techStack">Tech Stack</span>
+                            </a>
+                        </div>
+                        <div class="nav-divider"></div>
+                    </div>
+
+                    <div class="nav-right">
+                        <a href="https://twitter.com/pelusinnidev" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com/pelusinnidev" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+
+                    <button class="menu-toggle mobile-only" aria-label="Toggle menu">
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
-                    <div class="nav-links">
-                        <a href="${basePath}index.html" data-key="home" data-icon="fa-home" data-i18n="nav.home">
-                            <i class="fas fa-home"></i>
-                            <span data-i18n="nav.home">Home</span>
-                        </a>
-                        <a href="${basePath}pages/projects.html" data-key="projects" data-icon="fa-project-diagram" data-i18n="nav.projects">
-                            <i class="fas fa-project-diagram"></i>
-                            <span data-i18n="nav.projects">Projects</span>
-                        </a>
-                        <a href="${basePath}pages/tech-stack.html" data-key="techStack" data-icon="fa-layer-group" data-i18n="nav.techStack">
-                            <i class="fas fa-layer-group"></i>
-                            <span data-i18n="nav.techStack">Tech Stack</span>
-                        </a>
-                        <a href="${basePath}pages/contact.html" data-key="contact" data-icon="fa-envelope" data-i18n="nav.contact">
-                            <i class="fas fa-envelope"></i>
-                            <span data-i18n="nav.contact">Contact</span>
-                        </a>
-                    </div>
                 </div>
             </nav>
         `;
