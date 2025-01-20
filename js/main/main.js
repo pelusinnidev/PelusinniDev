@@ -29,7 +29,10 @@ const techIcons = [
     'fab fa-html5', 'fab fa-css3', 'fab fa-js',
     'fab fa-php', 'fab fa-laravel', 'fab fa-python',
     'fab fa-git-alt', 'fab fa-github', 'fab fa-docker',
-    'fab fa-windows', 'fab fa-apple', 'fab fa-linux'
+    'fab fa-aws', 'fab fa-apple', 'fab fa-linux',
+    'fab fa-react', 'fab fa-angular', 'fab fa-vuejs',
+    'fab fa-node', 'fab fa-npm', 'fab fa-sass',
+    'fab fa-bootstrap', 'fab fa-figma', 'fab fa-unity'
 ];
 
 class FloatingIcon {
@@ -38,16 +41,28 @@ class FloatingIcon {
         this.element.className = icon;
         this.x = Math.random() * window.innerWidth;
         this.y = Math.random() * window.innerHeight;
-        this.speedX = (Math.random() - 0.5) * 2;
-        this.speedY = (Math.random() - 0.5) * 2;
+        this.speedX = (Math.random() - 0.5) * 1; // Slower movement
+        this.speedY = (Math.random() - 0.5) * 1;
         this.rotation = Math.random() * 360;
-        this.rotationSpeed = (Math.random() - 0.5) * 2;
-        this.size = Math.random() * (30 - 15) + 15;
+        this.rotationSpeed = (Math.random() - 0.5) * 1;
+        this.size = Math.random() * (40 - 25) + 25; // Bigger icons
         this.element.style.position = 'absolute';
         this.element.style.fontSize = `${this.size}px`;
-        this.element.style.opacity = '0.2';
-        this.element.style.color = '#000';
-        this.element.style.transition = 'transform 0.3s ease';
+        this.element.style.opacity = '0.15'; // More subtle
+        this.element.style.color = '#ffffff';
+        this.element.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+        this.element.style.zIndex = '1';
+        
+        // Add hover effect
+        this.element.addEventListener('mouseenter', () => {
+            this.element.style.opacity = '0.8';
+            this.element.style.transform = `scale(1.2) translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg)`;
+        });
+        
+        this.element.addEventListener('mouseleave', () => {
+            this.element.style.opacity = '0.15';
+            this.element.style.transform = `scale(1) translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg)`;
+        });
     }
 
     update() {
@@ -204,64 +219,53 @@ function initParticles() {
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 100,
+                value: 80,
                 density: {
                     enable: true,
-                    value_area: 1000
+                    value_area: 800
                 }
             },
             color: {
-                value: ['#86868b', '#000000', '#1d1d1f']
+                value: '#ffffff'
             },
             shape: {
-                type: ['circle', 'image'],
-                image: [
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg', width: 100, height: 100 },
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg', width: 100, height: 100 },
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg', width: 100, height: 100 },
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', width: 100, height: 100 },
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg', width: 100, height: 100 },
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', width: 100, height: 100 },
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', width: 100, height: 100 },
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', width: 100, height: 100 },
-                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', width: 100, height: 100 }
-                ]
+                type: 'circle'
             },
             opacity: {
-                value: 0.6,
+                value: 0.1,
                 random: true,
                 anim: {
                     enable: true,
                     speed: 1,
-                    opacity_min: 0.2,
+                    opacity_min: 0.05,
                     sync: false
                 }
             },
             size: {
-                value: 25,
+                value: 3,
                 random: true,
                 anim: {
                     enable: true,
-                    speed: 3,
-                    size_min: 15,
+                    speed: 2,
+                    size_min: 1,
                     sync: false
                 }
             },
             line_linked: {
                 enable: true,
                 distance: 150,
-                color: '#86868b',
-                opacity: 0.3,
+                color: '#ffffff',
+                opacity: 0.1,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 1.5,
+                speed: 1,
                 direction: 'none',
                 random: true,
                 straight: false,
-                out_mode: 'bounce',
-                bounce: true,
+                out_mode: 'out',
+                bounce: false,
                 attract: {
                     enable: true,
                     rotateX: 600,
@@ -274,7 +278,7 @@ function initParticles() {
             events: {
                 onhover: {
                     enable: true,
-                    mode: ['grab', 'bubble']
+                    mode: 'grab'
                 },
                 onclick: {
                     enable: true,
@@ -284,20 +288,13 @@ function initParticles() {
             },
             modes: {
                 grab: {
-                    distance: 200,
+                    distance: 140,
                     line_linked: {
-                        opacity: 0.8
+                        opacity: 0.4
                     }
                 },
-                bubble: {
-                    distance: 200,
-                    size: 30,
-                    duration: 2,
-                    opacity: 0.8,
-                    speed: 3
-                },
                 push: {
-                    particles_nb: 3
+                    particles_nb: 4
                 }
             }
         },
@@ -305,14 +302,32 @@ function initParticles() {
     });
 }
 
+// First-time animation
+function firstTimeAnimation() {
+    console.log('Running first-time animation...');
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroSection.style.opacity = '0';
+        heroSection.style.transition = 'opacity 2s ease';
+        setTimeout(() => {
+            heroSection.style.opacity = '1';
+            console.log('First-time animation completed.');
+        }, 500);
+    } else {
+        console.error('Hero section not found!');
+    }
+}
+
 // Make sure particles are initialized
 window.addEventListener('load', () => {
+    console.log('Window loaded, initializing particles...');
     if (typeof particlesJS !== 'undefined') {
         initParticles();
         console.log('Particles initialized');
     } else {
         console.error('Particles.js not loaded');
     }
+    firstTimeAnimation();
 });
 
 // Initialize everything when DOM is loaded
@@ -322,6 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start other animations
     initTypingAnimation();
     updateFooterYear();
+    initFloatingIcons();
     
     // Initialize observers
     document.querySelectorAll('.section').forEach(section => {
