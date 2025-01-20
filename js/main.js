@@ -207,19 +207,25 @@ document.querySelectorAll('.section').forEach(section => {
 function handleWelcomeAnimation() {
     const hasSeenWelcome = sessionStorage.getItem('hasSeenWelcome');
     const welcomeOverlay = document.querySelector('.welcome-overlay');
+    const mainContent = document.querySelector('body > *:not(.welcome-overlay)');
     
     if (!hasSeenWelcome && welcomeOverlay) {
         welcomeOverlay.style.display = 'flex';
+        mainContent.style.opacity = '0';
+        mainContent.style.transform = 'scale(0.98)';
         sessionStorage.setItem('hasSeenWelcome', 'true');
         
         setTimeout(() => {
-            welcomeOverlay.style.animation = 'fadeOut 0.125s ease-in-out forwards';
+            welcomeOverlay.style.animation = 'fadeOut 1s cubic-bezier(0.4, 0, 0.2, 1) forwards';
+            mainContent.style.animation = 'mainContentFadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards';
             setTimeout(() => {
                 welcomeOverlay.style.display = 'none';
-            }, 125);
-        }, 625);
+            }, 1000);
+        }, 3000);
     } else if (welcomeOverlay) {
         welcomeOverlay.style.display = 'none';
+        mainContent.style.opacity = '1';
+        mainContent.style.transform = 'none';
     }
 }
 

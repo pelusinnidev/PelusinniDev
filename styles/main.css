@@ -1399,13 +1399,12 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 0.5s ease-in-out forwards;
     animation: none;
 }
 
 .welcome-content {
     text-align: center;
-    animation: welcomeContentFade 0.8s ease-in-out;
+    animation: welcomeContentFade 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .welcome-profile {
@@ -1415,7 +1414,7 @@ h3 {
     border-radius: 50%;
     border: 2px solid var(--primary-color);
     overflow: hidden;
-    animation: profileToHeader 0.8s ease-in-out 2s forwards;
+    animation: profileToHeader 0.8s cubic-bezier(0.4, 0, 0.2, 1) 2s forwards;
 }
 
 .welcome-profile img {
@@ -1429,12 +1428,31 @@ h3 {
     font-size: 2.5rem;
     color: var(--text-color);
     opacity: 0;
-    animation: textFadeIn 0.8s ease-in-out 0.5s forwards;
+    animation: textFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
 }
 
 @keyframes fadeOut {
-    from { opacity: 1; visibility: visible; }
-    to { opacity: 0; visibility: hidden; }
+    from { 
+        opacity: 1; 
+        visibility: visible;
+        transform: scale(1);
+    }
+    to { 
+        opacity: 0; 
+        visibility: hidden;
+        transform: scale(1.02);
+    }
+}
+
+@keyframes mainContentFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes welcomeContentFade {
