@@ -18,11 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize carousel
-    const carousel = document.querySelector('.carousel-container');
+    const carouselTrack = document.querySelector('.carousel-track');
     const projects = document.querySelectorAll('.project-card');
     const dotsContainer = document.querySelector('.nav-dots');
     const prevButton = document.querySelector('.nav-button.prev');
     const nextButton = document.querySelector('.nav-button.next');
+    const scrollHint = document.querySelector('.scroll-hint');
     let currentIndex = 0;
 
     // Create dots
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navigation functions
     function updateCarousel() {
         const offset = currentIndex * -100;
-        carousel.style.transform = `translateX(${offset}%)`;
+        carouselTrack.style.transform = `translateX(${offset}%)`;
         
         // Update dots
         document.querySelectorAll('.nav-dot').forEach((dot, index) => {
@@ -54,21 +55,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update timeline
         updateTimeline(projects[currentIndex].dataset.date);
+
+        // Update scroll hint arrows
+        updateScrollHint();
+    }
+
+    function updateScrollHint() {
+        const isFirst = currentIndex === 0;
+        const isLast = currentIndex === projects.length - 1;
+        const isMiddle = !isFirst && !isLast;
+
+        scrollHint.innerHTML = '';
+        
+        if (isFirst) {
+            scrollHint.innerHTML = `
+                <span data-i18n="projects.scrollHint">Scroll to see more projects</span>
+                <i class="fas fa-arrow-right"></i>
+            `;
+        } else if (isLast) {
+            scrollHint.innerHTML = `
+                <i class="fas fa-arrow-left"></i>
+                <span data-i18n="projects.scrollHint">Scroll to see more projects</span>
+            `;
+        } else {
+            scrollHint.innerHTML = `
+                <i class="fas fa-arrow-left"></i>
+                <span data-i18n="projects.scrollHint">Scroll to see more projects</span>
+                <i class="fas fa-arrow-right"></i>
+            `;
+        }
+
+        // Update button states
+        prevButton.style.opacity = isFirst ? '0.3' : '1';
+        nextButton.style.opacity = isLast ? '0.3' : '1';
+        prevButton.style.pointerEvents = isFirst ? 'none' : 'auto';
+        nextButton.style.pointerEvents = isLast ? 'none' : 'auto';
     }
 
     function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
+        if (index >= 0 && index < projects.length) {
+            currentIndex = index;
+            updateCarousel();
+        }
     }
 
     function nextSlide() {
-        currentIndex = (currentIndex + 1) % projects.length;
-        updateCarousel();
+        if (currentIndex < projects.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
     }
 
     function prevSlide() {
-        currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-        updateCarousel();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
     }
 
     // Event listeners
@@ -85,11 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let touchStartX = 0;
     let touchEndX = 0;
 
-    carousel.addEventListener('touchstart', e => {
+    carouselTrack.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
     });
 
-    carousel.addEventListener('touchend', e => {
+    carouselTrack.addEventListener('touchend', e => {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
     });
@@ -99,9 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const diff = touchStartX - touchEndX;
 
         if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
+            if (diff > 0 && currentIndex < projects.length - 1) {
                 nextSlide();
-            } else {
+            } else if (diff < 0 && currentIndex > 0) {
                 prevSlide();
             }
         }
@@ -181,11 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Set initial timeline date
-    const firstProject = document.querySelector('.project-card');
-    if (firstProject) {
-        updateTimeline(firstProject.dataset.date);
-    }
+    // Initialize resize handler
+    window.addEventListener('resize', () => {
+        updateCarousel();
+    });
 
     // Initialize
     updateCarousel();

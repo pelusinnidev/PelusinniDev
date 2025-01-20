@@ -1,0 +1,302 @@
+.project-card {
+    flex: 0 0 80vw;
+    max-width: 1000px;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+}
+
+.timeline-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.timeline-date {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-top: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin: 0 auto;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+.scroll-hint i {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    background: var(--accent-bg);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.scroll-hint i:hover {
+    transform: scale(1.1);
+}
+
+/* Apple/Volvo inspired styles */
+.project-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    margin-bottom: 1rem;
+}
+
+.project-image {
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 2rem 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.project-image img:hover {
+    filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex: 0 0 90vw;
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+
+    .timeline-indicator {
+        gap: 2rem;
+    }
+
+    .date-range {
+        gap: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .project-title {
+        font-size: 2rem;
+    }
+}
+
+.projects-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.project-card {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Remove date range from timeline */
+.timeline-date .date-range {
+    display: none;
+}
+
+/* Adjust timeline spacing */
+.timeline-date {
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-date .current-date {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    transition: all 0.6s ease;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        padding: 1.5rem;
+        min-height: 300px;
+    }
+    
+    .carousel-container {
+        padding: 0 1rem;
+    }
+}
+
+.project-details {
+    padding: 4rem 0;
+    background: var(--background-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.details-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background: var(--background-color);
+}
+
+.details-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    letter-spacing: -0.02em;
+}
+
+.details-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Site Footer */
+.site-footer {
+    padding: calc(var(--spacing-unit) * 4) 0;
+    background: var(--accent-color);
+    margin-top: calc(var(--spacing-unit) * 4);
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-button:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.nav-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-color);
+    opacity: 0.2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+    opacity: 1;
+    transform: scale(1.2);
+} 

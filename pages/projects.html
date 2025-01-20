@@ -29,8 +29,12 @@
                     <div class="timeline-line"></div>
                     <div class="timeline-dot current"></div>
                     <div class="timeline-date">
+                        <div class="programming-period">
+                            <span class="period-start">2022</span>
+                            <span class="period-separator">→</span>
+                            <span class="period-end">2025</span>
+                        </div>
                         <span class="current-date">January 2025</span>
-                        <span class="date-range">2023 - 2025</span>
                     </div>
                 </div>
                 <div class="scroll-hint">
@@ -42,182 +46,183 @@
 
         <!-- Projects Carousel (Desktop) -->
         <section class="projects-carousel desktop-only">
-            <div class="carousel-container">
-                <!-- My Cosmo -->
-                <article class="project-card" data-date="2025-01" data-project="mycosmo">
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="../assets/images/projects/mycosmo-wallpaper.png" alt="My Cosmo" class="grayscale">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <div class="project-title-group">
-                                    <h3>My Cosmo</h3>
-                                    <div class="project-status status-development">
-                                        <i class="fas fa-code-branch"></i>
-                                        <span data-i18n="projects.status.development">In Development</span>
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <!-- My Cosmo -->
+                    <article class="project-card" data-date="2025-01" data-project="mycosmo">
+                        <div class="project-content">
+                            <div class="project-image">
+                                <img src="../assets/images/projects/mycosmo-wallpaper.png" alt="My Cosmo" class="grayscale">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header">
+                                    <div class="project-title-group">
+                                        <h3>My Cosmo</h3>
+                                        <div class="project-status status-development">
+                                            <i class="fas fa-code-branch"></i>
+                                            <span data-i18n="projects.status.development">In Development</span>
+                                        </div>
                                     </div>
+                                    <time datetime="2025-01" class="project-date">January 2025</time>
                                 </div>
-                                <time datetime="2025-01" class="project-date">January 2025</time>
-                            </div>
-                            <p class="project-tagline">"Be your universe."</p>
-                            <p class="project-description" data-i18n="projects.items.mycosmo.description"></p>
-                            <div class="project-tech">
-                                <span><i class="fab fa-swift"></i> Swift</span>
-                                <span><i class="fab fa-apple"></i> SwiftUI</span>
-                                <span><i class="fas fa-mobile-alt"></i> iOS</span>
-                            </div>
-                            <div class="project-links">
-                                <span class="button-outline"><i class="fas fa-clock"></i> Coming Soon</span>
+                                <p class="project-tagline">"Be your universe."</p>
+                                <p class="project-description" data-i18n="projects.items.mycosmo.description"></p>
+                                <div class="project-tech">
+                                    <span><i class="fab fa-swift"></i> Swift</span>
+                                    <span><i class="fab fa-apple"></i> SwiftUI</span>
+                                    <span><i class="fas fa-mobile-alt"></i> iOS</span>
+                                </div>
+                                <div class="project-links">
+                                    <span class="button-outline"><i class="fas fa-clock"></i> Coming Soon</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Bobbo -->
-                <article class="project-card featured" data-date="2024-12" data-project="bobbo">
-                    <div class="featured-badge">
-                        <i class="fas fa-star"></i>
-                        <span data-i18n="projects.mainFocus">Main Focus</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="../assets/images/projects/bobbo-wallpaper.png" alt="Bobbo App" class="grayscale">
+                    <!-- Bobbo -->
+                    <article class="project-card featured" data-date="2024-12" data-project="bobbo">
+                        <div class="featured-badge">
+                            <i class="fas fa-star"></i>
+                            <span data-i18n="projects.mainFocus">Main Focus</span>
                         </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <div class="project-title-group">
-                                    <h3>Bobbo</h3>
-                                    <div class="project-status status-beta">
-                                        <i class="fas fa-flask"></i>
-                                        <span data-i18n="projects.status.beta">Beta Testing</span>
+                        <div class="project-content">
+                            <div class="project-image">
+                                <img src="../assets/images/projects/bobbo-wallpaper.png" alt="Bobbo App" class="grayscale">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header">
+                                    <div class="project-title-group">
+                                        <h3>Bobbo</h3>
+                                        <div class="project-status status-beta">
+                                            <i class="fas fa-flask"></i>
+                                            <span data-i18n="projects.status.beta">Beta Testing</span>
+                                        </div>
                                     </div>
+                                    <time datetime="2024-12" class="project-date">December 2024</time>
                                 </div>
-                                <time datetime="2024-12" class="project-date">December 2024</time>
-                            </div>
-                            <p class="project-tagline">"Making pet care simple and enjoyable"</p>
-                            <p class="project-description" data-i18n="projects.items.bobbo.description"></p>
-                            <div class="project-tech">
-                                <span><i class="fab fa-swift"></i> Swift</span>
-                                <span><i class="fab fa-apple"></i> SwiftUI</span>
-                                <span><i class="fas fa-database"></i> CoreData</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://bobbo.framer.website" target="_blank" class="button-outline"><i class="fas fa-globe"></i> View Website</a>
-                                <a href="https://testflight.apple.com/join/x1k5cdNe" target="_blank" class="button-outline"><i class="fab fa-app-store-ios"></i> Join Beta</a>
+                                <p class="project-tagline">"Making pet care simple and enjoyable"</p>
+                                <p class="project-description" data-i18n="projects.items.bobbo.description"></p>
+                                <div class="project-tech">
+                                    <span><i class="fab fa-swift"></i> Swift</span>
+                                    <span><i class="fab fa-apple"></i> SwiftUI</span>
+                                    <span><i class="fas fa-database"></i> CoreData</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://bobbo.framer.website" target="_blank" class="button-outline"><i class="fas fa-globe"></i> View Website</a>
+                                    <a href="https://testflight.apple.com/join/x1k5cdNe" target="_blank" class="button-outline"><i class="fab fa-app-store-ios"></i> Join Beta</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Asteroids -->
-                <article class="project-card" data-date="2024-11" data-project="asteroids">
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="../assets/images/projects/asteroids-wallpaper.png" alt="Pelusinni's Asteroids" class="grayscale">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <div class="project-title-group">
-                                    <h3>Pelusinni's Asteroids</h3>
-                                    <div class="project-status status-released">
-                                        <i class="fas fa-rocket"></i>
-                                        <span data-i18n="projects.status.released">Released</span>
+                    <!-- Asteroids -->
+                    <article class="project-card" data-date="2024-11" data-project="asteroids">
+                        <div class="project-content">
+                            <div class="project-image">
+                                <img src="../assets/images/projects/asteroids-wallpaper.png" alt="Pelusinni's Asteroids" class="grayscale">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header">
+                                    <div class="project-title-group">
+                                        <h3>Pelusinni's Asteroids</h3>
+                                        <div class="project-status status-released">
+                                            <i class="fas fa-rocket"></i>
+                                            <span data-i18n="projects.status.released">Released</span>
+                                        </div>
                                     </div>
+                                    <time datetime="2024-11" class="project-date">November 2024</time>
                                 </div>
-                                <time datetime="2024-11" class="project-date">November 2024</time>
-                            </div>
-                            <p class="project-tagline">"Reimagining a classic for new generations"</p>
-                            <p class="project-description" data-i18n="projects.items.asteroids.description"></p>
-                            <div class="project-tech">
-                                <span><i class="fab fa-python"></i> Python</span>
-                                <span><i class="fas fa-gamepad"></i> Pygame</span>
-                                <span><i class="fas fa-database"></i> MongoDB</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" target="_blank" class="button-outline"><i class="fab fa-github"></i> Repository</a>
-                                <a href="https://pelusinni.craft.me/AsteroidsGame" target="_blank" class="button-outline"><i class="fas fa-book"></i> Documentation</a>
+                                <p class="project-tagline">"Reimagining a classic for new generations"</p>
+                                <p class="project-description" data-i18n="projects.items.asteroids.description"></p>
+                                <div class="project-tech">
+                                    <span><i class="fab fa-python"></i> Python</span>
+                                    <span><i class="fas fa-gamepad"></i> Pygame</span>
+                                    <span><i class="fas fa-database"></i> MongoDB</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" target="_blank" class="button-outline"><i class="fab fa-github"></i> Repository</a>
+                                    <a href="https://pelusinni.craft.me/AsteroidsGame" target="_blank" class="button-outline"><i class="fas fa-book"></i> Documentation</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Ultimate Racing -->
-                <article class="project-card" data-date="2024-01" data-project="ultimateRacing">
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="../assets/images/projects/ultimate-racing.jpg" alt="Ultimate Racing" class="grayscale">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <div class="project-title-group">
-                                    <h3>Ultimate Racing</h3>
-                                    <div class="project-status status-development">
-                                        <i class="fas fa-code-branch"></i>
-                                        <span data-i18n="projects.status.development">In Development</span>
+                    <!-- Ultimate Racing -->
+                    <article class="project-card" data-date="2024-01" data-project="ultimateRacing">
+                        <div class="project-content">
+                            <div class="project-image">
+                                <img src="../assets/images/projects/ultimate-racing.jpg" alt="Ultimate Racing" class="grayscale">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header">
+                                    <div class="project-title-group">
+                                        <h3>Ultimate Racing</h3>
+                                        <div class="project-status status-development">
+                                            <i class="fas fa-code-branch"></i>
+                                            <span data-i18n="projects.status.development">In Development</span>
+                                        </div>
                                     </div>
+                                    <time datetime="2024-01" class="project-date">January 2024</time>
                                 </div>
-                                <time datetime="2024-01" class="project-date">January 2024</time>
-                            </div>
-                            <p class="project-tagline">"The future of SimRacing leagues"</p>
-                            <p class="project-description" data-i18n="projects.items.ultimateRacing.description"></p>
-                            <div class="project-tech">
-                                <span><i class="fab fa-python"></i> Python</span>
-                                <span><i class="fas fa-server"></i> Server</span>
-                                <span><i class="fas fa-gamepad"></i> Gaming</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/pelusinnidev/Ultimate-Racing" target="_blank" class="button-outline"><i class="fab fa-github"></i> Repository</a>
+                                <p class="project-tagline">"The future of SimRacing leagues"</p>
+                                <p class="project-description" data-i18n="projects.items.ultimateRacing.description"></p>
+                                <div class="project-tech">
+                                    <span><i class="fab fa-python"></i> Python</span>
+                                    <span><i class="fas fa-server"></i> Server</span>
+                                    <span><i class="fas fa-gamepad"></i> Gaming</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/pelusinnidev/Ultimate-Racing" target="_blank" class="button-outline"><i class="fab fa-github"></i> Repository</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Food4All -->
-                <article class="project-card nostalgia" data-date="2023-12" data-project="food4all">
-                    <div class="nostalgia-badge">
-                        <i class="fas fa-heart"></i>
-                        <span data-i18n="projects.nostalgia">Nostalgia</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-image">
-                            <img src="../assets/images/projects/food4all.jpg" alt="Food4All" class="grayscale">
+                    <!-- Food4All -->
+                    <article class="project-card nostalgia" data-date="2023-12" data-project="food4all">
+                        <div class="nostalgia-badge">
+                            <i class="fas fa-heart"></i>
+                            <span data-i18n="projects.nostalgia">Nostalgia</span>
                         </div>
-                        <div class="project-info">
-                            <div class="project-header">
-                                <div class="project-title-group">
-                                    <h3>Food4All</h3>
-                                    <div class="project-status status-released">
-                                        <i class="fas fa-rocket"></i>
-                                        <span data-i18n="projects.status.released">Released</span>
+                        <div class="project-content">
+                            <div class="project-image">
+                                <img src="../assets/images/projects/food4all.jpg" alt="Food4All" class="grayscale">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-header">
+                                    <div class="project-title-group">
+                                        <h3>Food4All</h3>
+                                        <div class="project-status status-released">
+                                            <i class="fas fa-rocket"></i>
+                                            <span data-i18n="projects.status.released">Released</span>
+                                        </div>
                                     </div>
+                                    <time datetime="2023-12" class="project-date">December 2023</time>
                                 </div>
-                                <time datetime="2023-12" class="project-date">December 2023</time>
-                            </div>
-                            <p class="project-tagline">"Food for everyone, everywhere"</p>
-                            <p class="project-description" data-i18n="projects.items.food4all.description"></p>
-                            <div class="project-tech">
-                                <span><i class="fab fa-html5"></i> HTML</span>
-                                <span><i class="fab fa-css3"></i> CSS</span>
-                                <span><i class="fab fa-js"></i> JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/pelusinnidev/LaSalle---DAM-M04---Food4All" target="_blank" class="button-outline"><i class="fab fa-github"></i> Repository</a>
+                                <p class="project-tagline">"Food for everyone, everywhere"</p>
+                                <p class="project-description" data-i18n="projects.items.food4all.description"></p>
+                                <div class="project-tech">
+                                    <span><i class="fab fa-html5"></i> HTML</span>
+                                    <span><i class="fab fa-css3"></i> CSS</span>
+                                    <span><i class="fab fa-js"></i> JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/pelusinnidev/LaSalle---DAM-M04---Food4All" target="_blank" class="button-outline"><i class="fab fa-github"></i> Repository</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Carousel Navigation -->
-            <div class="carousel-nav">
-                <button class="nav-button prev" aria-label="Previous project">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="nav-dots"></div>
-                <button class="nav-button next" aria-label="Next project">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                    </article>
+                </div>
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="nav-button prev" aria-label="Previous project">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="nav-dots"></div>
+                    <button class="nav-button next" aria-label="Next project">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -253,5 +258,20 @@
         <section class="projects-list mobile-only">
             <!-- Projects will be cloned here for mobile view -->
         </section>
+
+        <!-- Site Footer -->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-profile">
+                        <img src="../assets/images/profile/my-notion-face-portrait.png" alt="Pelusinni" class="footer-avatar">
+                        <span class="footer-name">Pelusinni</span>
+                    </div>
+                    <div class="footer-copyright">
+                        <span data-i18n="footer.copyright">© 2025 Pelusinni</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
