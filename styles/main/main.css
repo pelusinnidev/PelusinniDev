@@ -3,6 +3,7 @@
     --primary-color: #000000;
     --secondary-color: #86868b;
     --background-color: #ffffff;
+    --background-rgb: 255, 255, 255;
     --text-color: #1d1d1f;
     --accent-color: #f5f5f7;
     --card-background: rgba(255, 255, 255, 0.8);
@@ -49,6 +50,33 @@ body {
     background-color: var(--background-color);
 }
 
+/* Add fade effect at the bottom */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(var(--background-rgb), 0.3) 30%,
+        rgba(var(--background-rgb), 0.7) 60%,
+        var(--background-color) 100%
+    );
+    opacity: var(--fade-opacity, 0);
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+}
+
+.hero:hover::after {
+    opacity: 1;
+}
+
+/* Update the mouse aura effect to be more visible through the fade */
 .hero::before {
     content: '';
     position: absolute;
@@ -56,24 +84,21 @@ body {
     height: 100%;
     background: radial-gradient(
         circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-        rgba(0, 122, 255, 0.15) 0%,
-        rgba(94, 92, 230, 0.12) 25%,
-        rgba(191, 90, 242, 0.08) 50%,
+        rgba(0, 122, 255, 0.2) 0%,
+        rgba(94, 92, 230, 0.15) 25%,
+        rgba(191, 90, 242, 0.1) 50%,
         transparent 70%
     );
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
     pointer-events: none;
-}
-
-.hero:hover::before {
-    opacity: 1;
+    z-index: 2;
 }
 
 .hero-content {
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 4;
     backdrop-filter: blur(20px) saturate(180%);
     padding: 3.5rem;
     border-radius: 30px;
@@ -120,31 +145,21 @@ body {
     letter-spacing: -0.01em;
 }
 
+/* Update particles and floating icons z-index */
+#particles-js,
 #floatingIcons {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    top: 0;
+    left: 0;
     z-index: 1;
-    opacity: 0.06;
 }
 
 #floatingIcons i {
     pointer-events: auto;
     cursor: pointer;
     will-change: transform;
-}
-
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: transparent;
 }
 
 .profile-container {
@@ -480,6 +495,7 @@ body {
 @media (prefers-color-scheme: dark) {
     :root {
         --background-color: #000000;
+        --background-rgb: 0, 0, 0;
         --text-color: #ffffff;
         --accent-color: #1d1d1f;
         --secondary-color: #86868b;
@@ -555,4 +571,21 @@ body {
 @keyframes auraEffect {
     0% { transform: scale(1); opacity: 0.5; }
     100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add a smooth transition between sections */
+main {
+    position: relative;
+    background: var(--background-color);
+}
+
+.section {
+    position: relative;
+    z-index: 1;
+    background: var(--background-color);
 } 

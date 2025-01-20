@@ -349,6 +349,28 @@ window.addEventListener('load', () => {
     firstTimeAnimation();
 });
 
+// Add bottom fade effect based on mouse position
+function initBottomFade() {
+    const hero = document.querySelector('.hero');
+    const fadeThreshold = 200; // Distance from bottom to start fade
+
+    hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const distanceFromBottom = rect.bottom - e.clientY;
+        
+        if (distanceFromBottom < fadeThreshold) {
+            const opacity = (distanceFromBottom / fadeThreshold);
+            hero.style.setProperty('--fade-opacity', `${1 - opacity}`);
+        } else {
+            hero.style.setProperty('--fade-opacity', '0');
+        }
+    });
+
+    hero.addEventListener('mouseleave', () => {
+        hero.style.setProperty('--fade-opacity', '0');
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing...');
@@ -358,6 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateFooterYear();
     initFloatingIcons();
     initMouseAura();
+    initBottomFade();
     
     // Initialize observers
     document.querySelectorAll('.section').forEach(section => {
