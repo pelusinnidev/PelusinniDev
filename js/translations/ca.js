@@ -47,26 +47,47 @@ const translations = {
         }
     },
     projects: {
-        title: 'Projectes Destacats',
-        intro: 'Una selecció dels meus projectes més significatius, cadascun representant un repte i solució únics.',
-        viewProject: 'Veure Projecte',
-        inDevelopment: 'En desenvolupament',
-        completed: 'Completat',
+        title: 'Els Meus Projectes',
+        subtitle: 'Un viatge cronològic a través de la meva experiència en desenvolupament',
+        scrollHint: 'Llisca per veure més projectes',
+        scrollDown: 'Baixa per descobrir més detalls',
+        mainFocus: 'Focus Principal',
+        nostalgia: 'Nostàlgia',
+        status: {
+            beta: 'En Proves Beta',
+            development: 'En desenvolupament',
+            released: 'Publicat'
+        },
         items: {
+            mycosmo: {
+                description: 'Una aplicació nativa d\'iOS d\'astronomia que portarà les meravelles del cosmos als teus dits.',
+                background: 'Inspirat en la meva fascinació per l\'espai i el desig de fer l\'astronomia més accessible.',
+                objective: 'Crear una experiència educativa i immersiva que connecti les persones amb l\'univers.',
+                inspiration: 'Influenciat pel disseny minimalista d\'aplicacions com Sky Guide i la passió per l\'exploració espacial.'
+            },
             bobbo: {
-                title: '"Bobbo"',
-                tagline: '"Making pet care simple and enjoyable"',
-                description: 'Una aplicació veterinària dissenyada per simplificar la cura de les mascotes i millorar la vida dels nostres estimats companys, tal com ells milloren la nostra.'
+                description: 'Una aplicació veterinària dissenyada per simplificar la cura de les mascotes i millorar la vida dels nostres companys.',
+                background: 'Nascut de l\'experiència personal amb la meva mascota i la necessitat de millorar la gestió veterinària.',
+                objective: 'Revolucionar la manera com gestionem la salut i el benestar de les nostres mascotes.',
+                inspiration: 'Inspirat en les millors pràctiques de disseny d\'Apple i l\'enfocament centrat en l\'usuari.'
             },
             asteroids: {
-                title: '"Pelusinni\'s Asteroids"',
-                tagline: '"Reimagining a classic for new generations"',
-                description: 'Una versió moderna del clàssic joc Asteroids, dissenyat tant com a joc jugable com a plantilla educativa per a desenvolupadors aspirants.'
+                description: 'Una versió moderna del clàssic joc Asteroids, dissenyat com a joc i com a plantilla educativa.',
+                background: 'Un homenatge als jocs arcade clàssics amb un toc modern i educatiu.',
+                objective: 'Combinar l\'entreteniment amb l\'aprenentatge de programació de jocs.',
+                inspiration: 'Basat en el llegendari joc Asteroids d\'Atari, actualitzat amb mecàniques modernes.'
             },
-            mycosmo: {
-                title: '"My Cosmo"',
-                tagline: '"Be your universe."',
-                description: 'Una propera aplicació nativa d\'iOS que portarà les meravelles del cosmos als teus dits. Construïda amb Swift i SwiftUI. Mantén-te atent per a una experiència astronòmica.'
+            ultimateRacing: {
+                description: 'Una plataforma completa per gestionar lligues de SimRacing.',
+                background: 'Sorgeix de la passió pels esports de motor i la necessitat d\'eines de gestió més eficients.',
+                objective: 'Crear un ecosistema complet per a comunitats de SimRacing.',
+                inspiration: 'Inspirat en plataformes professionals de gestió d\'eSports i competicions reals de motor.'
+            },
+            food4all: {
+                description: 'El meu primer projecte web, desenvolupat completament a mà sense assistència d\'IA.',
+                background: 'El punt d\'inici en el meu viatge com a desenvolupador web.',
+                objective: 'Aprendre els fonaments del desenvolupament web des de zero.',
+                inspiration: 'Motivat pel desig d\'entendre com funcionen les webs des de dins.'
             }
         }
     },

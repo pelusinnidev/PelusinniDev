@@ -47,26 +47,47 @@ const translations = {
         }
     },
     projects: {
-        title: 'Featured Projects',
-        intro: 'A selection of my most significant projects, each representing a unique challenge and solution.',
-        viewProject: 'View Project',
-        inDevelopment: 'In Development',
-        completed: 'Completed',
+        title: 'My Projects',
+        subtitle: 'A chronological journey through my development experience',
+        scrollHint: 'Scroll to see more projects',
+        scrollDown: 'Scroll down to discover more details',
+        mainFocus: 'Main Focus',
+        nostalgia: 'Nostalgia',
+        status: {
+            beta: 'Beta Testing',
+            development: 'In Development',
+            released: 'Released'
+        },
         items: {
+            mycosmo: {
+                description: 'A native iOS astronomy application that will bring the wonders of the cosmos to your fingertips.',
+                background: 'Inspired by my fascination with space and the desire to make astronomy more accessible.',
+                objective: 'Create an educational and immersive experience that connects people with the universe.',
+                inspiration: 'Influenced by the minimalist design of apps like Sky Guide and the passion for space exploration.'
+            },
             bobbo: {
-                title: 'Bobbo',
-                tagline: 'Making pet care simple and enjoyable',
-                description: 'A veterinary app designed to simplify pet care and enhance the lives of our beloved companions, just as they enhance ours.'
+                description: 'A veterinary app designed to simplify pet care and enhance the lives of our beloved companions.',
+                background: 'Born from personal experience with my pet and the need to improve veterinary management.',
+                objective: 'Revolutionize the way we manage our pets\' health and well-being.',
+                inspiration: 'Inspired by Apple\'s design best practices and user-centered approach.'
             },
             asteroids: {
-                title: 'Pelusinni\'s Asteroids',
-                tagline: 'Reimagining a classic for new generations',
-                description: 'A modern take on the classic Asteroids game, designed as both a playable game and an educational template for aspiring developers.'
+                description: 'A modern take on the classic Asteroids game, designed as both a game and educational template.',
+                background: 'A tribute to classic arcade games with a modern and educational twist.',
+                objective: 'Combine entertainment with game programming learning.',
+                inspiration: 'Based on Atari\'s legendary Asteroids game, updated with modern mechanics.'
             },
-            mycosmo: {
-                title: 'My Cosmo',
-                tagline: 'Be your universe.',
-                description: 'An upcoming native iOS astronomy application that will bring the wonders of the cosmos to your fingertips. Built with Swift and SwiftUI. Stay tuned for an astronomical experience.'
+            ultimateRacing: {
+                description: 'A comprehensive platform for managing SimRacing leagues.',
+                background: 'Emerges from the passion for motorsports and the need for more efficient management tools.',
+                objective: 'Create a complete ecosystem for SimRacing communities.',
+                inspiration: 'Inspired by professional eSports management platforms and real motor racing competitions.'
+            },
+            food4all: {
+                description: 'My first web project, handcrafted without AI assistance.',
+                background: 'The starting point in my journey as a web developer.',
+                objective: 'Learn web development fundamentals from scratch.',
+                inspiration: 'Motivated by the desire to understand how websites work from the inside out.'
             }
         }
     },

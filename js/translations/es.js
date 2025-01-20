@@ -47,26 +47,47 @@ const translations = {
         }
     },
     projects: {
-        title: 'Proyectos Destacados',
-        intro: 'Una selección de mis proyectos más significativos, cada uno representando un desafío y solución únicos.',
-        viewProject: 'Ver Proyecto',
-        inDevelopment: 'En Desarrollo',
-        completed: 'Completado',
+        title: 'Mis Proyectos',
+        subtitle: 'Un viaje cronológico a través de mi experiencia en desarrollo',
+        scrollHint: 'Desliza para ver más proyectos',
+        scrollDown: 'Baja para descubrir más detalles',
+        mainFocus: 'Foco Principal',
+        nostalgia: 'Nostalgia',
+        status: {
+            beta: 'En Pruebas Beta',
+            development: 'En Desarrollo',
+            released: 'Publicado'
+        },
         items: {
+            mycosmo: {
+                description: 'Una aplicación nativa de iOS de astronomía que traerá las maravillas del cosmos a tus dedos.',
+                background: 'Inspirado en mi fascinación por el espacio y el deseo de hacer la astronomía más accesible.',
+                objective: 'Crear una experiencia educativa e inmersiva que conecte a las personas con el universo.',
+                inspiration: 'Influenciado por el diseño minimalista de aplicaciones como Sky Guide y la pasión por la exploración espacial.'
+            },
             bobbo: {
-                title: '"Bobbo"',
-                tagline: '"Making pet care simple and enjoyable"',
-                description: 'Una aplicación veterinaria diseñada para simplificar el cuidado de las mascotas y mejorar la vida de nuestros queridos compañeros, tal como ellos mejoran la nuestra.'
+                description: 'Una aplicación veterinaria diseñada para simplificar el cuidado de las mascotas y mejorar la vida de nuestros compañeros.',
+                background: 'Nacido de la experiencia personal con mi mascota y la necesidad de mejorar la gestión veterinaria.',
+                objective: 'Revolucionar la forma en que gestionamos la salud y el bienestar de nuestras mascotas.',
+                inspiration: 'Inspirado en las mejores prácticas de diseño de Apple y el enfoque centrado en el usuario.'
             },
             asteroids: {
-                title: '"Pelusinni\'s Asteroids"',
-                tagline: '"Reimagining a classic for new generations"',
-                description: 'Una versión moderna del clásico juego Asteroids, diseñado tanto como juego jugable como plantilla educativa para desarrolladores aspirantes.'
+                description: 'Una versión moderna del clásico juego Asteroids, diseñado como juego y como plantilla educativa.',
+                background: 'Un homenaje a los juegos arcade clásicos con un toque moderno y educativo.',
+                objective: 'Combinar el entretenimiento con el aprendizaje de programación de juegos.',
+                inspiration: 'Basado en el legendario juego Asteroids de Atari, actualizado con mecánicas modernas.'
             },
-            mycosmo: {
-                title: '"My Cosmo"',
-                tagline: '"Be your universe."',
-                description: 'Una próxima aplicación nativa de iOS que traerá las maravillas del cosmos a tus dedos. Construida con Swift y SwiftUI. Mantente atento para una experiencia astronómica.'
+            ultimateRacing: {
+                description: 'Una plataforma completa para gestionar ligas de SimRacing.',
+                background: 'Surge de la pasión por los deportes de motor y la necesidad de herramientas de gestión más eficientes.',
+                objective: 'Crear un ecosistema completo para comunidades de SimRacing.',
+                inspiration: 'Inspirado en plataformas profesionales de gestión de eSports y competiciones reales de motor.'
+            },
+            food4all: {
+                description: 'Mi primer proyecto web, desarrollado completamente a mano sin asistencia de IA.',
+                background: 'El punto de inicio en mi viaje como desarrollador web.',
+                objective: 'Aprender los fundamentos del desarrollo web desde cero.',
+                inspiration: 'Motivado por el deseo de entender cómo funcionan las webs desde dentro.'
             }
         }
     },
