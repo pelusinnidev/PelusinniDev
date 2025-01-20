@@ -1,59 +1,30 @@
 // Mobile menu handling
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-const navItems = document.querySelectorAll('.nav-links a');
 
 menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
-    
-    // Animate nav items
-    if (navLinks.classList.contains('active')) {
-        navItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, 100 * index);
-        });
-    } else {
-        navItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(-10px)';
-        });
-    }
+    menuToggle.classList.toggle('active');
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
-        menuToggle.classList.remove('active');
+    if (!e.target.closest('.nav')) {
         navLinks.classList.remove('active');
-        navItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(-10px)';
-        });
+        menuToggle.classList.remove('active');
     }
-});
-
-// Close menu when clicking on a link
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
 });
 
 // Typing animation for hero section
 const typingTexts = [
-    'iOS Developer',
-    'Creative Problem Solver',
-    'AI & ML Enthusiast',
-    'Cloud Architecture Expert',
-    'Game Development Lover'
+    'Software Developer',
+    'iOS Development Enthusiast',
+    'AI & ML Explorer',
+    'Cloud Computing Passionate'
 ];
 
 let currentTextIndex = 0;
-let charIndex = 0;
+let currentCharIndex = 0;
 let isDeleting = false;
 let typingElement = document.querySelector('.typing-text');
 
@@ -61,25 +32,23 @@ function typeText() {
     const currentText = typingTexts[currentTextIndex];
     
     if (isDeleting) {
-        typingElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
+        typingElement.textContent = currentText.substring(0, currentCharIndex - 1);
+        currentCharIndex--;
     } else {
-        typingElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
+        typingElement.textContent = currentText.substring(0, currentCharIndex + 1);
+        currentCharIndex++;
     }
-    
-    let typeSpeed = isDeleting ? 50 : 100;
-    
-    if (!isDeleting && charIndex === currentText.length) {
-        typeSpeed = 2000; // Pause at end
+
+    if (!isDeleting && currentCharIndex === currentText.length) {
         isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
+        setTimeout(typeText, 2000); // Wait before starting to delete
+    } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false;
         currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
-        typeSpeed = 500; // Pause before starting new word
+        setTimeout(typeText, 500); // Wait before typing next text
+    } else {
+        setTimeout(typeText, isDeleting ? 100 : 150);
     }
-    
-    setTimeout(typeText, typeSpeed);
 }
 
 // Smooth scroll for navigation
@@ -131,7 +100,7 @@ document.querySelectorAll('.section').forEach(section => {
 // Initialize animations
 document.addEventListener('DOMContentLoaded', () => {
     // Start typing animation
-    setTimeout(typeText, 1000);
+    typeText();
     
     // Initialize stagger animations
     document.querySelectorAll('.highlight, .expertise-card, .project-card, .tech-item').forEach(item => {
@@ -148,109 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScroll = window.pageYOffset;
         
         if (currentScroll <= 0) {
-            nav.style.transform = 'translateX(-50%)';
+            nav.style.transform = 'translateY(0)';
             return;
         }
         
         if (currentScroll > lastScroll && !navLinks.classList.contains('active')) {
-            nav.style.transform = 'translateX(-50%) translateY(-100%)';
-            nav.style.opacity = '0';
+            nav.style.transform = 'translateY(-100%)';
         } else {
-            nav.style.transform = 'translateX(-50%)';
-            nav.style.opacity = '1';
+            nav.style.transform = 'translateY(0)';
         }
         
         lastScroll = currentScroll;
     });
-});
-
-// Theme handling
-const themeToggle = document.querySelector('.theme-toggle');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-// Set initial theme
-function setInitialTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    } else if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-}
-
-// Toggle theme
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-});
-
-// Language handling
-const languageButtons = document.querySelectorAll('.lang-btn');
-const translations = {
-    en: {
-        home: 'Home',
-        about: 'About',
-        expertise: 'Expertise',
-        projects: 'Projects',
-        techStack: 'Tech Stack',
-        contact: 'Contact',
-        // Add more translations as needed
-    },
-    es: {
-        home: 'Inicio',
-        about: 'Sobre mí',
-        expertise: 'Experiencia',
-        projects: 'Proyectos',
-        techStack: 'Tecnologías',
-        contact: 'Contacto',
-    },
-    ca: {
-        home: 'Inici',
-        about: 'Sobre mi',
-        expertise: 'Experiència',
-        projects: 'Projectes',
-        techStack: 'Tecnologies',
-        contact: 'Contacte',
-    }
-};
-
-function setLanguage(lang) {
-    localStorage.setItem('language', lang);
-    
-    // Update active button
-    languageButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-    
-    // Update navigation text
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        const key = link.getAttribute('href').replace('#', '');
-        if (translations[lang][key]) {
-            link.textContent = translations[lang][key];
-        }
-    });
-    
-    // Update other text content as needed
-}
-
-// Set initial language
-const savedLanguage = localStorage.getItem('language') || 'en';
-setLanguage(savedLanguage);
-
-// Language button click handlers
-languageButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        setLanguage(lang);
-    });
-});
-
-// Initialize theme
-document.addEventListener('DOMContentLoaded', () => {
-    setInitialTheme();
-    // ... existing initialization code ...
 }); 
