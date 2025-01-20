@@ -493,4 +493,43 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeNavigation();
     initializeTechStack();
     i18n.translatePage();
+});
+
+function updateProgrammingTimeline() {
+    const startDate = new Date(2021, 5); // June 2021
+    const currentDate = new Date();
+    const currentYear = document.getElementById('current-year');
+    
+    if (currentYear) {
+        currentYear.textContent = currentDate.getFullYear();
+    }
+
+    // Calculate total months of experience
+    const months = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + 
+                  (currentDate.getMonth() - startDate.getMonth());
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+
+    // Update duration text
+    const durationElement = document.querySelector('.period-duration');
+    if (durationElement) {
+        durationElement.textContent = `${years}Y ${remainingMonths}M`;
+    }
+
+    // Calculate progress percentage (from June 2021 to current date)
+    const totalMonths = 43; // From June 2021 to January 2025
+    const progress = Math.min((months / totalMonths) * 100, 100);
+
+    // Update progress bar
+    const progressBar = document.querySelector('.period-progress');
+    if (progressBar) {
+        progressBar.style.transform = `scaleX(${progress / 100})`;
+    }
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    updateProgrammingTimeline();
+    // Update every minute
+    setInterval(updateProgrammingTimeline, 60000);
 }); 

@@ -149,16 +149,73 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Project details
+    // Project details scroll animations
+    const detailsSections = document.querySelectorAll('.details-section');
+    const detailsImages = document.querySelectorAll('.details-section img');
+
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    detailsSections.forEach(section => sectionObserver.observe(section));
+    detailsImages.forEach(image => imageObserver.observe(image));
+
+    // Sample project details content
+    const projectDetails = {
+        mycosmo: {
+            background: "My Cosmo emerged from a deep fascination with personal growth and self-discovery. As someone who believes in the power of introspection, I wanted to create a digital space that helps people understand themselves better and track their personal evolution.",
+            objective: "The app aims to provide users with a beautiful and intuitive interface to document their daily thoughts, track habits, and visualize their progress over time. It's designed to be more than just a diary—it's a personal growth companion.",
+            inspiration: `<p>The inspiration for My Cosmo came from three main sources:</p>
+            <ul>
+                <li>The concept of 'digital gardens' and how they help people cultivate their thoughts and ideas</li>
+                <li>Modern minimalist design principles that prioritize content and user experience</li>
+                <li>The growing need for digital tools that support mental well-being and personal development</li>
+            </ul>`
+        },
+        bobbo: {
+            background: "Bobbo was born from my personal experience as a pet owner and the challenges I faced in managing my dog's daily care routine. I noticed a gap in the market for a truly user-friendly, comprehensive pet care app.",
+            objective: "To create an intuitive, beautiful, and feature-rich app that helps pet owners manage every aspect of their pet's life—from daily routines to vet appointments, while making the experience enjoyable and stress-free.",
+            inspiration: `<p>The project draws inspiration from several sources:</p>
+            <ul>
+                <li>The joy and challenges of being a pet parent</li>
+                <li>Modern iOS design principles and animations</li>
+                <li>The growing trend of treating pets as family members</li>
+            </ul>`
+        }
+    };
+
     function updateProjectDetails(projectId) {
-        const translations = window.translations || {};
-        const projectData = translations.projects?.items?.[projectId];
-        
+        const projectData = projectDetails[projectId];
         if (!projectData) return;
 
         document.querySelectorAll('.dynamic-content').forEach(element => {
             const contentType = element.dataset.content;
-            element.textContent = projectData[contentType] || '';
+            if (projectData[contentType]) {
+                element.innerHTML = projectData[contentType];
+            }
+        });
+
+        // Reset animations
+        detailsSections.forEach(section => {
+            section.classList.remove('visible');
+            setTimeout(() => section.classList.add('visible'), 100);
         });
     }
 
@@ -227,6 +284,52 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         updateCarousel();
     });
+
+    // Calculate programming experience and timeline progress
+    function updateProgrammingTimeline() {
+        const startDate = new Date(2021, 5); // June 2021
+        const currentDate = new Date();
+        
+        // Update current year display
+        const currentYearEl = document.getElementById('current-year');
+        if (currentYearEl) {
+            currentYearEl.textContent = currentDate.getFullYear();
+        }
+        
+        // Calculate experience duration
+        const years = currentDate.getFullYear() - startDate.getFullYear();
+        const months = currentDate.getMonth() - startDate.getMonth();
+        let totalMonths = (years * 12) + months;
+        
+        const experienceDuration = document.getElementById('experience-duration');
+        if (experienceDuration) {
+            const displayYears = Math.floor(totalMonths / 12);
+            const displayMonths = totalMonths % 12;
+            
+            let durationText = '';
+            if (displayYears > 0) {
+                durationText += `${displayYears}Y `;
+            }
+            if (displayMonths > 0 || displayYears === 0) {
+                durationText += `${displayMonths}M`;
+            }
+            experienceDuration.textContent = durationText;
+        }
+        
+        // Update progress bar
+        const progressBar = document.getElementById('programming-progress');
+        if (progressBar) {
+            const totalDuration = new Date(currentDate.getFullYear(), 11, 31) - startDate;
+            const currentProgress = currentDate - startDate;
+            const progressPercentage = Math.min(100, (currentProgress / totalDuration) * 100);
+            progressBar.style.transform = `scaleX(${progressPercentage / 100})`;
+        }
+    }
+
+    // Initialize timeline
+    updateProgrammingTimeline();
+    // Update every minute
+    setInterval(updateProgrammingTimeline, 60000);
 
     // Initialize
     updateCarousel();

@@ -24,22 +24,26 @@
         <section class="projects-hero section">
             <div class="container">
                 <h1 data-i18n="projects.title">My Projects</h1>
-                <p class="subtitle" data-i18n="projects.subtitle">A chronological journey through my development experience</p>
+                <p class="subtitle" data-i18n="projects.subtitle">Discover my journey through technology and programming, where each project tells a story of passion and innovation</p>
                 <div class="timeline-indicator">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-dot current"></div>
-                    <div class="timeline-date">
-                        <div class="programming-period">
-                            <span class="period-start">2022</span>
-                            <span class="period-separator">→</span>
-                            <span class="period-end">2025</span>
+                    <div class="programming-period">
+                        <div class="period-start">
+                            <span class="period-year">2021</span>
+                            <span class="period-month">JUN</span>
                         </div>
-                        <span class="current-date">January 2025</span>
+                        <div class="period-line-container">
+                            <div class="timeline-line">
+                                <div class="timeline-progress"></div>
+                            </div>
+                            <div class="period-duration">
+                                <span id="experience-duration"></span>
+                            </div>
+                        </div>
+                        <div class="period-end">
+                            <span class="period-year" id="current-year"></span>
+                            <span class="period-month">NOW</span>
+                        </div>
                     </div>
-                </div>
-                <div class="scroll-hint">
-                    <span data-i18n="projects.scrollHint">Scroll to see more projects</span>
-                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
         </section>
