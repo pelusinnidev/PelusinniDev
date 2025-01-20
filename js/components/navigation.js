@@ -1,4 +1,4 @@
-import i18n from '../js/i18n.js';
+import i18n from '../i18n.js';
 
 class Navigation extends HTMLElement {
     constructor() {
