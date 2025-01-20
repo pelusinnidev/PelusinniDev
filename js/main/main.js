@@ -41,28 +41,17 @@ class FloatingIcon {
         this.element.className = icon;
         this.x = Math.random() * window.innerWidth;
         this.y = Math.random() * window.innerHeight;
-        this.speedX = (Math.random() - 0.5) * 1; // Slower movement
-        this.speedY = (Math.random() - 0.5) * 1;
+        this.speedX = (Math.random() - 0.5) * 0.5; // Even slower movement
+        this.speedY = (Math.random() - 0.5) * 0.5;
         this.rotation = Math.random() * 360;
-        this.rotationSpeed = (Math.random() - 0.5) * 1;
-        this.size = Math.random() * (40 - 25) + 25; // Bigger icons
+        this.rotationSpeed = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * (35 - 20) + 20;
         this.element.style.position = 'absolute';
         this.element.style.fontSize = `${this.size}px`;
-        this.element.style.opacity = '0.15'; // More subtle
-        this.element.style.color = '#ffffff';
-        this.element.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+        this.element.style.opacity = '0.06';
+        this.element.style.color = '#000000';
+        this.element.style.willChange = 'transform';
         this.element.style.zIndex = '1';
-        
-        // Add hover effect
-        this.element.addEventListener('mouseenter', () => {
-            this.element.style.opacity = '0.8';
-            this.element.style.transform = `scale(1.2) translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg)`;
-        });
-        
-        this.element.addEventListener('mouseleave', () => {
-            this.element.style.opacity = '0.15';
-            this.element.style.transform = `scale(1) translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg)`;
-        });
     }
 
     update() {
@@ -214,7 +203,26 @@ function updateFooterYear() {
     }
 }
 
-// Initialize particles
+// Add mouse aura effect
+function initMouseAura() {
+    const hero = document.querySelector('.hero');
+    
+    hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / hero.offsetWidth) * 100;
+        const y = ((e.clientY - rect.top) / hero.offsetHeight) * 100;
+        
+        hero.style.setProperty('--mouse-x', `${x}%`);
+        hero.style.setProperty('--mouse-y', `${y}%`);
+    });
+    
+    hero.addEventListener('mouseleave', () => {
+        hero.style.setProperty('--mouse-x', '50%');
+        hero.style.setProperty('--mouse-y', '50%');
+    });
+}
+
+// Update particles configuration for a more subtle effect
 function initParticles() {
     particlesJS('particles-js', {
         particles: {
@@ -226,17 +234,21 @@ function initParticles() {
                 }
             },
             color: {
-                value: '#ffffff'
+                value: ['#007AFF', '#5856D6', '#BF5AF2']
             },
             shape: {
-                type: 'circle'
+                type: ['circle', 'triangle'],
+                stroke: {
+                    width: 0,
+                    color: '#000000'
+                }
             },
             opacity: {
-                value: 0.1,
+                value: 0.15,
                 random: true,
                 anim: {
                     enable: true,
-                    speed: 1,
+                    speed: 0.5,
                     opacity_min: 0.05,
                     sync: false
                 }
@@ -246,21 +258,21 @@ function initParticles() {
                 random: true,
                 anim: {
                     enable: true,
-                    speed: 2,
-                    size_min: 1,
+                    speed: 1,
+                    size_min: 0.5,
                     sync: false
                 }
             },
             line_linked: {
                 enable: true,
                 distance: 150,
-                color: '#ffffff',
-                opacity: 0.1,
+                color: '#5856D6',
+                opacity: 0.12,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 1,
+                speed: 0.8,
                 direction: 'none',
                 random: true,
                 straight: false,
@@ -278,7 +290,7 @@ function initParticles() {
             events: {
                 onhover: {
                     enable: true,
-                    mode: 'grab'
+                    mode: ['grab', 'bubble']
                 },
                 onclick: {
                     enable: true,
@@ -288,13 +300,20 @@ function initParticles() {
             },
             modes: {
                 grab: {
-                    distance: 140,
+                    distance: 180,
                     line_linked: {
-                        opacity: 0.4
+                        opacity: 0.3
                     }
                 },
+                bubble: {
+                    distance: 200,
+                    size: 6,
+                    duration: 2,
+                    opacity: 0.2,
+                    speed: 3
+                },
                 push: {
-                    particles_nb: 4
+                    particles_nb: 3
                 }
             }
         },
@@ -334,10 +353,11 @@ window.addEventListener('load', () => {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing...');
     
-    // Start other animations
+    // Start animations
     initTypingAnimation();
     updateFooterYear();
     initFloatingIcons();
+    initMouseAura();
     
     // Initialize observers
     document.querySelectorAll('.section').forEach(section => {
