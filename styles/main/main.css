@@ -187,35 +187,158 @@ body {
 
 /* Think Different Section */
 .think-different {
-    padding: 6rem 2rem;
-    background-color: var(--accent-color);
+    padding: 8rem 2rem;
+    background-color: var(--background-color);
+    position: relative;
+    overflow: hidden;
 }
 
-.section-content {
-    max-width: 1200px;
+.think-different::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(0, 122, 255, 0.03),
+        rgba(94, 92, 230, 0.03),
+        rgba(191, 90, 242, 0.03)
+    );
+    z-index: 1;
+}
+
+.think-different .section-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
+.think-different .quote-container {
+    padding-right: 2rem;
 }
 
-.philosophy-quote {
-    font-size: 1.8rem;
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-style: italic;
+.think-different .section-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
 }
 
-.philosophy-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.2rem;
+.think-different .philosophy-quote {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-style: normal;
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.2s;
+}
+
+.think-different .quote-attribution {
+    font-size: 1rem;
     color: var(--secondary-color);
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.4s;
+}
+
+.think-different .philosophy-content {
+    text-align: left;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.6s;
+}
+
+.think-different .philosophy-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.think-different .image-container {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.8s;
+}
+
+.think-different .steve-jobs-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.think-different .image-container:hover .steve-jobs-image {
+    filter: grayscale(0%);
+}
+
+.think-different .image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .think-different .section-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .think-different .quote-container {
+        padding-right: 0;
+    }
+    
+    .think-different .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .think-different .philosophy-quote {
+        text-align: center;
+    }
+    
+    .think-different .quote-attribution {
+        text-align: center;
+    }
 }
 
 /* Featured Projects Section */
@@ -362,29 +485,6 @@ body {
         --secondary-color: #86868b;
         --card-background: rgba(29, 29, 31, 0.8);
         --card-border: rgba(255, 255, 255, 0.1);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .typing-text {
-        font-size: 1.2rem;
-    }
-
-    .philosophy-quote {
-        font-size: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
     }
 }
 
