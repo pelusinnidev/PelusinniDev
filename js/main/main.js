@@ -36,35 +36,54 @@ const techIcons = [
 ];
 
 class FloatingIcon {
-    constructor(icon) {
+    constructor(icon, index, total) {
         this.element = document.createElement('i');
         this.element.className = icon;
-        this.x = Math.random() * window.innerWidth;
-        this.y = Math.random() * window.innerHeight;
-        this.speedX = (Math.random() - 0.5) * 0.5; // Even slower movement
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.rotation = Math.random() * 360;
-        this.rotationSpeed = (Math.random() - 0.5) * 0.5;
-        this.size = Math.random() * (35 - 20) + 20;
+        
+        // Calculate initial position on a circle
+        const angle = (index / total) * Math.PI * 2;
+        this.centerX = window.innerWidth / 2;
+        this.centerY = window.innerHeight / 2;
+        // Make the radius relative to the hero content size
+        const heroContent = document.querySelector('.hero-content');
+        const heroSize = heroContent ? heroContent.offsetWidth : 500;
+        this.radius = (heroSize * 0.75); // Slightly larger than the hero content
+        this.angle = angle;
+        this.angleSpeed = 0.0005 + (Math.random() * 0.0005); // Slower, more elegant movement
+        this.size = Math.random() * (35 - 25) + 25; // Slightly larger icons
+        
         this.element.style.position = 'absolute';
         this.element.style.fontSize = `${this.size}px`;
-        this.element.style.opacity = '0.06';
-        this.element.style.color = '#000000';
+        this.element.style.opacity = '0.4';
         this.element.style.willChange = 'transform';
         this.element.style.zIndex = '1';
+        
+        // Add hover effect
+        this.element.addEventListener('mouseenter', () => {
+            this.element.style.opacity = '1';
+            this.angleSpeed = 0.0001; // Slow down when hovered
+        });
+        
+        this.element.addEventListener('mouseleave', () => {
+            this.element.style.opacity = '0.4';
+            this.angleSpeed = 0.0005 + (Math.random() * 0.0005); // Resume normal speed
+        });
     }
 
     update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.rotation += this.rotationSpeed;
-
-        // Bounce off edges
-        if (this.x <= 0 || this.x >= window.innerWidth) this.speedX *= -1;
-        if (this.y <= 0 || this.y >= window.innerHeight) this.speedY *= -1;
-
-        // Apply position
-        this.element.style.transform = `translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg)`;
+        // Update angle for circular motion
+        this.angle += this.angleSpeed;
+        
+        // Calculate new position
+        this.x = this.centerX + Math.cos(this.angle) * this.radius;
+        this.y = this.centerY + Math.sin(this.angle) * this.radius;
+        
+        // Add slight floating effect
+        const floatY = Math.sin(Date.now() * 0.001 + this.angle) * 10;
+        const floatX = Math.cos(Date.now() * 0.001 + this.angle) * 10;
+        
+        // Apply position with smooth animation
+        this.element.style.transform = `translate(${this.x + floatX}px, ${this.y + floatY}px) rotate(${this.angle * 57.2958}deg)`;
     }
 }
 
@@ -78,9 +97,10 @@ function initFloatingIcons() {
     }
 
     const icons = [];
+    const totalIcons = techIcons.length;
 
-    techIcons.forEach(icon => {
-        const floatingIcon = new FloatingIcon(icon);
+    techIcons.forEach((icon, index) => {
+        const floatingIcon = new FloatingIcon(icon, index, totalIcons);
         container.appendChild(floatingIcon.element);
         icons.push(floatingIcon);
     });
@@ -92,21 +112,15 @@ function initFloatingIcons() {
 
     animate();
 
-    // Mouse interaction
-    document.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-
-        icons.forEach(icon => {
-            const dx = mouseX - icon.x;
-            const dy = mouseY - icon.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 100) {
-                const angle = Math.atan2(dy, dx);
-                icon.speedX -= Math.cos(angle) * 0.5;
-                icon.speedY -= Math.sin(angle) * 0.5;
-            }
+    // Update positions on window resize
+    window.addEventListener('resize', () => {
+        const heroContent = document.querySelector('.hero-content');
+        const heroSize = heroContent ? heroContent.offsetWidth : 500;
+        
+        icons.forEach((icon) => {
+            icon.centerX = window.innerWidth / 2;
+            icon.centerY = window.innerHeight / 2;
+            icon.radius = (heroSize * 0.75);
         });
     });
 }
@@ -234,7 +248,7 @@ function initParticles() {
                 }
             },
             color: {
-                value: ['#007AFF', '#5856D6', '#BF5AF2']
+                value: ['#007AFF', '#5856D6', '#BF5AF2', '#FF2D55']
             },
             shape: {
                 type: ['circle', 'triangle'],
@@ -244,12 +258,12 @@ function initParticles() {
                 }
             },
             opacity: {
-                value: 0.15,
+                value: 0.25,
                 random: true,
                 anim: {
                     enable: true,
                     speed: 0.5,
-                    opacity_min: 0.05,
+                    opacity_min: 0.15,
                     sync: false
                 }
             },
@@ -267,8 +281,8 @@ function initParticles() {
                 enable: true,
                 distance: 150,
                 color: '#5856D6',
-                opacity: 0.12,
-                width: 1
+                opacity: 0.2,
+                width: 1.2
             },
             move: {
                 enable: true,
@@ -302,14 +316,14 @@ function initParticles() {
                 grab: {
                     distance: 180,
                     line_linked: {
-                        opacity: 0.3
+                        opacity: 0.4
                     }
                 },
                 bubble: {
                     distance: 200,
                     size: 6,
                     duration: 2,
-                    opacity: 0.2,
+                    opacity: 0.3,
                     speed: 3
                 },
                 push: {
