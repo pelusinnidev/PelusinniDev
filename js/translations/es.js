@@ -60,18 +60,24 @@ const translations = {
         },
         items: {
             mycosmo: {
+                title: 'MyCosmo',
+                tagline: 'Tu ventana personal al universo',
                 description: 'Una aplicación nativa de iOS de astronomía que traerá las maravillas del cosmos a tus dedos.',
                 background: 'Inspirado en mi fascinación por el espacio y el deseo de hacer la astronomía más accesible.',
                 objective: 'Crear una experiencia educativa e inmersiva que conecte a las personas con el universo.',
                 inspiration: 'Influenciado por el diseño minimalista de aplicaciones como Sky Guide y la pasión por la exploración espacial.'
             },
             bobbo: {
+                title: 'Bobbo',
+                tagline: 'El compañero digital de tu mascota',
                 description: 'Una aplicación veterinaria diseñada para simplificar el cuidado de las mascotas y mejorar la vida de nuestros compañeros.',
                 background: 'Nacido de la experiencia personal con mi mascota y la necesidad de mejorar la gestión veterinaria.',
                 objective: 'Revolucionar la forma en que gestionamos la salud y el bienestar de nuestras mascotas.',
                 inspiration: 'Inspirado en las mejores prácticas de diseño de Apple y el enfoque centrado en el usuario.'
             },
             asteroids: {
+                title: 'Asteroids',
+                tagline: 'Un clásico reinventado',
                 description: 'Una versión moderna del clásico juego Asteroids, diseñado como juego y como plantilla educativa.',
                 background: 'Un homenaje a los juegos arcade clásicos con un toque moderno y educativo.',
                 objective: 'Combinar el entretenimiento con el aprendizaje de programación de juegos.',

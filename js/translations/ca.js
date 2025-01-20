@@ -20,7 +20,7 @@ const translations = {
             'Explorador Tecnològic',
             'Entusiasta de la Robòtica',
             'Curiós del Desenvolupament Web',
-            'Entusiasta del Desenvolupament en Minecraft'
+            'Entusiasta del desenvolupament en Minecraft'
         ],
         keepExploring: 'Segueix Explorant'
     },
@@ -60,18 +60,24 @@ const translations = {
         },
         items: {
             mycosmo: {
+                title: 'MyCosmo',
+                tagline: 'La teva finestra personal a l\'univers',
                 description: 'Una aplicació nativa d\'iOS d\'astronomia que portarà les meravelles del cosmos als teus dits.',
                 background: 'Inspirat en la meva fascinació per l\'espai i el desig de fer l\'astronomia més accessible.',
                 objective: 'Crear una experiència educativa i immersiva que connecti les persones amb l\'univers.',
                 inspiration: 'Influenciat pel disseny minimalista d\'aplicacions com Sky Guide i la passió per l\'exploració espacial.'
             },
             bobbo: {
+                title: 'Bobbo',
+                tagline: 'El company digital de la teva mascota',
                 description: 'Una aplicació veterinària dissenyada per simplificar la cura de les mascotes i millorar la vida dels nostres companys.',
                 background: 'Nascut de l\'experiència personal amb la meva mascota i la necessitat de millorar la gestió veterinària.',
                 objective: 'Revolucionar la manera com gestionem la salut i el benestar de les nostres mascotes.',
                 inspiration: 'Inspirat en les millors pràctiques de disseny d\'Apple i l\'enfocament centrat en l\'usuari.'
             },
             asteroids: {
+                title: 'Asteroids',
+                tagline: 'Un clàssic reinventat',
                 description: 'Una versió moderna del clàssic joc Asteroids, dissenyat com a joc i com a plantilla educativa.',
                 background: 'Un homenatge als jocs arcade clàssics amb un toc modern i educatiu.',
                 objective: 'Combinar l\'entreteniment amb l\'aprenentatge de programació de jocs.',
