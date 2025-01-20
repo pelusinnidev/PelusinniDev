@@ -2,20 +2,20 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+menuToggle?.addEventListener('click', () => {
+    navLinks?.classList.toggle('active');
     menuToggle.classList.toggle('active');
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav')) {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
+        navLinks?.classList.remove('active');
+        menuToggle?.classList.remove('active');
     }
 });
 
-// Typing animation for hero section
+// Typing animation texts
 const typingTexts = [
     'Software Developer',
     'iOS Development Enthusiast',
@@ -23,32 +23,127 @@ const typingTexts = [
     'Cloud Computing Passionate'
 ];
 
-let currentTextIndex = 0;
-let currentCharIndex = 0;
-let isDeleting = false;
-let typingElement = document.querySelector('.typing-text');
+// Floating icons setup
+const techIcons = [
+    'fab fa-swift', 'fab fa-android', 'fab fa-flutter',
+    'fab fa-html5', 'fab fa-css3', 'fab fa-js',
+    'fab fa-php', 'fab fa-laravel', 'fab fa-python',
+    'fab fa-git-alt', 'fab fa-github', 'fab fa-docker',
+    'fab fa-windows', 'fab fa-apple', 'fab fa-linux'
+];
 
-function typeText() {
-    const currentText = typingTexts[currentTextIndex];
-    
-    if (isDeleting) {
-        typingElement.textContent = currentText.substring(0, currentCharIndex - 1);
-        currentCharIndex--;
-    } else {
-        typingElement.textContent = currentText.substring(0, currentCharIndex + 1);
-        currentCharIndex++;
+class FloatingIcon {
+    constructor(icon) {
+        this.element = document.createElement('i');
+        this.element.className = icon;
+        this.x = Math.random() * window.innerWidth;
+        this.y = Math.random() * window.innerHeight;
+        this.speedX = (Math.random() - 0.5) * 2;
+        this.speedY = (Math.random() - 0.5) * 2;
+        this.rotation = Math.random() * 360;
+        this.rotationSpeed = (Math.random() - 0.5) * 2;
+        this.size = Math.random() * (30 - 15) + 15;
+        this.element.style.position = 'absolute';
+        this.element.style.fontSize = `${this.size}px`;
+        this.element.style.opacity = '0.2';
+        this.element.style.color = '#000';
+        this.element.style.transition = 'transform 0.3s ease';
     }
 
-    if (!isDeleting && currentCharIndex === currentText.length) {
-        isDeleting = true;
-        setTimeout(typeText, 2000); // Wait before starting to delete
-    } else if (isDeleting && currentCharIndex === 0) {
-        isDeleting = false;
-        currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
-        setTimeout(typeText, 500); // Wait before typing next text
-    } else {
-        setTimeout(typeText, isDeleting ? 100 : 150);
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.rotation += this.rotationSpeed;
+
+        // Bounce off edges
+        if (this.x <= 0 || this.x >= window.innerWidth) this.speedX *= -1;
+        if (this.y <= 0 || this.y >= window.innerHeight) this.speedY *= -1;
+
+        // Apply position
+        this.element.style.transform = `translate(${this.x}px, ${this.y}px) rotate(${this.rotation}deg)`;
     }
+}
+
+// Initialize floating icons
+function initFloatingIcons() {
+    console.log('Initializing floating icons...');
+    const container = document.getElementById('floatingIcons');
+    if (!container) {
+        console.error('Floating icons container not found!');
+        return;
+    }
+
+    const icons = [];
+
+    techIcons.forEach(icon => {
+        const floatingIcon = new FloatingIcon(icon);
+        container.appendChild(floatingIcon.element);
+        icons.push(floatingIcon);
+    });
+
+    function animate() {
+        icons.forEach(icon => icon.update());
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Mouse interaction
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        icons.forEach(icon => {
+            const dx = mouseX - icon.x;
+            const dy = mouseY - icon.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 100) {
+                const angle = Math.atan2(dy, dx);
+                icon.speedX -= Math.cos(angle) * 0.5;
+                icon.speedY -= Math.sin(angle) * 0.5;
+            }
+        });
+    });
+}
+
+// Typing animation
+function initTypingAnimation() {
+    console.log('Initializing typing animation...');
+    let currentTextIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.querySelector('.typing-text');
+
+    if (!typingElement) {
+        console.error('Typing element not found!');
+        return;
+    }
+
+    function typeText() {
+        const currentText = typingTexts[currentTextIndex];
+        
+        if (isDeleting) {
+            typingElement.textContent = currentText.substring(0, currentCharIndex - 1);
+            currentCharIndex--;
+        } else {
+            typingElement.textContent = currentText.substring(0, currentCharIndex + 1);
+            currentCharIndex++;
+        }
+
+        if (!isDeleting && currentCharIndex === currentText.length) {
+            isDeleting = true;
+            setTimeout(typeText, 2000);
+        } else if (isDeleting && currentCharIndex === 0) {
+            isDeleting = false;
+            currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
+            setTimeout(typeText, 500);
+        } else {
+            setTimeout(typeText, isDeleting ? 100 : 150);
+        }
+    }
+
+    typeText();
 }
 
 // Smooth scroll for navigation
@@ -70,7 +165,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for fade-in animations
+// Intersection Observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -80,8 +175,9 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            if (entry.target.querySelectorAll('.highlight, .expertise-card, .project-card, .tech-item').length) {
-                entry.target.querySelectorAll('.highlight, .expertise-card, .project-card, .tech-item').forEach((item, index) => {
+            const animatedElements = entry.target.querySelectorAll('.tech-item, .project-card');
+            if (animatedElements.length) {
+                animatedElements.forEach((item, index) => {
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'translateY(0)';
@@ -92,18 +188,148 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections and cards
-document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
+// Update footer year
+function updateFooterYear() {
+    console.log('Updating footer year...');
+    const yearElement = document.querySelector('.footer-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    } else {
+        console.error('Footer year element not found!');
+    }
+}
+
+// Initialize particles
+function initParticles() {
+    particlesJS('particles-js', {
+        particles: {
+            number: {
+                value: 100,
+                density: {
+                    enable: true,
+                    value_area: 1000
+                }
+            },
+            color: {
+                value: ['#86868b', '#000000', '#1d1d1f']
+            },
+            shape: {
+                type: ['circle', 'image'],
+                image: [
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg', width: 100, height: 100 },
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg', width: 100, height: 100 },
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg', width: 100, height: 100 },
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', width: 100, height: 100 },
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg', width: 100, height: 100 },
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', width: 100, height: 100 },
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', width: 100, height: 100 },
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', width: 100, height: 100 },
+                    { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', width: 100, height: 100 }
+                ]
+            },
+            opacity: {
+                value: 0.6,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.2,
+                    sync: false
+                }
+            },
+            size: {
+                value: 25,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 3,
+                    size_min: 15,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#86868b',
+                opacity: 0.3,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 1.5,
+                direction: 'none',
+                random: true,
+                straight: false,
+                out_mode: 'bounce',
+                bounce: true,
+                attract: {
+                    enable: true,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: ['grab', 'bubble']
+                },
+                onclick: {
+                    enable: true,
+                    mode: 'push'
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 200,
+                    line_linked: {
+                        opacity: 0.8
+                    }
+                },
+                bubble: {
+                    distance: 200,
+                    size: 30,
+                    duration: 2,
+                    opacity: 0.8,
+                    speed: 3
+                },
+                push: {
+                    particles_nb: 3
+                }
+            }
+        },
+        retina_detect: true
+    });
+}
+
+// Make sure particles are initialized
+window.addEventListener('load', () => {
+    if (typeof particlesJS !== 'undefined') {
+        initParticles();
+        console.log('Particles initialized');
+    } else {
+        console.error('Particles.js not loaded');
+    }
 });
 
-// Initialize animations
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Start typing animation
-    typeText();
+    console.log('DOM loaded, initializing...');
+    
+    // Start other animations
+    initTypingAnimation();
+    updateFooterYear();
+    
+    // Initialize observers
+    document.querySelectorAll('.section').forEach(section => {
+        observer.observe(section);
+    });
     
     // Initialize stagger animations
-    document.querySelectorAll('.highlight, .expertise-card, .project-card, .tech-item').forEach(item => {
+    document.querySelectorAll('.tech-item, .project-card').forEach(item => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(20px)';
         item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

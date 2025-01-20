@@ -3,69 +3,157 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pelusinni's Portfolio</title>
-        <link rel="stylesheet" href="styles/main.css">
+        <meta name="description" content="PelusinniDev - Software Developer, iOS Expert & AI Enthusiast">
+        <meta name="theme-color" content="#000000">
+        
+        <title>PelusinniDev | Software Developer</title>
+        
+        <!-- Preload fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="styles/main/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Particles.js -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     </head>
     <body>
-        <main class="container">
-            <div class="content">
-                <div class="logo">
-                    <div class="logo-container">
-                        <img src="assets/images/my-notion-face-transparent.png" alt="Pelusinni" class="logo-image">
+        <!-- Loading State -->
+        <div class="loading">
+            <div class="loading-content">
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+            </div>
+        </div>
+
+        <!-- Navigation placeholder -->
+        <nav class="nav">
+            <!-- Will be implemented later -->
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero section visible" id="hero">
+                <div id="particles-js"></div>
+                <div class="hero-content">
+                    <div class="profile-container">
+                        <img src="assets/profile/profile-transparent.png" alt="PelusinniDev" class="profile-image">
+                    </div>
+                    <h1 class="hero-title">PelusinniDev</h1>
+                    <div class="typing-text"></div>
+                    <p class="hero-subtitle">Software Developer | iOS Expert | AI Enthusiast</p>
+                </div>
+            </section>
+
+            <!-- Think Different Section -->
+            <section class="think-different section" id="philosophy">
+                <div class="section-content">
+                    <h2 class="section-title">Think Different</h2>
+                    <blockquote class="philosophy-quote">
+                        <p>"Here's to the crazy ones. The misfits. The rebels. The troublemakers..."</p>
+                    </blockquote>
+                    <div class="philosophy-content">
+                        <p>Breaking boundaries in software development, one line of code at a time.</p>
                     </div>
                 </div>
-                <div class="animation-container">
-                    <div class="tools-animation">
-                        <div class="tools-animation-content">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-php"></i>
-                            <i class="fab fa-laravel"></i>
-                            <i class="fab fa-python"></i>
-                            <i class="fab fa-swift"></i>
-                            <i class="fab fa-android"></i>
-                            <i class="fab fa-git-alt"></i>
-                            <i class="fab fa-github"></i>
-                            <i class="fas fa-terminal"></i>
-                            <i class="fab fa-docker"></i>
-                            <i class="fab fa-flutter"></i>
-                            <i class="fab fa-windows"></i>
-                            <i class="fab fa-apple"></i>
-                            <i class="fab fa-linux"></i>
+            </section>
+
+            <!-- Featured Projects Section -->
+            <section class="featured-projects section" id="featured">
+                <div class="section-content">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <div class="project-content">
+                                <h3>Pol's Asteroids</h3>
+                                <p>A modern take on the classic arcade game</p>
+                                <a href="https://pelusinni.craft.me/AsteroidsGame" class="project-link">
+                                    <span>View Project</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-content">
+                                <h3>Bobbo App</h3>
+                                <p>Revolutionary pet care application</p>
+                                <a href="https://bobbo.framer.website" class="project-link">
+                                    <span>View Project</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-content">
+                                <h3>SimRacing Platform</h3>
+                                <p>Custom league management system</p>
+                                <a href="#" class="project-link">
+                                    <span>Coming Soon</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack Section -->
+            <section class="tech-stack section" id="stack">
+                <div class="section-content">
+                    <h2 class="section-title">Tech Stack</h2>
+                    <div class="stack-grid">
+                        <div class="stack-category">
+                            <h3>Mobile Development</h3>
+                            <div class="stack-items">
+                                <div class="tech-item"><i class="fab fa-swift"></i><span>Swift</span></div>
+                                <div class="tech-item"><i class="fab fa-android"></i><span>Android</span></div>
+                                <div class="tech-item"><i class="fab fa-flutter"></i><span>Flutter</span></div>
+                            </div>
                         </div>
-                        <div class="tools-animation-content">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-php"></i>
-                            <i class="fab fa-laravel"></i>
-                            <i class="fab fa-python"></i>
-                            <i class="fab fa-swift"></i>
-                            <i class="fab fa-android"></i>
-                            <i class="fab fa-git-alt"></i>
-                            <i class="fab fa-github"></i>
-                            <i class="fas fa-terminal"></i>
-                            <i class="fab fa-docker"></i>
-                            <i class="fab fa-flutter"></i>
-                            <i class="fab fa-windows"></i>
-                            <i class="fab fa-apple"></i>
-                            <i class="fab fa-linux"></i>
+                        <div class="stack-category">
+                            <h3>Web Development</h3>
+                            <div class="stack-items">
+                                <div class="tech-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                                <div class="tech-item"><i class="fab fa-css3"></i><span>CSS3</span></div>
+                                <div class="tech-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                                <div class="tech-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                                <div class="tech-item"><i class="fab fa-laravel"></i><span>Laravel</span></div>
+                            </div>
+                        </div>
+                        <div class="stack-category">
+                            <h3>Tools & Technologies</h3>
+                            <div class="stack-items">
+                                <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                                <div class="tech-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+                                <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <h1>Portfolio in Progress</h1>
-                <p class="message">Fine-tuning my digital space. Stay tuned for something awesome!</p>
-                <div class="social-links">
-                    <a href="https://twitter.com/pelusinnidev" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://github.com/pelusinnidev" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="assets/profile/profile-transparent.png" alt="PelusinniDev" class="footer-logo">
+                    <span class="footer-name">Pelusinni</span>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-year"></span>
                 </div>
             </div>
-        </main>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="js/main/main.js"></script>
+        <script>
+            // Remove loading state after everything is loaded
+            window.addEventListener('load', () => {
+                document.querySelector('.loading').classList.add('hidden');
+            });
+        </script>
     </body>
 </html>
