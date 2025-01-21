@@ -1,18 +1,17 @@
 :root {
-    /* Apple-inspired colors */
-    --primary-color: #000000;
-    --secondary-color: #86868b;
+    /* Updated Apple-inspired colors with white primary */
+    --primary-color: #ffffff;
+    --secondary-color: #1d1d1f;
     --background-color: #ffffff;
-    --background-rgb: 255, 255, 255;
-    --text-color: #1d1d1f;
+    --text-color: #000000;
     --accent-color: #f5f5f7;
     --card-background: rgba(255, 255, 255, 0.8);
-    --card-border: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(0, 0, 0, 0.1);
     --card-shadow: rgba(0, 0, 0, 0.1);
-    --glass-background: rgba(255, 255, 255, 0.7);
+    --glass-background: rgba(255, 255, 255, 0.9);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Enhanced Neural Engine inspired gradients */
+    /* Enhanced Neural Engine inspired gradients - keeping these vibrant */
     --gradient-blue: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
     --gradient-purple: linear-gradient(135deg, #5E5CE6 0%, #BF5AF2 100%);
     --gradient-pink: linear-gradient(135deg, #FF2D55 0%, #FF375F 100%);
@@ -50,33 +49,6 @@ body {
     background-color: var(--background-color);
 }
 
-/* Add fade effect at the bottom */
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(var(--background-rgb), 0.3) 30%,
-        rgba(var(--background-rgb), 0.7) 60%,
-        var(--background-color) 100%
-    );
-    opacity: var(--fade-opacity, 0);
-    transition: opacity 0.3s ease;
-    z-index: 3;
-    pointer-events: none;
-    backdrop-filter: blur(5px);
-}
-
-.hero:hover::after {
-    opacity: 1;
-}
-
-/* Update the mouse aura effect to be more visible */
 .hero::before {
     content: '';
     position: absolute;
@@ -84,15 +56,14 @@ body {
     height: 100%;
     background: radial-gradient(
         circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-        rgba(0, 122, 255, 0.25) 0%,
-        rgba(94, 92, 230, 0.2) 25%,
-        rgba(191, 90, 242, 0.15) 50%,
+        rgba(0, 122, 255, 0.08) 0%,
+        rgba(94, 92, 230, 0.06) 25%,
+        rgba(191, 90, 242, 0.04) 50%,
         transparent 70%
     );
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
     pointer-events: none;
-    z-index: 2;
 }
 
 .hero:hover::before {
@@ -102,33 +73,29 @@ body {
 .hero-content {
     text-align: center;
     position: relative;
-    z-index: 4;
+    z-index: 2;
     backdrop-filter: blur(20px) saturate(180%);
-    padding: 3rem;
-    border-radius: 50%;
+    padding: 3.5rem;
+    border-radius: 30px;
     background: var(--glass-background);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06),
-        inset 0 0 20px rgba(255, 255, 255, 0.5);
-    width: min(500px, 90vw);
-    aspect-ratio: 1;
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03),
+        inset 0 0 20px rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    width: 90%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-content:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
     box-shadow: 
-        0 20px 25px -5px rgba(0, 0, 0, 0.1),
-        0 10px 10px -5px rgba(0, 0, 0, 0.04),
-        inset 0 0 25px rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+        0 20px 25px -5px rgba(0, 0, 0, 0.05),
+        0 10px 10px -5px rgba(0, 0, 0, 0.02),
+        inset 0 0 25px rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .hero-title {
@@ -142,7 +109,7 @@ body {
 .typing-text {
     font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     min-height: 2em;
     color: var(--secondary-color);
 }
@@ -153,52 +120,60 @@ body {
     letter-spacing: -0.01em;
 }
 
-/* Update particles and floating icons z-index */
-#particles-js,
 #floatingIcons {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
+    z-index: 1;
+    opacity: 0.06;
 }
 
 #floatingIcons i {
     pointer-events: auto;
     cursor: pointer;
     will-change: transform;
-    filter: none;
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    opacity: 0.4;
-    transition: all 0.3s ease;
 }
 
-#floatingIcons i:hover {
-    opacity: 1;
-    color: var(--gradient-main);
-    transform: scale(1.2);
-    text-shadow: 
-        0 0 20px rgba(0, 122, 255, 0.5),
-        0 0 40px rgba(94, 92, 230, 0.3);
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: transparent;
 }
 
 .profile-container {
     width: 150px;
     height: 150px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 2rem;
     border-radius: 50%;
     padding: 3px;
-    background: #ffffff;
+    background: var(--gradient-main);
+    background-size: 300% 300%;
+    animation: gradientFlow 15s ease infinite;
     position: relative;
-    box-shadow: 0 0 20px rgba(0, 122, 255, 0.2);
-    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
 }
 
-.profile-container:hover {
+.profile-container::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
     background: var(--gradient-main);
+    background-size: 300% 300%;
+    animation: gradientFlow 15s ease infinite;
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0.5;
 }
 
 .profile-image {
@@ -227,9 +202,9 @@ body {
     bottom: 0;
     background: linear-gradient(
         45deg,
-        rgba(0, 122, 255, 0.03),
-        rgba(94, 92, 230, 0.03),
-        rgba(191, 90, 242, 0.03)
+        rgba(0, 122, 255, 0.02),
+        rgba(94, 92, 230, 0.02),
+        rgba(191, 90, 242, 0.02)
     );
     z-index: 1;
 }
@@ -451,11 +426,13 @@ body {
     border-radius: 12px;
     border: 1px solid var(--card-border);
     transition: var(--transition);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .tech-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px var(--card-shadow);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .tech-item i {
@@ -501,26 +478,16 @@ body {
     color: var(--secondary-color);
 }
 
-/* Dark Mode Support */
+/* Dark Mode Support - Updated to maintain white theme */
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #000000;
-        --background-rgb: 0, 0, 0;
-        --text-color: #ffffff;
-        --accent-color: #1d1d1f;
-        --secondary-color: #86868b;
-        --card-background: rgba(29, 29, 31, 0.8);
-        --card-border: rgba(255, 255, 255, 0.1);
-    }
-    
-    #particles-js,
-    #floatingIcons {
-        mix-blend-mode: screen;
-    }
-    
-    #floatingIcons i {
-        color: rgba(255, 255, 255, 0.9);
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        --background-color: #ffffff;
+        --text-color: #000000;
+        --accent-color: #f5f5f7;
+        --secondary-color: #1d1d1f;
+        --card-background: rgba(255, 255, 255, 0.8);
+        --card-border: rgba(0, 0, 0, 0.1);
+        --glass-background: rgba(255, 255, 255, 0.9);
     }
 }
 
@@ -591,21 +558,4 @@ body {
 @keyframes auraEffect {
     0% { transform: scale(1); opacity: 0.5; }
     100% { transform: scale(1.5); opacity: 0; }
-}
-
-/* Add smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Add a smooth transition between sections */
-main {
-    position: relative;
-    background: var(--background-color);
-}
-
-.section {
-    position: relative;
-    z-index: 1;
-    background: var(--background-color);
 } 
