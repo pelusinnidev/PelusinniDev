@@ -279,28 +279,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 3.5rem;
-    }
-    
-    .typing-text {
-        font-size: 1.4rem;
-    }
-    
-    .think-different .section-title {
-        font-size: 3rem;
-    }
-    
-    .think-different .philosophy-quote {
-        font-size: 1.6rem;
-    }
-    
-    .apple-icons {
-        gap: 2rem;
-    }
-}
-
 /* Featured Projects Section */
 .featured-projects {
     padding: 6rem 2rem;
@@ -436,19 +414,6 @@ body {
 
 .footer-year {
     color: var(--secondary-color);
-}
-
-/* Dark Mode Support - Updated to maintain white theme */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #ffffff;
-        --text-color: #000000;
-        --accent-color: #f5f5f7;
-        --secondary-color: #1d1d1f;
-        --card-background: rgba(255, 255, 255, 0.8);
-        --card-border: rgba(0, 0, 0, 0.1);
-        --glass-background: rgba(255, 255, 255, 0.9);
-    }
 }
 
 /* Animations */
