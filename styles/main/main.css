@@ -184,14 +184,15 @@ body {
 
 .apple-symbol {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
-    animation: float 3s ease-in-out infinite;
+    margin-bottom: 1.5rem;
+    display: inline-block;
 }
 
 .apple-symbol i {
     background: var(--gradient-main);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: float 3s ease-in-out infinite;
 }
 
 .think-different .section-title {
