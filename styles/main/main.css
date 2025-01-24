@@ -147,7 +147,6 @@ body {
     border-radius: 50%;
     object-fit: cover;
     background-color: var(--background-color);
-    padding: 8px;
 }
 
 /* Think Different Section */
