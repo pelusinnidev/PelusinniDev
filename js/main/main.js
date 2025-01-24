@@ -385,7 +385,128 @@ function initBottomFade() {
     });
 }
 
-// Initialize everything when DOM is loaded
+// Projects Carousel
+function initProjectsCarousel() {
+    const track = document.querySelector('.carousel-track');
+    const cards = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-button.next');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    
+    let currentIndex = 0;
+    
+    // Create indicators
+    cards.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
+    
+    const indicators = Array.from(document.querySelectorAll('.indicator'));
+    
+    // Set initial state
+    updateCarousel();
+    
+    function updateCarousel() {
+        // Update track position
+        const slideWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+        track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+        
+        // Update active states
+        cards.forEach((card, index) => {
+            card.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update button states
+        prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextButton.style.opacity = currentIndex === cards.length - 1 ? '0.5' : '1';
+    }
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+    
+    // Event Listeners
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchmove', e => {
+        touchEndX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchend', () => {
+        const difference = touchStartX - touchEndX;
+        if (Math.abs(difference) > 50) { // Minimum swipe distance
+            if (difference > 0 && currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else if (difference < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
+            updateCarousel();
+        }
+    });
+    
+    // Auto-play functionality
+    let autoplayInterval;
+    
+    function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }, 5000); // Change slide every 5 seconds
+    }
+    
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+    
+    // Start autoplay initially
+    startAutoplay();
+    
+    // Pause autoplay on hover
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+    
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateCarousel, 100);
+    });
+}
+
+// Initialize carousel when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing...');
     
@@ -395,6 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFloatingIcons();
     initMouseAura();
     initBottomFade();
+    initProjectsCarousel();
     
     // Initialize observers
     document.querySelectorAll('.section').forEach(section => {

@@ -281,52 +281,233 @@ body {
 
 /* Featured Projects Section */
 .featured-projects {
-    padding: 6rem 2rem;
+    padding: 8rem 2rem;
+    background-color: var(--background-color);
+    overflow: hidden;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.projects-carousel {
+    margin-top: 4rem;
+    position: relative;
+}
+
+.carousel-container {
+    overflow: hidden;
+    margin: 0 -2rem;
+    padding: 2rem;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     gap: 2rem;
-    margin-top: 3rem;
+    padding: 2rem;
 }
 
 .project-card {
-    background: var(--card-background);
-    border-radius: 20px;
-    padding: 2rem;
+    min-width: calc(100% - 4rem);
+    background: var(--glass-background);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
     border: 1px solid var(--card-border);
-    box-shadow: 0 8px 32px var(--card-shadow);
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: var(--transition);
+    transform: scale(0.98);
+    opacity: 0.7;
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+.project-card.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.project-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 2rem;
 }
 
 .project-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.project-content p {
+.project-slogan {
+    font-size: 1.2rem;
     color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary-color);
-    text-decoration: none;
+.tag {
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.875rem;
     font-weight: 500;
     transition: var(--transition);
 }
 
+/* Category Tags */
+.tag.category-game {
+    background: rgba(255, 45, 85, 0.1);
+    color: #FF2D55;
+}
+
+.tag.category-mobile {
+    background: rgba(0, 122, 255, 0.1);
+    color: #007AFF;
+}
+
+.tag.category-web {
+    background: rgba(88, 86, 214, 0.1);
+    color: #5856D6;
+}
+
+/* Technology Tags */
+.tag.tech-js { background: rgba(247, 223, 30, 0.1); color: #f7df1e; }
+.tag.tech-html { background: rgba(241, 101, 41, 0.1); color: #f16529; }
+.tag.tech-css { background: rgba(41, 101, 241, 0.1); color: #2965f1; }
+.tag.tech-swift { background: rgba(255, 59, 48, 0.1); color: #FF3B30; }
+.tag.tech-firebase { background: rgba(255, 149, 0, 0.1); color: #FF9500; }
+.tag.tech-figma { background: rgba(162, 89, 255, 0.1); color: #A259FF; }
+.tag.tech-react { background: rgba(97, 218, 251, 0.1); color: #61dafb; }
+.tag.tech-node { background: rgba(104, 159, 99, 0.1); color: #689f63; }
+.tag.tech-mongo { background: rgba(67, 153, 52, 0.1); color: #439934; }
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient-main);
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+}
+
+.project-link:hover::before {
+    transform: translateX(100%);
+    transition: transform 0.6s ease;
+}
+
 .project-link:hover {
-    gap: 1rem;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.carousel-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--glass-background);
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    border: 1px solid var(--card-border);
+}
+
+.carousel-button:hover {
+    background: var(--gradient-main);
+    color: white;
+    transform: scale(1.1);
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    opacity: 0.3;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.indicator.active {
+    opacity: 1;
+    background: var(--gradient-main);
+    width: 24px;
+    border-radius: 100px;
+}
+
+/* Add a subtle gradient overlay to project images */
+.project-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
+    pointer-events: none;
 }
 
 /* Tech Stack Section */
