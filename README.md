@@ -1,8 +1,6 @@
-# <div align="center">![Header](https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:4F4F4F&height=200&section=header&text=PelusinniDev&fontSize=60&animation=fadeIn&fontColor=ffffff&fontAlignY=35&desc=iOS%20Developer%20|%20AI%20Enthusiast%20|%20Cloud%20Expert&descAlignY=55&descAlign=50)</div>
+# <div align="center">
 
-<div align="center">
-  
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=30&pause=1000&color=4F4F4F&center=true&vCenter=true&random=false&width=600&height=70&lines=Software+Developer;iOS+Development+Expert;AI+%26+ML+Explorer)](https://git.io/typing-svg)
+![Header](https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:4F4F4F&height=200&section=header&text=PelusinniDev&fontSize=60&animation=fadeIn&fontColor=ffffff&fontAlignY=35&desc=iOS%20Developer%20|%20AI%20Enthusiast%20|%20Cloud%20Expert&descAlignY=55&descAlign=50)
 
 </div>
 
