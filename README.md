@@ -10,13 +10,13 @@
 name: PelusinniDev
 role: Software Developer
 focus: iOS Development & AI Integration
-location: Spain
 interests: [
   "Mobile Development",
-  "Artificial Intelligence",
-  "Cloud Computing"
+  "iOS Development",
+  "Robotics",
+  "Artificial Intelligence/ML"
 ]
-current_focus: "Building innovative iOS applications with AI/ML integration"
+current_focus: "Pursuing maximum expertise in iOS Development, Robotics, and AI/ML integration"
 ```
 
 ## 🛠️ Tech Stack
