@@ -35,7 +35,6 @@ current_focus: "Building innovative iOS applications with AI/ML integration"
 ### 🌐 Web Technologies
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 
@@ -52,18 +51,18 @@ current_focus: "Building innovative iOS applications with AI/ML integration"
 
 </div>
 
-## 🚀 Featured Projects
+## 🚀 Featured Public Projects
 
 <div align="center">
 
 [![Pol's Asteroids](https://img.shields.io/badge/🎮_Pol's_Asteroids-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/Pols-Asteroids)
-[![Bobbo App](https://img.shields.io/badge/📱_Bobbo_App-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/Bobbo-App)
+[![Food4All](https://img.shields.io/badge/🌐_Food4All-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/LaSalle---DAM-M04---Food4All)
 
 ### Pol's Asteroids
 > A modern take on the classic arcade game, built with advanced gaming technologies.
 
-### Bobbo App
-> iOS application focused on innovative mobile solutions.
+### Food4All
+> My first web project - A nostalgic journey into web development #nostalgia
 
 </div>
 
@@ -71,11 +70,9 @@ current_focus: "Building innovative iOS applications with AI/ML integration"
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=graywhite&hide_border=true&count_private=true&bg_color=00000000" />
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=default&hide_border=true&count_private=true" />
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PelusinniDev&layout=compact&theme=graywhite&hide_border=true&bg_color=00000000" />
-
-![Snake animation](https://github.com/PelusinniDev/PelusinniDev/blob/output/github-contribution-grid-snake.svg)
+<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PelusinniDev&layout=compact&theme=default&hide_border=true" />
 
 </div>
 
