@@ -575,6 +575,7 @@ body {
 .tag.tech-react { background: rgba(97, 218, 251, 0.1); color: #61dafb; }
 .tag.tech-node { background: rgba(104, 159, 99, 0.1); color: #689f63; }
 .tag.tech-mongo { background: rgba(67, 153, 52, 0.1); color: #439934; }
+.tag.tech-python { background: rgba(55, 118, 171, 0.1); color: #3776AB; }
 .tag.tech-swiftui { background: rgba(0, 122, 255, 0.1); color: #007AFF; }
 .tag.tech-swiftdata { background: rgba(142, 142, 147, 0.1); color: #8E8E93; }
 
