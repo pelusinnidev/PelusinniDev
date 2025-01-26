@@ -1,125 +1,86 @@
 # <div align="center">
 
-<div align="center">
-
-![Header](https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:ffffff&height=200&section=header&text=PelusinniDev&fontSize=70&animation=fadeIn&fontColor=ffffff&fontAlignY=35&desc=Software%20Developer%20|%20iOS%20Expert%20|%20AI%20Enthusiast&descAlignY=55&descAlign=50)
-  
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=200&size=35&pause=1000&color=FFFFFF&center=true&vCenter=true&random=false&width=600&height=100&lines=Software+Developer;iOS+Development+Enthusiast;AI+%26+ML+Explorer;Cloud+Computing+Passionate)](https://git.io/typing-svg)
+![Header](https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:4F4F4F&height=200&section=header&text=PelusinniDev&fontSize=60&animation=fadeIn&fontColor=ffffff&fontAlignY=35&desc=🚀%20Crafting%20the%20Future%20of%20Mobile%20Experiences%20|%20🤖%20AI%20Innovator%20|%20☁️%20Cloud%20Architect&descAlignY=55&descAlign=50)
 
 </div>
 
-## ⚡ About Me  
+## 🎯 Mission Statement
+
+> "To revolutionize mobile experiences through cutting-edge iOS development, seamless AI integration, and cloud-native solutions that empower users and businesses alike."
+
+## 🧑‍🚀 Personal Manifesto
 
 ```yaml
 name: PelusinniDev
-located_in: Spain
-current_focus: iOS Development
-fields_of_interests: [
-  "Mobile Development",
-  "Artificial Intelligence",
-  "Cloud Computing",
-  "Game Development",
-  "UI/UX"
+philosophy: "Code is art, technology is the canvas"
+mantra: "Innovate, Integrate, Iterate"
+core_values: [
+  "Clean Code",
+  "User-Centric Design",
+  "Continuous Learning",
+  "Open Source Contribution"
 ]
-hobbies: ["Gaming", "SimRacing", "Coding"]
+current_quest: "Building the next generation of intelligent mobile applications"
 ```
 
-<br>
-
-## ✨ More About Me
-
-- 🌟 **Inspired by Creativity**: Transforming innovative ideas into interactive solutions
-- 📱 **Mobile Development Expert**: iOS specialist exploring AI/ML integration
-- 🌍 **Cloud Enthusiast**: Working with Oracle Cloud and Ubuntu Server
-- 🎮 **Minecraft Innovator**: Custom server and plugin development
-- 🏎️ **SimRacing Organizer**: League management with integrated web platform
-- 🚀 **Game Developer**: Creator of [Pol's Asteroids](https://github.com/pelusinnidev/Pols-Asteroids)
-- 🌌 **MyCosmo Developer**: Leading a Swift iOS 18 project focused on astrology and enhancing Swift skills.
-- 💡 **Philosophy**: "Think Different" - Breaking boundaries in software development
-
-<br>
-
-## 🎯 Featured Projects
+## 🌟 Tech Superpowers
 
 <div align="center">
 
-[![Pol's Asteroids](https://img.shields.io/badge/🎮_Pol's_Asteroids-000000?style=for-the-badge)](https://pelusinni.craft.me/AsteroidsGame)
-[![Bobbo App](https://img.shields.io/badge/🐕_Bobbo_App-000000?style=for-the-badge)](https://bobbo.framer.website)
-[![MyCosmo](https://img.shields.io/badge/🌌_MyCosmo-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/MyCosmo)
+### 🛠️ Development Arsenal
+![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-0D96F6?style=for-the-badge&logo=swift&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![React Native](https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+
+### 🤖 AI & Machine Learning
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+
+### ☁️ Cloud & DevOps
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 
 </div>
 
-<br>
-
-## 💻 Tech Stack
+## 🚀 Featured Projects
 
 <div align="center">
 
-### 📱 Mobile Development  
-![Swift](https://img.shields.io/badge/Swift-000000?style=for-the-badge&logo=swift&logoColor=white)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-000000?style=for-the-badge&logo=swift&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-000000?style=for-the-badge&logo=kotlin&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-000000?style=for-the-badge&logo=flutter&logoColor=white)
-![Android](https://img.shields.io/badge/Android-000000?style=for-the-badge&logo=android&logoColor=white)
+[![Pol's Asteroids](https://img.shields.io/badge/🛸_Pol's_Asteroids-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/Pols-Asteroids)
+[![Food4All](https://img.shields.io/badge/🍽️_Food4All-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/LaSalle---DAM-M04---Food4All)
+[![AI Companion](https://img.shields.io/badge/🤖_AI_Companion-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/AI-Companion)
 
-<br>
+### Pol's Asteroids
+> A modern take on the classic arcade game, built with advanced gaming technologies.
 
-### 🌐 Web Development
-![HTML5](https://img.shields.io/badge/HTML5-000000?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-000000?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-000000?style=for-the-badge&logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-000000?style=for-the-badge&logo=laravel&logoColor=white)
+### Food4All
+> My first web project - A nostalgic journey into web development #nostalgia
 
-<br>
-
-### 🐍 Python & Data
-![Python](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-000000?style=for-the-badge&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-000000?style=for-the-badge&logo=mysql&logoColor=white)
-
-<br>
-
-### 🛠️ Tools & Technologies
-![Git](https://img.shields.io/badge/Git-000000?style=for-the-badge&logo=git&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=white)
-![Visual Studio Code](https://img.shields.io/badge/VS_Code-000000?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-![Xcode](https://img.shields.io/badge/Xcode-000000?style=for-the-badge&logo=xcode&logoColor=white)
+### AI Companion
+> An intelligent assistant that learns and adapts to your needs
 
 </div>
 
-<br>
-
-## 📊 GitHub Stats
-
-<div align="center" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
-
-<img width="400" src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=graywhite&hide_border=true&count_private=true" alt="GitHub Stats">
-
-<img width="400" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PelusinniDev&layout=compact&theme=graywhite&hide_border=true" alt="Top Languages">
-
-</div>
-
-<br>
-
-## 🤝 Connect with Me
+## 📈 GitHub Analytics
 
 <div align="center">
-  
-<a href="https://twitter.com/pelusinnidev" style="text-decoration: none; margin: 0 10px;">
-  <img src="https://img.shields.io/badge/-%40pelusinnidev-000000?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
-</a>
 
-<a href="https://github.com/pelusinnidev" style="text-decoration: none; margin: 0 10px;">
-  <img src="https://img.shields.io/badge/-PelusinniDev-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-</a>
-
-<a href="https://www.linkedin.com/in/pol-hernàndez-319518299" style="text-decoration: none; margin: 0 10px;">
-  <img src="https://img.shields.io/badge/-LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-</a>
+![Metrics](https://metrics.lecoq.io/PelusinniDev?template=classic&isocalendar=1&languages=1&activity=1&achievements=1&notable=1&lines=1&repositories=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&isocalendar=false&isocalendar.duration=full-year&languages=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.analysis.timeout.repositories=7.5&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&activity=false&activity.limit=5&activity.load=300&activity.days=14&activity.visibility=all&activity.timestamps=false&activity.filter=all&achievements=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&notable=false&notable.from=organization&notable.repositories=false&notable.indepth=false&notable.types=commit&lines=false&lines.sections=base&lines.repositories.limit=4&lines.history.limit=1&repositories=false&repositories.batch=100&repositories.forks=false&repositories.affiliations=owner&repositories.featured=PelusinniDev%2FPols-Asteroids%2CPelusinniDev%2FFood4All&config.timezone=Europe%2FMadrid)
 
 </div>
 
-<br>
+## 🌐 Let's Connect
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:000000&height=100&section=footer)
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/pol-hernàndez-319518299)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/pelusinnidev)
+
+</div>
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:4F4F4F,100:000000&height=100&section=footer)
