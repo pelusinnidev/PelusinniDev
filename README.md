@@ -44,6 +44,7 @@ hobbies: ["Gaming", "SimRacing", "Coding"]
 
 [![Pol's Asteroids](https://img.shields.io/badge/🎮_Pol's_Asteroids-000000?style=for-the-badge)](https://pelusinni.craft.me/AsteroidsGame)
 [![Bobbo App](https://img.shields.io/badge/🐕_Bobbo_App-000000?style=for-the-badge)](https://bobbo.framer.website)
+[![MyCosmo](https://img.shields.io/badge/🌌_MyCosmo-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/MyCosmo)
 
 </div>
 
@@ -117,3 +118,6 @@ hobbies: ["Gaming", "SimRacing", "Coding"]
 <br>
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:000000&height=100&section=footer)
+
+### MyCosmo
+> Be your universe - A Swift iOS 18 project for astrology and learning Swift.
