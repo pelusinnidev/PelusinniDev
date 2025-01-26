@@ -1,6 +1,6 @@
 # <div align="center">
 
-![Header](https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:4F4F4F&height=200&section=header&text=PelusinniDev&fontSize=60&animation=fadeIn&fontColor=ffffff&fontAlignY=35&desc=🚀%20Mobile%20Developer%20|%20🤖%20AI%20%26%20Robotics%20Enthusiast%20|%20💡%20Tech%20Explorer&descAlignY=55&descAlign=50)
+![Header](https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:4F4F4F&height=200&section=header&text=PelusinniDev&fontSize=60&animation=fadeIn&fontColor=ffffff&fontAlignY=35&desc=🚀%20Crafting%20the%20Future%20of%20Mobile%20Experiences%20|%20🤖%20AI%20Innovator%20|%20☁️%20Cloud%20Architect&descAlignY=55&descAlign=50)
 
 </div>
 
@@ -60,14 +60,6 @@ current_quest: "Building the next generation of intelligent mobile applications"
 
 ### MyCosmo
 > Be your universe - An educational Swift app to learn and improve together
-
-</div>
-
-## 📈 GitHub Analytics
-
-<div align="center">
-
-![Metrics](https://metrics.lecoq.io/PelusinniDev?template=classic&isocalendar=1&languages=1&activity=1&achievements=1&notable=1&lines=1&repositories=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&isocalendar=false&isocalendar.duration=full-year&languages=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.analysis.timeout.repositories=7.5&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&activity=false&activity.limit=5&activity.load=300&activity.days=14&activity.visibility=all&activity.timestamps=false&activity.filter=all&achievements=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&notable=false&notable.from=organization&notable.repositories=false&notable.indepth=false&notable.types=commit&lines=false&lines.sections=base&lines.repositories.limit=4&lines.history.limit=1&repositories=false&repositories.batch=100&repositories.forks=false&repositories.affiliations=owner&repositories.featured=PelusinniDev%2FPols-Asteroids%2CPelusinniDev%2FFood4All&config.timezone=Europe%2FMadrid)
 
 </div>
 
