@@ -123,6 +123,3 @@ hobbies: ["Gaming", "SimRacing", "Coding"]
 <br>
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:000000&height=100&section=footer)
-
-### MyCosmo
-> Be your universe - A Swift iOS 18 project for astrology and learning Swift.
