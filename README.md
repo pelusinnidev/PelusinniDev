@@ -34,6 +34,7 @@ hobbies: ["Gaming", "SimRacing", "Coding"]
 - 🎮 **Minecraft Innovator**: Custom server and plugin development
 - 🏎️ **SimRacing Organizer**: League management with integrated web platform
 - 🚀 **Game Developer**: Creator of [Pol's Asteroids](https://github.com/pelusinnidev/Pols-Asteroids)
+- 🌌 **MyCosmo Developer**: Leading a Swift iOS 18 project focused on astrology and enhancing Swift skills.
 - 💡 **Philosophy**: "Think Different" - Breaking boundaries in software development
 
 <br>
@@ -111,6 +112,10 @@ hobbies: ["Gaming", "SimRacing", "Coding"]
 
 <a href="https://github.com/pelusinnidev" style="text-decoration: none; margin: 0 10px;">
   <img src="https://img.shields.io/badge/-PelusinniDev-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+</a>
+
+<a href="https://www.linkedin.com/in/pol-hernàndez-319518299" style="text-decoration: none; margin: 0 10px;">
+  <img src="https://img.shields.io/badge/-LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
 
 </div>
