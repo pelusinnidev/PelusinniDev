@@ -632,23 +632,28 @@ body {
 .projects-carousel {
     margin-top: 4rem;
     position: relative;
+    width: 100%;
 }
 
 .carousel-container {
     overflow: hidden;
-    margin: 0 -2rem;
-    padding: 2rem;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     gap: 2rem;
-    padding: 2rem;
+    width: 100%;
+    padding: 1rem;
 }
 
 .project-card {
-    min-width: calc(100% - 4rem);
+    min-width: 100%;
+    flex: 0 0 100%;
     background: var(--glass-background);
     border-radius: 24px;
     overflow: hidden;

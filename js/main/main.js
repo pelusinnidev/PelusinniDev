@@ -397,7 +397,11 @@ function initBottomFade() {
 // Projects Carousel
 function initProjectsCarousel() {
     const track = document.querySelector('.carousel-track');
+    if (!track) return;
+
     const cards = Array.from(track.children);
+    if (cards.length === 0) return;
+
     const nextButton = document.querySelector('.carousel-button.next');
     const prevButton = document.querySelector('.carousel-button.prev');
     const indicatorsContainer = document.querySelector('.carousel-indicators');
@@ -419,13 +423,19 @@ function initProjectsCarousel() {
     updateCarousel();
     
     function updateCarousel() {
-        // Update track position
-        const slideWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+        // Calculate the width including the gap
+        const cardWidth = cards[0].offsetWidth;
+        const gap = parseInt(getComputedStyle(track).gap) || 0;
+        const slideWidth = cardWidth + gap;
+        
+        // Update track position with smooth transition
         track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
         
         // Update active states
         cards.forEach((card, index) => {
             card.classList.toggle('active', index === currentIndex);
+            // Add smooth transition
+            card.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         });
         
         // Update indicators
@@ -434,29 +444,39 @@ function initProjectsCarousel() {
         });
         
         // Update button states
-        prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
-        nextButton.style.opacity = currentIndex === cards.length - 1 ? '0.5' : '1';
+        if (prevButton && nextButton) {
+            prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+            prevButton.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+            
+            nextButton.style.opacity = currentIndex === cards.length - 1 ? '0.5' : '1';
+            nextButton.style.pointerEvents = currentIndex === cards.length - 1 ? 'none' : 'auto';
+        }
     }
     
     function goToSlide(index) {
+        if (index < 0 || index >= cards.length) return;
         currentIndex = index;
         updateCarousel();
     }
     
     // Event Listeners
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < cards.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+    }
     
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+    }
     
     // Touch events for mobile
     let touchStartX = 0;
@@ -464,13 +484,31 @@ function initProjectsCarousel() {
     
     track.addEventListener('touchstart', e => {
         touchStartX = e.touches[0].clientX;
+        // Disable transition during touch
+        track.style.transition = 'none';
     });
     
     track.addEventListener('touchmove', e => {
         touchEndX = e.touches[0].clientX;
+        const difference = touchStartX - touchEndX;
+        const cardWidth = cards[0].offsetWidth;
+        const gap = parseInt(getComputedStyle(track).gap) || 0;
+        const slideWidth = cardWidth + gap;
+        
+        // Calculate the new position
+        const newPosition = -currentIndex * slideWidth - difference;
+        // Add some resistance at the edges
+        if (newPosition > 0 || newPosition < -(cards.length - 1) * slideWidth) {
+            track.style.transform = `translateX(${newPosition * 0.3}px)`;
+        } else {
+            track.style.transform = `translateX(${newPosition}px)`;
+        }
     });
     
     track.addEventListener('touchend', () => {
+        // Re-enable transition
+        track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        
         const difference = touchStartX - touchEndX;
         if (Math.abs(difference) > 50) { // Minimum swipe distance
             if (difference > 0 && currentIndex < cards.length - 1) {
@@ -478,8 +516,8 @@ function initProjectsCarousel() {
             } else if (difference < 0 && currentIndex > 0) {
                 currentIndex--;
             }
-            updateCarousel();
         }
+        updateCarousel();
     });
     
     // Auto-play functionality
