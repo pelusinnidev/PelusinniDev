@@ -30,10 +30,17 @@ body {
     width: 100%;
     max-width: 600px;
     padding: 2rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .content {
     text-align: center;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 .logo {
@@ -67,8 +74,8 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    background-color: var(--background-color);
-    padding: 8px;
+    background-color: transparent;
+    padding: 0;
 }
 
 .animation-container {
@@ -330,12 +337,12 @@ h1 {
 
     .container {
         padding: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100dvh;
-        max-width: 100%;
-        margin: 0 auto;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .content {
+        transform: scale(0.9);
     }
 
     .logo {
@@ -349,10 +356,7 @@ h1 {
     }
 
     .animation-container {
-        width: 100%;
-        margin: 1rem 0;
-        padding: 10px 0;
-        overflow: hidden;
+        height: 100px;
     }
 
     .tools-animation {
@@ -397,8 +401,7 @@ h1 {
     }
 
     .content {
-        width: 100%;
-        padding: 0 0.5rem;
+        transform: scale(0.8);
     }
 
     .animation-container {
