@@ -24,217 +24,222 @@
             <div class="loading-content">
                 <i class="fas fa-circle-notch fa-spin fa-3x"></i>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <nav class="nav">
-            <a href="../index.html" class="nav-back">
-                <i class="fas fa-chevron-left"></i>
-                <span>Back</span>
-            </a>
-        </nav>
+        </div> 
 
         <main>
             <!-- Hero Section -->
-            <section class="projects-hero section">
+            <section class="projects-hero">
                 <div class="hero-content">
-                    <h1 class="hero-title fade-in">My Projects</h1>
-                    <p class="hero-subtitle fade-in delay-1">A journey through innovation and creativity</p>
+                    <h1 class="hero-title">My Projects</h1>
+                    <p class="hero-subtitle">A journey through innovation and creativity</p>
+                    
+                    <!-- Category Filters -->
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">
+                            <i class="fas fa-th-large"></i>
+                            <span>All</span>
+                        </button>
+                        <button class="filter-btn" data-category="ios">
+                            <i class="fab fa-apple"></i>
+                            <span>iOS Apps</span>
+                        </button>
+                        <button class="filter-btn" data-category="game">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Games</span>
+                        </button>
+                        <button class="filter-btn" data-category="web">
+                            <i class="fas fa-globe"></i>
+                            <span>Web</span>
+                        </button>
+                        <button class="filter-btn" data-category="server">
+                            <i class="fas fa-server"></i>
+                            <span>Server</span>
+                        </button>
+                    </div>
                 </div>
             </section>
 
-            <!-- Timeline Section -->
-            <section class="timeline-section">
-                <div class="timeline-container">
-                    <!-- 2024 -->
-                    <div class="timeline-year">
-                        <div class="year-marker">
-                            <span>2024</span>
+            <!-- Projects Grid -->
+            <section class="projects-grid">
+                <!-- Bobbo -->
+                <article class="project-card" data-category="ios">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-paw"></i>
+                            </div>
+                            <div class="project-year">2024</div>
                         </div>
-                        <div class="timeline-projects">
-                            <!-- Bobbo -->
-                            <article class="project-card featured" data-category="ios">
-                                <div class="project-image grayscale">
-                                    <img src="../assets/projects/bobbo-wallpaper.png" alt="Bobbo App">
-                                    <div class="image-overlay">
-                                        <i class="fab fa-apple overlay-icon"></i>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-info">
-                                        <h3 class="project-title extra-bold">Bobbo</h3>
-                                        <p class="project-slogan italic">Simplifying Care, Enhancing Lives</p>
-                                        <p class="project-description focus-line">This app is designed to make life easier for you and your best friend, enabling you to focus on what truly matters - the bond between you and spending quality time together with optimal health. After all, that's what's most important. With unwavering commitment to your privacy and data protection, we're embarking on an exciting journey. There's so much to accomplish, and we hope to achieve it... Together.</p>
-                                    </div>
-                                    <div class="project-actions">
-                                        <div class="project-tags">
-                                            <span class="tag category-ios"><i class="fab fa-apple"></i> iOS</span>
-                                            <span class="tag tech-swift"><i class="fab fa-swift"></i> Swift</span>
-                                            <span class="tag tech-figma"><i class="fab fa-figma"></i> Figma</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="https://testflight.apple.com/join/x1k5cdNe" class="project-link">
-                                                <span>Join the Beta</span>
-                                                <i class="fab fa-app-store-ios"></i>
-                                            </a>
-                                            <a href="https://bobbo.framer.website" class="project-link">
-                                                <span>Website</span>
-                                                <i class="fas fa-globe"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                        <div class="project-image">
+                            <img src="../assets/projects/bobbo-wallpaper.png" alt="Bobbo App">
                         </div>
+                        <div class="project-info">
+                            <h3>Bobbo</h3>
+                            <p>Simplifying Care, Enhancing Lives</p>
+                            <div class="tech-stack">
+                                <i class="fab fa-swift" title="Swift"></i>
+                                <i class="fab fa-apple" title="iOS"></i>
+                                <i class="fab fa-figma" title="Figma"></i>
+                            </div>
+                        </div>
+                        <a href="project-detail/bobbo.html" class="card-overlay">
+                            <div class="overlay-content">
+                                <span class="view-project">View Project</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
                     </div>
+                </article>
 
-                    <!-- 2023 -->
-                    <div class="timeline-year">
-                        <div class="year-marker">
-                            <span>2023</span>
+                <!-- MyCosmo -->
+                <article class="project-card" data-category="ios">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="project-year">2023</div>
                         </div>
-                        <div class="timeline-projects">
-                            <!-- MyCosmo -->
-                            <article class="project-card featured" data-category="ios">
-                                <div class="project-image grayscale">
-                                    <img src="../assets/projects/mycosmo-wallpaper.png" alt="MyCosmo">
-                                    <div class="image-overlay">
-                                        <i class="fab fa-apple overlay-icon"></i>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-info">
-                                        <h3 class="project-title extra-bold">MyCosmo</h3>
-                                        <p class="project-slogan italic">Be your universe</p>
-                                        <p class="project-description focus-line">A space and astrology app for astronomy enthusiasts. Originally a school project that has evolved into something bigger and more dynamic. Like space itself, it's still growing and holds unknown potential.</p>
-                                    </div>
-                                    <div class="project-actions">
-                                        <div class="project-tags">
-                                            <span class="tag category-ios"><i class="fab fa-apple"></i> iOS</span>
-                                            <span class="tag tech-swift"><i class="fab fa-swift"></i> Swift</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="https://apps.apple.com/es/app/mycosmo/id6741042321?l=en-GB" class="project-link">
-                                                <span>Download</span>
-                                                <i class="fab fa-app-store-ios"></i>
-                                            </a>
-                                            <a href="https://pelusinni.craft.me/s0QQJ1BZo4A4Ai" class="project-link">
-                                                <span>Documentation</span>
-                                                <i class="fas fa-book"></i>
-                                            </a>
-                                            <a href="https://github.com/pelusinnidev/MyCosmo" class="project-link">
-                                                <span>GitHub Repository</span>
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <!-- Asteroids -->
-                            <article class="project-card featured" data-category="game">
-                                <div class="project-image grayscale">
-                                    <img src="../assets/projects/asteroids-wallpaper.png" alt="Pol's Asteroids">
-                                    <div class="image-overlay">
-                                        <i class="fas fa-gamepad overlay-icon"></i>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-info">
-                                        <h3 class="project-title extra-bold">Pol's Asteroids</h3>
-                                        <p class="project-slogan italic">A modern take for the classics!</p>
-                                        <p class="project-description focus-line">In my journey as a developer, I chose to learn Python through reimagining the iconic Asteroids game. This modern interpretation offers both single and multiplayer experiences, leveraging the latest technologies and MongoDB integration for cross-device score tracking and competitive tournaments. Experience the nostalgia of a classic, enhanced with contemporary features.</p>
-                                    </div>
-                                    <div class="project-actions">
-                                        <div class="project-tags">
-                                            <span class="tag category-game"><i class="fas fa-gamepad"></i> Game</span>
-                                            <span class="tag tech-python"><i class="fab fa-python"></i> Python</span>
-                                            <span class="tag tech-mongo"><i class="fas fa-database"></i> MongoDB</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="https://pelusinni.craft.me/AsteroidsGame" class="project-link">
-                                                <span>Documentation</span>
-                                                <i class="fas fa-book"></i>
-                                            </a>
-                                            <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" class="project-link">
-                                                <span>GitHub Repository</span>
-                                                <i class="fab fa-github"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <!-- Racing Project -->
-                            <article class="project-card" data-category="game">
-                                <div class="project-image grayscale">
-                                    <img src="../assets/projects/racing-wallpaper.png" alt="Racing Game">
-                                    <div class="image-overlay">
-                                        <i class="fas fa-car overlay-icon"></i>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-info">
-                                        <h3 class="project-title extra-bold">Racing Adventure</h3>
-                                        <p class="project-slogan italic">Speed through the pixels!</p>
-                                        <p class="project-description focus-line">My first venture into game development using Python and Pygame. A retro-style racing game that combines classic arcade mechanics with modern twists. Features multiple tracks, car customization, and local multiplayer support.</p>
-                                    </div>
-                                    <div class="project-actions">
-                                        <div class="project-tags">
-                                            <span class="tag category-game"><i class="fas fa-gamepad"></i> Game</span>
-                                            <span class="tag tech-python"><i class="fab fa-python"></i> Python</span>
-                                            <span class="tag tech-pygame"><i class="fas fa-gamepad"></i> Pygame</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="#" class="project-link">
-                                                <span>Coming Soon</span>
-                                                <i class="fas fa-clock"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                        <div class="project-image">
+                            <img src="../assets/projects/mycosmo-wallpaper.png" alt="MyCosmo">
                         </div>
+                        <div class="project-info">
+                            <h3>MyCosmo</h3>
+                            <p>Be your universe</p>
+                            <div class="tech-stack">
+                                <i class="fab fa-swift" title="Swift"></i>
+                                <i class="fab fa-apple" title="iOS"></i>
+                                <i class="fas fa-satellite" title="NASA API"></i>
+                            </div>
+                        </div>
+                        <a href="project-detail/mycosmo.html" class="card-overlay">
+                            <div class="overlay-content">
+                                <span class="view-project">View Project</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
                     </div>
+                </article>
 
-                    <!-- 2022 -->
-                    <div class="timeline-year">
-                        <div class="year-marker">
-                            <span>2022</span>
+                <!-- Asteroids -->
+                <article class="project-card" data-category="game">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="project-year">2023</div>
                         </div>
-                        <div class="timeline-projects">
-                            <!-- First Website -->
-                            <article class="project-card" data-category="web">
-                                <div class="project-image grayscale">
-                                    <img src="../assets/projects/first-website-wallpaper.png" alt="First Website">
-                                    <div class="image-overlay">
-                                        <i class="fas fa-code overlay-icon"></i>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-info">
-                                        <h3 class="project-title extra-bold">My First Website</h3>
-                                        <p class="project-slogan italic">Where it all began</p>
-                                        <p class="project-description focus-line">My first step into web development. A simple yet meaningful project that taught me the fundamentals of HTML, CSS, and JavaScript. This project represents the beginning of my journey in software development.</p>
-                                    </div>
-                                    <div class="project-actions">
-                                        <div class="project-tags">
-                                            <span class="tag tech-html"><i class="fab fa-html5"></i> HTML</span>
-                                            <span class="tag tech-css"><i class="fab fa-css3"></i> CSS</span>
-                                            <span class="tag tech-js"><i class="fab fa-js"></i> JavaScript</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="#" class="project-link disabled">
-                                                <span>Archive</span>
-                                                <i class="fas fa-archive"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                        <div class="project-image">
+                            <img src="../assets/projects/asteroids-wallpaper.png" alt="Pol's Asteroids">
                         </div>
+                        <div class="project-info">
+                            <h3>Pol's Asteroids</h3>
+                            <p>A modern take for the classics!</p>
+                            <div class="tech-stack">
+                                <i class="fab fa-python" title="Python"></i>
+                                <i class="fas fa-gamepad" title="Game"></i>
+                                <i class="fas fa-database" title="MongoDB"></i>
+                            </div>
+                        </div>
+                        <a href="project-detail/asteroids.html" class="card-overlay">
+                            <div class="overlay-content">
+                                <span class="view-project">View Project</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
                     </div>
-                </div>
+                </article>
+
+                <!-- Racing Project -->
+                <article class="project-card" data-category="game">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="project-year">2023</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="../assets/projects/racing-wallpaper.png" alt="Racing Game">
+                        </div>
+                        <div class="project-info">
+                            <h3>Racing Adventure</h3>
+                            <p>Speed through the pixels!</p>
+                            <div class="tech-stack">
+                                <i class="fab fa-python" title="Python"></i>
+                                <i class="fas fa-gamepad" title="Pygame"></i>
+                                <i class="fas fa-palette" title="Pixel Art"></i>
+                            </div>
+                        </div>
+                        <a href="project-detail/racing.html" class="card-overlay">
+                            <div class="overlay-content">
+                                <span class="view-project">View Project</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Minecraft Server -->
+                <article class="project-card" data-category="server">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="project-year">2023</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="../assets/projects/minecraft-wallpaper.png" alt="Minecraft Server">
+                        </div>
+                        <div class="project-info">
+                            <h3>Minecraft Server</h3>
+                            <p>Build, Play, Connect</p>
+                            <div class="tech-stack">
+                                <i class="fab fa-java" title="Java"></i>
+                                <i class="fab fa-docker" title="Docker"></i>
+                                <i class="fas fa-server" title="Server"></i>
+                            </div>
+                        </div>
+                        <a href="project-detail/minecraft.html" class="card-overlay">
+                            <div class="overlay-content">
+                                <span class="view-project">View Project</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- First Website -->
+                <article class="project-card" data-category="web">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="project-year">2022</div>
+                        </div>
+                        <div class="project-image">
+                            <img src="../assets/projects/first-website-wallpaper.png" alt="First Website">
+                        </div>
+                        <div class="project-info">
+                            <h3>First Website</h3>
+                            <p>Where it all began</p>
+                            <div class="tech-stack">
+                                <i class="fab fa-html5" title="HTML"></i>
+                                <i class="fab fa-css3" title="CSS"></i>
+                                <i class="fab fa-js" title="JavaScript"></i>
+                            </div>
+                        </div>
+                        <a href="project-detail/first-website.html" class="card-overlay">
+                            <div class="overlay-content">
+                                <span class="view-project">View Project</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </article>
             </section>
         </main>
 
@@ -270,6 +275,7 @@
             // Remove loading state after everything is loaded
             window.addEventListener('load', () => {
                 document.querySelector('.loading').classList.add('hidden');
+                document.querySelector('.projects-grid').classList.add('loaded');
             });
         </script>
     </body>

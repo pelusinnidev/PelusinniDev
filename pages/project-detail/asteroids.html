@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Pol's Asteroids - A modern take for the classics">
+        <meta name="theme-color" content="#000000">
+        
+        <title>Pol's Asteroids | PelusinniDev</title>
+        
+        <!-- Preload fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="../../styles/main/main.css">
+        <link rel="stylesheet" href="../../styles/projects/project-detail.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- Loading State -->
+        <div class="loading">
+            <div class="loading-content">
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="../projects.html" class="nav-back">
+                <i class="fas fa-chevron-left"></i>
+                <span>Back to Projects</span>
+            </a>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="project-hero">
+                <div class="hero-content">
+                    <div class="project-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h1 class="project-title">Pol's Asteroids</h1>
+                    <p class="project-slogan">A modern take for the classics!</p>
+                    <div class="project-tags">
+                        <span class="tag category-game"><i class="fas fa-gamepad"></i> Game</span>
+                        <span class="tag tech-python"><i class="fab fa-python"></i> Python</span>
+                        <span class="tag tech-mongo"><i class="fas fa-database"></i> MongoDB</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="../../assets/projects/asteroids-wallpaper.png" alt="Pol's Asteroids Game">
+                </div>
+            </section>
+
+            <!-- Project Content -->
+            <section class="project-content">
+                <div class="content-container">
+                    <!-- Overview -->
+                    <article class="content-section">
+                        <h2>Overview</h2>
+                        <p>In my journey as a developer, I chose to learn Python through reimagining the iconic Asteroids game. This modern interpretation offers both single and multiplayer experiences, leveraging the latest technologies and MongoDB integration for cross-device score tracking and competitive tournaments.</p>
+                        <p>Experience the nostalgia of a classic, enhanced with contemporary features that bring new life to this timeless arcade game.</p>
+                    </article>
+
+                    <!-- Features -->
+                    <article class="content-section">
+                        <h2>Key Features</h2>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-users"></i>
+                                <h3>Multiplayer Mode</h3>
+                                <p>Challenge your friends in local multiplayer battles or compete online in tournaments.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-trophy"></i>
+                                <h3>Global Leaderboard</h3>
+                                <p>Track your progress and compete with players worldwide through MongoDB-powered leaderboards.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-paint-brush"></i>
+                                <h3>Modern Graphics</h3>
+                                <p>Enjoy smooth animations and polished visuals while maintaining the classic arcade feel.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-cogs"></i>
+                                <h3>Custom Controls</h3>
+                                <p>Personalize your gaming experience with fully customizable controls and settings.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Technical Details -->
+                    <article class="content-section">
+                        <h2>Technical Stack</h2>
+                        <div class="tech-details">
+                            <ul class="tech-list">
+                                <li><i class="fab fa-python"></i> Python with Pygame for game engine</li>
+                                <li><i class="fas fa-database"></i> MongoDB for data persistence</li>
+                                <li><i class="fas fa-network-wired"></i> Socket.io for real-time multiplayer</li>
+                                <li><i class="fas fa-palette"></i> Custom pixel art and animations</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Links -->
+                    <article class="content-section">
+                        <h2>Play Now</h2>
+                        <div class="project-links">
+                            <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" class="project-link primary">
+                                <i class="fab fa-github"></i>
+                                <span>View Source</span>
+                            </a>
+                            <a href="https://pelusinni.craft.me/AsteroidsGame" class="project-link secondary">
+                                <i class="fas fa-book"></i>
+                                <span>Documentation</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="../../assets/profile/ProfileAI-3.png" alt="PelusinniDev" class="footer-logo">
+                    <span class="footer-name">Pelusinni</span>
+                </div>
+                <div class="footer-center">
+                    <div class="social-links">
+                        <a href="https://github.com/pelusinnidev" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/pelusinnidev" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="http://linkedin.com/in/pol-hernàndez-319518299" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-year">2025</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script>
+            // Remove loading state after everything is loaded
+            window.addEventListener('load', () => {
+                document.querySelector('.loading').classList.add('hidden');
+            });
+
+            // Parallax effect for hero image
+            const heroImage = document.querySelector('.hero-image');
+            window.addEventListener('scroll', () => {
+                if (heroImage) {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.5;
+                    heroImage.style.transform = `translate3d(0, ${rate}px, 0)`;
+                }
+            });
+        </script>
+    </body>
+</html> 
