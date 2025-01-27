@@ -1224,18 +1224,6 @@ body {
         height: 32px;
         font-size: 1rem;
     }
-
-    .footer-year span {
-        display: none;
-    }
-
-    .footer-year::before {
-        content: "25";
-    }
-
-    .footer-year::after {
-        content: "'";
-    }
 }
 
 /* Dark mode adjustments */
@@ -1504,14 +1492,6 @@ body {
     .footer-year {
         text-align: right;
         white-space: nowrap;
-    }
-
-    .footer-year::before {
-        content: "'";
-    }
-
-    .footer-year::after {
-        content: "";
     }
 
     /* Section padding consistency */
