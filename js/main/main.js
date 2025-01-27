@@ -183,25 +183,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for animations
+// Intersection Observer for scroll animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    root: null,
+    rootMargin: '-50px',
+    threshold: 0.15
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            const animatedElements = entry.target.querySelectorAll('.tech-item, .project-card');
-            if (animatedElements.length) {
-                animatedElements.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
-            }
+            
+            // Also trigger child animations if they exist
+            const fadeElements = entry.target.querySelectorAll('.fade-in');
+            fadeElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 100);
+            });
+
+            // Handle tech items separately
+            const techItems = entry.target.querySelectorAll('.tech-item');
+            techItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
         }
     });
 }, observerOptions);
@@ -506,48 +515,87 @@ function initProjectsCarousel() {
     });
 }
 
-// Initialize carousel when DOM is loaded
+// Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing...');
     
-    // Start animations
-    initTypingAnimation();
+    // Initialize typing animation
+    const typingElement = document.querySelector('.typing-text');
+    if (typingElement) {
+        initTypingAnimation();
+    }
+
+    // Initialize footer year
     updateFooterYear();
-    initFloatingIcons();
+
+    // Initialize mouse effects
     initMouseAura();
     initBottomFade();
-    initProjectsCarousel();
-    
-    // Initialize observers
+
+    // Initialize carousel only if we're not on mobile
+    if (window.innerWidth > 768) {
+        const carousel = document.querySelector('.carousel-track');
+        if (carousel) {
+            initProjectsCarousel();
+        }
+    } else {
+        // For mobile, handle project cards scroll animations
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            observer.observe(card);
+        });
+    }
+
+    // Observe all sections for animations
     document.querySelectorAll('.section').forEach(section => {
         observer.observe(section);
     });
-    
-    // Initialize stagger animations
-    document.querySelectorAll('.tech-item, .project-card').forEach(item => {
+
+    // Initialize tech items with stagger animation
+    document.querySelectorAll('.tech-item').forEach((item, index) => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        item.style.transitionDelay = `${index * 100}ms`;
     });
-    
+
     // Show navigation on scroll up, hide on scroll down
     let lastScroll = 0;
     const nav = document.querySelector('.nav');
     
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            nav.style.transform = 'translateY(0)';
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !navLinks.classList.contains('active')) {
-            nav.style.transform = 'translateY(-100%)';
-        } else {
-            nav.style.transform = 'translateY(0)';
-        }
-        
-        lastScroll = currentScroll;
-    });
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                nav.style.transform = 'translateY(0)';
+                return;
+            }
+            
+            if (currentScroll > lastScroll) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }
+});
+
+// Initialize particles when window is loaded
+window.addEventListener('load', () => {
+    console.log('Window loaded, initializing particles...');
+    if (typeof particlesJS !== 'undefined') {
+        initParticles();
+        console.log('Particles initialized');
+    } else {
+        console.error('Particles.js not loaded');
+    }
+    
+    // Remove loading screen
+    const loading = document.querySelector('.loading');
+    if (loading) {
+        loading.classList.add('hidden');
+    }
 }); 

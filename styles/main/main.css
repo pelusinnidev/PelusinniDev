@@ -793,7 +793,14 @@ body {
 
 .fade-in {
     opacity: 0;
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .delay-1 {
@@ -953,7 +960,7 @@ body {
 /* Tech Stack Section */
 .tech-stack {
     padding: 8rem 2rem;
-    background-color: var(--accent-color);
+    background-color: var(--background-color);
     position: relative;
     overflow: hidden;
 }
@@ -1186,21 +1193,29 @@ body {
 }
 
 .section {
-    opacity: 1;
-    transform: none;
+    position: relative;
+    padding: 8rem 2rem;
+    background-color: var(--background-color);
 }
 
-.section .tech-item,
-.section .project-card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: var(--transition);
-}
-
-.section.visible .tech-item,
-.section.visible .project-card {
-    opacity: 1;
-    transform: translateY(0);
+.section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--card-border),
+        var(--card-border),
+        var(--card-border),
+        transparent
+    );
+    opacity: 0.8;
 }
 
 /* Loading state */
@@ -1350,6 +1365,91 @@ body {
 
 /* Mobile (up to 767px) */
 @media (max-width: 767px) {
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        min-height: 100vh;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Think Different Section */
+    .think-different .section-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .think-different .philosophy-quote {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+
+    .think-different .philosophy-content {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Expertise Cards */
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.75rem;
+    }
+
+    .expertise-card {
+        width: 100%;
+        margin: 0;
+        padding: 1.5rem;
+    }
+
+    /* Project Cards */
+    .project-card {
+        width: 100%;
+        margin: 0 0 1.5rem 0;
+        padding: 0;
+    }
+
+    /* Tech Stack */
+    .stack-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.75rem;
+    }
+
+    .stack-card {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Footer */
+    .footer-content {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0 0.75rem;
+    }
+
+    .footer-year {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .footer-year::before {
+        content: "'";
+    }
+
+    .footer-year::after {
+        content: "";
+    }
+
+    /* Section padding consistency */
+    .section {
+        padding: 4rem 0.75rem;
+    }
+
     /* General Typography */
     .hero-title {
         font-size: 2.8rem;
@@ -1371,11 +1471,6 @@ body {
     }
 
     /* Layout Adjustments */
-    .hero {
-        padding: 1rem;
-        min-height: 90vh;
-    }
-
     .profile-container {
         width: 120px;
         height: 120px;
@@ -1464,30 +1559,13 @@ body {
         width: 100%;
         justify-content: center;
     }
-
-    /* Footer */
-    .footer-content {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-
-    .footer-center {
-        position: relative;
-        left: 0;
-        transform: none;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
 }
 
 /* Small height screens */
-@media (max-height: 700px) {
+@media (max-height: 700px) and (max-width: 767px) {
     .hero {
-        min-height: auto;
-        padding: 4rem 1rem;
+        height: 100vh;
+        min-height: 100vh;
     }
 
     .profile-container {
@@ -1519,6 +1597,25 @@ body {
         --glass-background: rgba(29, 29, 31, 0.9);
     }
 
+    .section:not(:last-child)::after {
+        opacity: 0.3;
+        background: linear-gradient(
+            to right,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+    }
+
+    .tech-stack,
+    .think-different,
+    .expertise,
+    .featured-projects {
+        background-color: var(--background-color);
+    }
+
     .tech-item {
         background: rgba(29, 29, 31, 0.5);
     }
@@ -1527,6 +1624,17 @@ body {
     .expertise-card,
     .stack-card {
         background: var(--card-background);
+    }
+
+    .tag.category-ios {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+
+    .project-link.disabled {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.5);
+        opacity: 0.7;
     }
 }
 
@@ -1545,4 +1653,17 @@ body {
         break-inside: avoid;
         page-break-inside: avoid;
     }
+}
+
+/* Add this to ensure footer year is always right-aligned and doesn't overlap */
+.footer-right {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.footer-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 } 
