@@ -15,30 +15,32 @@ if (projectsHero) {
     });
 }
 
-// Project cards animation on scroll
+// Project cards animation on scroll with improved performance
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            // Stop observing once the card is visible
+            observer.unobserve(entry.target);
         }
     });
 }, {
-    threshold: 0.1,
+    threshold: 0.15,
     rootMargin: '50px'
 });
 
 projectCards.forEach(card => observer.observe(card));
 
-// Category filtering
+// Category filtering with smooth transitions
 function filterProjects(category) {
     projectCards.forEach(card => {
         const cardCategory = card.dataset.category;
         if (category === 'all' || cardCategory === category) {
             card.style.display = 'block';
-            requestAnimationFrame(() => {
+            setTimeout(() => {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
-            });
+            }, 50);
         } else {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
@@ -47,16 +49,16 @@ function filterProjects(category) {
             }, 300);
         }
     });
+
+    // Smooth scroll to top of grid
+    projectsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // Initialize filtering
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
         button.classList.add('active');
-        
         const category = button.dataset.category;
         filterProjects(category);
     });
@@ -68,7 +70,7 @@ darkModeMediaQuery.addListener(() => {
     document.documentElement.classList.toggle('dark-mode', darkModeMediaQuery.matches);
 });
 
-// Initialize page
+// Initialize page with improved loading
 document.addEventListener('DOMContentLoaded', () => {
     // Show all projects initially
     filterProjects('all');
@@ -79,16 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('visible');
         }, index * 100);
     });
-    
-    // Remove loading state
-    const loading = document.querySelector('.loading');
-    if (loading) {
-        loading.classList.add('hidden');
-    }
 });
 
-// Handle image loading
-const images = document.querySelectorAll('img');
+// Handle image loading with improved performance
+const images = document.querySelectorAll('.project-image img');
 let loadedImages = 0;
 
 const imageLoaded = () => {
@@ -108,7 +104,7 @@ images.forEach(img => {
     }
 });
 
-// Smooth scroll for navigation
+// Smooth scroll for navigation with improved performance
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -131,80 +127,51 @@ if (backButton) {
     });
 }
 
-// Add parallax effect to project images
-const addParallaxToImages = () => {
-    const projectImages = document.querySelectorAll('.project-image');
+// Add hover effect to project icons with improved animations
+const projectIcons = document.querySelectorAll('.project-icon');
+projectIcons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+        icon.style.transform = 'scale(1.05)';
+    });
     
-    window.addEventListener('scroll', () => {
-        projectImages.forEach(image => {
-            const rect = image.getBoundingClientRect();
-            const scrolled = window.pageYOffset;
+    icon.addEventListener('mouseleave', () => {
+        icon.style.transform = 'scale(1)';
+    });
+});
+
+// Remove parallax effect to improve performance and prevent content overlap
+// Handle preview card positioning with improved performance
+const handlePreviewPosition = () => {
+    requestAnimationFrame(() => {
+        const previewCards = document.querySelectorAll('.project-preview');
+        previewCards.forEach(card => {
+            const parent = card.closest('.project-timeline-item');
+            if (!parent) return;
             
-            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                const speed = 0.1;
-                const yPos = -(rect.top - window.innerHeight) * speed;
-                image.style.transform = `translate3d(0, ${yPos}px, 0)`;
+            const parentRect = parent.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            if (parentRect.top < 0) {
+                card.style.top = '0';
+            } else if (parentRect.bottom > viewportHeight) {
+                card.style.top = 'auto';
+                card.style.bottom = '0';
             }
         });
     });
 };
 
-// Initialize parallax effect
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    addParallaxToImages();
-}
-
-// Add hover effect to project icons
-const projectIcons = document.querySelectorAll('.project-icon');
-projectIcons.forEach(icon => {
-    icon.addEventListener('mouseenter', () => {
-        icon.style.transform = 'scale(1.1) rotate(5deg)';
-    });
-    
-    icon.addEventListener('mouseleave', () => {
-        icon.style.transform = 'scale(1) rotate(0deg)';
-    });
-});
-
-// Handle preview card positioning
-const handlePreviewPosition = () => {
-    const previewCards = document.querySelectorAll('.project-preview');
-    
-    previewCards.forEach(card => {
-        const parent = card.closest('.project-timeline-item');
-        const parentRect = parent.getBoundingClientRect();
-        
-        // Check if preview would go off screen
-        const cardRect = card.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        
-        if (cardRect.top < 0) {
-            card.style.top = '0';
-        } else if (cardRect.bottom > viewportHeight) {
-            card.style.top = 'auto';
-            card.style.bottom = '0';
-        }
-    });
+// Throttle resize and scroll events for better performance
+let ticking = false;
+const throttleEvent = (callback) => {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            callback();
+            ticking = false;
+        });
+        ticking = true;
+    }
 };
 
-// Add keyframe animation for fade in up effect
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// Handle window resize
-window.addEventListener('resize', handlePreviewPosition);
-
-// Handle scroll for preview positioning
-window.addEventListener('scroll', handlePreviewPosition);
+window.addEventListener('resize', () => throttleEvent(handlePreviewPosition));
+window.addEventListener('scroll', () => throttleEvent(handlePreviewPosition));
