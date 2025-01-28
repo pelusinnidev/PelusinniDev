@@ -351,7 +351,7 @@
 
 .tech-tag {
     background: var(--tag-background);
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 100px;
     font-size: 0.875rem;
     color: var(--text-color);
@@ -359,6 +359,9 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--section-border);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tech-tag:hover {
@@ -366,6 +369,7 @@
     color: white;
     transform: translateY(-2px);
     border-color: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-card p {
@@ -471,4 +475,166 @@
 
 .loading-content {
     color: var(--progress-fill);
+}
+
+/* Language Trends Section */
+.trends-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.trends-chart {
+    position: relative;
+}
+
+.chart-container {
+    height: 400px;
+    position: relative;
+}
+
+/* GitHub Stats */
+.github-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.github-stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.github-stat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid var(--section-border);
+    transition: all 0.3s ease;
+}
+
+.github-stat:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.github-stat i {
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-main);
+    border-radius: 12px;
+    color: white;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+}
+
+.github-link {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.github-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient-main);
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.github-profile-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Project References */
+.project-references {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--section-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.reference-label {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.reference-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    color: #FFFFFF !important;
+}
+
+.project-link:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #FFFFFF;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Responsive Design for Trends Section */
+@media (max-width: 1024px) {
+    .trends-section {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
 }
