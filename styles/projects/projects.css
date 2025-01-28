@@ -155,9 +155,8 @@
 }
 
 .project-card:hover .card-content {
-    transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: transparent;
 }
 
 .project-image {
@@ -175,7 +174,7 @@
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05);
+    transform: none;
 }
 
 .card-header {
@@ -192,15 +191,15 @@
 }
 
 .project-icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background: var(--gradient-main);
-    border-radius: 12px;
+    border-radius: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -234,6 +233,7 @@
     font-weight: 600;
     letter-spacing: -0.02em;
     color: var(--text-color);
+    opacity: 1;
 }
 
 .project-info p {
@@ -243,20 +243,34 @@
     line-height: 1.5;
     font-weight: 400;
     letter-spacing: -0.01em;
+    opacity: 1;
+}
+
+.project-description {
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.8;
 }
 
 .tech-stack {
     display: flex;
     gap: 1.25rem;
-    margin-top: auto;
-    padding-top: 1.25rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 0.25rem;
 }
 
 .tech-stack i {
     font-size: 1.35rem;
     color: var(--secondary-color);
     transition: all 0.3s ease;
+    opacity: 1;
 }
 
 .tech-stack i:hover {
