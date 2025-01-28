@@ -1,5 +1,6 @@
 /* Tech Stack Page Styles */
 :root {
+    /* Dark mode variables (default) */
     --card-background: rgba(255, 255, 255, 0.05);
     --card-border: rgba(255, 255, 255, 0.1);
     --progress-background: rgba(255, 255, 255, 0.1);
@@ -12,6 +13,119 @@
     --backend-gradient: linear-gradient(135deg, #32D74B, #64D2FF);
     --game-gradient: linear-gradient(135deg, #BF5AF2, #FF375F);
     --tools-gradient: linear-gradient(135deg, #FF9F0A, #FFD60A);
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --chart-grid: rgba(255, 255, 255, 0.5);
+    --hover-background: rgba(255, 255, 255, 0.05);
+}
+
+/* Light mode overrides */
+@media (prefers-color-scheme: light) {
+    :root {
+        --card-background: rgba(0, 0, 0, 0.02);
+        --card-border: rgba(0, 0, 0, 0.1);
+        --progress-background: rgba(0, 0, 0, 0.1);
+        --section-border: rgba(0, 0, 0, 0.15);
+        --tag-background: rgba(0, 0, 0, 0.05);
+        --text-primary: #000000;
+        --text-secondary: rgba(0, 0, 0, 0.7);
+        --chart-grid: rgba(0, 0, 0, 0.2);
+        --hover-background: rgba(0, 0, 0, 0.03);
+    }
+
+    .tech-card, .timeline-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .trend-item {
+        background: rgba(0, 0, 0, 0.02);
+    }
+
+    .trend-item:hover {
+        background: var(--hover-background);
+    }
+
+    .tech-tag {
+        background: var(--tag-background);
+        color: var(--text-primary);
+    }
+
+    .tech-tag:hover {
+        background: var(--gradient-main);
+        color: white;
+    }
+
+    .card-header h3,
+    .tech-card h2,
+    .tech-timeline h2 {
+        color: var(--text-primary);
+    }
+
+    .trend-info h3 {
+        color: var(--text-primary);
+    }
+
+    .trend-description,
+    .reference-label {
+        color: var(--text-secondary);
+    }
+
+    .project-link {
+        color: var(--text-primary);
+    }
+
+    .project-link:hover {
+        color: #007AFF !important;
+    }
+
+    .project-link:after {
+        background: #007AFF;
+    }
+
+    /* Chart adjustments for light mode */
+    #proficiencyChart,
+    #languageTrendsChart {
+        --chart-background: rgba(0, 0, 0, 0.05);
+        --chart-border: rgba(0, 0, 0, 0.1);
+    }
+
+    /* GitHub stats light mode */
+    .github-stat {
+        background: rgba(0, 0, 0, 0.02);
+        border-color: var(--section-border);
+    }
+
+    .github-stat:hover {
+        background: var(--hover-background);
+    }
+
+    .stat-value {
+        color: var(--text-primary);
+    }
+
+    .stat-label {
+        color: var(--text-secondary);
+    }
+
+    /* Timeline cards light mode specific */
+    .timeline-card {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-card:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Trend bars light mode */
+    .trend-bar {
+        background: var(--progress-background);
+    }
+
+    .trend-progress {
+        background: var(--gradient-main);
+    }
 }
 
 /* Hero Section */

@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.loading').classList.add('hidden');
     }, 1000);
 
+    // Check if we're in light mode
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const chartTextColor = isLightMode ? '#000000' : '#FFFFFF';
+    const chartGridColor = isLightMode ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.5)';
+    const chartBackgroundColor = isLightMode ? 'rgba(0, 122, 255, 0.1)' : 'rgba(0, 122, 255, 0.2)';
+
     // Initialize proficiency chart with improved visibility
     const ctx = document.getElementById('proficiencyChart').getContext('2d');
     
@@ -21,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
             datasets: [{
                 label: 'Skill Level',
                 data: [95, 85, 75, 80, 70],
-                backgroundColor: 'rgba(0, 122, 255, 0.2)',
+                backgroundColor: chartBackgroundColor,
                 borderColor: '#007AFF',
                 pointBackgroundColor: '#007AFF',
-                pointBorderColor: '#FFFFFF',
-                pointHoverBackgroundColor: '#FFFFFF',
+                pointBorderColor: isLightMode ? '#FFFFFF' : '#000000',
+                pointHoverBackgroundColor: isLightMode ? '#FFFFFF' : '#000000',
                 pointHoverBorderColor: '#007AFF',
                 borderWidth: 3,
                 pointRadius: 6,
@@ -36,16 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
             scales: {
                 r: {
                     angleLines: {
-                        color: 'rgba(255, 255, 255, 0.5)',
+                        color: chartGridColor,
                         lineWidth: 2
                     },
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.5)',
+                        color: chartGridColor,
                         circular: true,
                         lineWidth: 2
                     },
                     pointLabels: {
-                        color: '#FFFFFF',
+                        color: chartTextColor,
                         font: {
                             family: "'SF Pro Display', sans-serif",
                             size: 16,
@@ -54,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         padding: 25
                     },
                     ticks: {
-                        color: '#FFFFFF',
+                        color: chartTextColor,
                         backdropColor: 'transparent',
                         font: {
                             size: 14,
@@ -100,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     label: 'Swift',
                     data: [65, 75, 85, 90, 95, 95],
                     borderColor: '#FF3B30',
-                    backgroundColor: 'rgba(255, 59, 48, 0.2)',
+                    backgroundColor: isLightMode ? 'rgba(255, 59, 48, 0.1)' : 'rgba(255, 59, 48, 0.2)',
                     tension: 0.4,
                     borderWidth: 3,
                     fill: true
@@ -109,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     label: 'HTML/CSS/JS',
                     data: [40, 45, 60, 75, 80, 85],
                     borderColor: '#5856D6',
-                    backgroundColor: 'rgba(88, 86, 214, 0.2)',
+                    backgroundColor: isLightMode ? 'rgba(88, 86, 214, 0.1)' : 'rgba(88, 86, 214, 0.2)',
                     tension: 0.4,
                     borderWidth: 3,
                     fill: true
@@ -118,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     label: 'Python',
                     data: [70, 65, 60, 55, 50, 45],
                     borderColor: '#FFD60A',
-                    backgroundColor: 'rgba(255, 214, 10, 0.2)',
+                    backgroundColor: isLightMode ? 'rgba(255, 214, 10, 0.1)' : 'rgba(255, 214, 10, 0.2)',
                     tension: 0.4,
                     borderWidth: 3,
                     fill: true
@@ -132,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 legend: {
                     position: 'top',
                     labels: {
-                        color: '#FFFFFF',
+                        color: chartTextColor,
                         font: {
                             family: "'SF Pro Display', sans-serif",
                             size: 14,
@@ -149,11 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     beginAtZero: true,
                     max: 100,
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.2)',
+                        color: chartGridColor,
                         lineWidth: 1
                     },
                     ticks: {
-                        color: '#FFFFFF',
+                        color: chartTextColor,
                         font: {
                             family: "'SF Pro Display', sans-serif",
                             size: 12,
@@ -164,11 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 x: {
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.2)',
+                        color: chartGridColor,
                         lineWidth: 1
                     },
                     ticks: {
-                        color: '#FFFFFF',
+                        color: chartTextColor,
                         font: {
                             family: "'SF Pro Display', sans-serif",
                             size: 12,
