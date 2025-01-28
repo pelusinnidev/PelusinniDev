@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="PelusinniDev Tech Stack - Skills & Expertise">
+        <meta name="theme-color" content="#000000">
+        
+        <title>Pelusinni's Tech Stack</title>
+        
+        <!-- Preload fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="../styles/main/main.css">
+        <link rel="stylesheet" href="../styles/tech/tech.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <!-- Chart.js for beautiful graphs -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <!-- Loading State -->
+        <div class="loading">
+            <div class="loading-content">
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+            </div>
+        </div>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="tech-hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Tech Stack</h1>
+                    <p class="hero-subtitle">My digital toolbox and expertise</p>
+                </div>
+            </section>
+
+            <!-- Tech Overview Grid -->
+            <section class="tech-overview">
+                <div class="tech-grid">
+                    <!-- Recent Trends -->
+                    <div class="tech-card trends">
+                        <h2>Recent Focus</h2>
+                        <div class="trend-list">
+                            <div class="trend-item">
+                                <i class="fab fa-swift"></i>
+                                <div class="trend-info">
+                                    <h3>Swift</h3>
+                                    <div class="trend-bar">
+                                        <div class="trend-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-item">
+                                <i class="fab fa-html5"></i>
+                                <div class="trend-info">
+                                    <h3>HTML/CSS</h3>
+                                    <div class="trend-bar">
+                                        <div class="trend-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-item">
+                                <i class="fab fa-js"></i>
+                                <div class="trend-info">
+                                    <h3>JavaScript</h3>
+                                    <div class="trend-bar">
+                                        <div class="trend-progress" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proficiency Chart -->
+                    <div class="tech-card proficiency">
+                        <h2>Skill Distribution</h2>
+                        <canvas id="proficiencyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Timeline -->
+                <div class="tech-timeline">
+                    <h2>Technology Experience</h2>
+                    <div class="timeline-grid">
+                        <!-- Mobile Development -->
+                        <div class="timeline-card" data-category="mobile">
+                            <div class="card-header">
+                                <i class="fab fa-apple"></i>
+                                <h3>Mobile Development</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">SwiftUI</span>
+                                <span class="tech-tag">UIKit</span>
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Flutter</span>
+                            </div>
+                            <p>Used in: MyCosmo, Bobbo</p>
+                        </div>
+
+                        <!-- Web Development -->
+                        <div class="timeline-card" data-category="web">
+                            <div class="card-header">
+                                <i class="fas fa-globe"></i>
+                                <h3>Web Development</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                            </div>
+                            <p>Used in: Personal Portfolio, Racing League Platform</p>
+                        </div>
+
+                        <!-- Backend & Server -->
+                        <div class="timeline-card" data-category="backend">
+                            <div class="card-header">
+                                <i class="fas fa-server"></i>
+                                <h3>Backend & Server</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                            <p>Used in: Minecraft Server, Racing League Backend</p>
+                        </div>
+
+                        <!-- Game Development -->
+                        <div class="timeline-card" data-category="game">
+                            <div class="card-header">
+                                <i class="fas fa-gamepad"></i>
+                                <h3>Game Development</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pygame</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">OpenGL</span>
+                            </div>
+                            <p>Used in: Pol's Asteroids, Racing Adventure</p>
+                        </div>
+
+                        <!-- Tools & DevOps -->
+                        <div class="timeline-card" data-category="tools">
+                            <div class="card-header">
+                                <i class="fas fa-tools"></i>
+                                <h3>Tools & DevOps</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">VS Code</span>
+                                <span class="tech-tag">Xcode</span>
+                                <span class="tech-tag">Linux</span>
+                            </div>
+                            <p>Used across all projects for development and deployment</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Scripts -->
+        <script src="../js/tech/tech.js"></script>
+    </body>
+</html>
