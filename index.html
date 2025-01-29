@@ -3,75 +3,416 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pelusinni's Portfolio</title>
-        <link rel="stylesheet" href="styles/main.css">
+        <meta name="description" content="PelusinniDev - Software Developer, iOS Expert & AI Enthusiast">
+        <meta name="theme-color" content="#000000">
+        
+        <title>My Portfolio</title>
+        
+        <!-- Preload fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="./styles/main/main.css">
+        <link rel="stylesheet" href="./styles/shared/navigation.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Particles.js -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     </head>
     <body>
-        <main class="container">
-            <div class="content">
-                <div class="logo">
-                    <div class="logo-container">
-                        <img src="assets/images/ProfileAI-2.png" alt="Pelusinni" class="logo-image">
-                    </div>
-                </div>
-                <div class="animation-container">
-                    <div class="tools-animation">
-                        <div class="tools-animation-content">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-php"></i>
-                            <i class="fab fa-laravel"></i>
-                            <i class="fab fa-python"></i>
-                            <i class="fab fa-swift"></i>
-                            <i class="fab fa-android"></i>
-                            <i class="fab fa-git-alt"></i>
-                            <i class="fab fa-github"></i>
-                            <i class="fas fa-terminal"></i>
-                            <i class="fab fa-docker"></i>
-                            <i class="fab fa-flutter"></i>
-                            <i class="fab fa-windows"></i>
-                            <i class="fab fa-apple"></i>
-                            <i class="fab fa-linux"></i>
-                        </div>
-                        <div class="tools-animation-content">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-php"></i>
-                            <i class="fab fa-laravel"></i>
-                            <i class="fab fa-python"></i>
-                            <i class="fab fa-swift"></i>
-                            <i class="fab fa-android"></i>
-                            <i class="fab fa-git-alt"></i>
-                            <i class="fab fa-github"></i>
-                            <i class="fas fa-terminal"></i>
-                            <i class="fab fa-docker"></i>
-                            <i class="fab fa-flutter"></i>
-                            <i class="fab fa-windows"></i>
-                            <i class="fab fa-apple"></i>
-                            <i class="fab fa-linux"></i>
-                        </div>
-                    </div>
-                </div>
-                <h1>Crafting Something Special</h1>
-                <p class="message">Like a master craftsman in their workshop, I'm meticulously refining every pixel and line of code. The new portfolio will be worth the wait.</p>
-                <p class="subtitle">Expected completion: Soon™</p>
-                <div class="status-container">
-                    <div class="status-bar">
-                        <div class="status-progress"></div>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://twitter.com/pelusinnidev" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://github.com/pelusinnidev" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
+        <!-- Loading State -->
+        <div class="loading">
+            <div class="loading-content">
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-content">
+                <a href="./index.html" class="nav-logo">
+                    <img src="./assets/profile/ProfileAI-3.png" alt="PelusinniDev">
+                    <span>Pelusinni</span>
+                </a>
+                <div class="nav-links">
+                    <a href="./index.html" class="nav-link">Home</a>
+                    <a href="./pages/projects.html" class="nav-link">Projects</a>
+                    <a href="./pages/tech.html" class="nav-link">Tech Stack</a>
                 </div>
             </div>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero section visible" id="hero">
+                <div id="particles-js"></div>
+                <div class="hero-content">
+                    <div class="profile-container fade-in">
+                        <img src="./assets/profile/ProfileAI-3.png" alt="PelusinniDev" class="profile-image">
+                    </div>
+                    <h1 class="hero-title fade-in delay-1">Pelusinni</h1>
+                    <div class="typing-text fade-in delay-2"></div>
+                </div>
+            </section>
+
+            <!-- Think Different Section -->
+            <section class="think-different section" id="philosophy">
+                <div class="section-content">
+                    <div class="quote-container">
+                        <div class="apple-symbol fade-in">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <h2 class="section-title fade-in delay-1">Think Different</h2>
+                        <blockquote class="philosophy-quote fade-in delay-2">
+                            "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently..."
+                        </blockquote>
+                        <p class="quote-attribution fade-in delay-2">— Apple Inc., 1997 Think Different Campaign</p>
+                        <div class="philosophy-content fade-in delay-3">
+                            <p>This iconic phrase has been my guiding light throughout my journey in technology and personal growth. It represents more than just innovation; it's about challenging conventional wisdom and finding unique perspectives in everything we do.</p>
+                            <p>As a developer and technology enthusiast, I believe that thinking differently isn't just about creating new solutions—it's about reimagining the questions themselves.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expertise Section -->
+            <section class="expertise section" id="expertise">
+                <div class="section-content expertise-container">
+                    <div class="section-header fade-in">
+                        <div class="expertise-symbol">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h2 class="section-title gradient-text fade-in delay-1">My Journey in Tech</h2>
+                        <p class="section-subtitle fade-in delay-2">Currently focused on mobile development while exploring various areas of software development and emerging technologies.</p>
+                    </div>
+                    
+                    <div class="expertise-grid fade-in delay-3">
+                        <!-- Mobile Development - Primary Focus -->
+                        <div class="expertise-card primary">
+                            <div class="expertise-icon">
+                                <i class="fab fa-apple"></i>
+                            </div>
+                            <h3>Mobile Development</h3>
+                            <p>Specialized in native iOS development with Swift and SwiftUI, creating intuitive and powerful mobile experiences.</p>
+                            <div class="tech-tags">
+                                <span><i class="fab fa-swift"></i> Swift</span>
+                                <span><i class="fab fa-apple"></i> SwiftUI</span>
+                                <span><i class="fab fa-android"></i> Android</span>
+                            </div>
+                            <div class="status-badge current">Current Focus</div>
+                        </div>
+
+                        <!-- Backend Development -->
+                        <div class="expertise-card">
+                            <div class="expertise-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Backend Development</h3>
+                            <p>Learning modern backend technologies and database management for scalable applications.</p>
+                            <div class="tech-tags">
+                                <span><i class="fab fa-java"></i> Java</span>
+                                <span><i class="fas fa-database"></i> SQL</span>
+                                <span><i class="fas fa-database"></i> MongoDB</span>
+                            </div>
+                            <div class="status-badge exploring">Learning</div>
+                        </div>
+
+                        <!-- AI & ML -->
+                        <div class="expertise-card">
+                            <div class="expertise-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>AI & Machine Learning</h3>
+                            <p>Preparing to dive deep into the world of artificial intelligence and machine learning.</p>
+                            <div class="tech-tags">
+                                <span><i class="fab fa-python"></i> Python</span>
+                                <span><i class="fas fa-robot"></i> ML</span>
+                                <span><i class="fas fa-network-wired"></i> Neural Networks</span>
+                            </div>
+                            <div class="status-badge exploring">Exploring</div>
+                        </div>
+
+                        <!-- Robotics - Future Focus -->
+                        <div class="expertise-card future">
+                            <div class="expertise-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3>Robotics</h3>
+                            <p>Planning to explore the fascinating world of robotics through personal projects and continuous learning.</p>
+                            <div class="tech-tags">
+                                <span><i class="fab fa-python"></i> Python</span>
+                                <span><i class="fas fa-microchip"></i> Arduino</span>
+                                <span><i class="fas fa-cogs"></i> ROS</span>
+                            </div>
+                            <div class="status-badge future">Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Projects Section -->
+            <section class="featured-projects section" id="featured">
+                <div class="section-content">
+                    <div class="section-header fade-in">
+                        <div class="projects-symbol fade-in">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h2 class="section-title gradient-text fade-in delay-1">Featured Projects</h2>
+                        <p class="section-subtitle fade-in delay-2">Crafting digital experiences that push boundaries</p>
+                    </div>
+                    <div class="projects-carousel fade-in delay-3">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <article class="project-card">
+                                    <div class="project-image grayscale">
+                                        <img src="./assets/projects/bobbo-wallpaper.png" alt="Bobbo App">
+                                        <div class="image-overlay">
+                                            <i class="fab fa-apple overlay-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-info">
+                                            <h3 class="project-title extra-bold">Bobbo</h3>
+                                            <p class="project-slogan italic">Simplifying Care, Enhancing Lives</p>
+                                            <p class="project-description focus-line">This app is designed to make life easier for you and your best friend, enabling you to focus on what truly matters - the bond between you and spending quality time together with optimal health. After all, that's what's most important. With unwavering commitment to your privacy and data protection, we're embarking on an exciting journey. There's so much to accomplish, and we hope to achieve it... Together.</p>
+                                        </div>
+                                        <div class="project-actions">
+                                            <div class="project-tags">
+                                                <span class="tag category-ios"><i class="fab fa-apple"></i> iOS</span>
+                                                <span class="tag tech-swift"><i class="fab fa-swift"></i> Swift</span>
+                                                <span class="tag tech-figma"><i class="fab fa-figma"></i> Figma</span>
+                                            </div>
+                                            <div class="project-links">
+                                                <a href="https://testflight.apple.com/join/x1k5cdNe" class="project-link">
+                                                    <span>Join the Beta</span>
+                                                    <i class="fab fa-app-store-ios"></i>
+                                                </a>
+                                                <a href="https://bobbo.framer.website" class="project-link">
+                                                    <span>Website</span>
+                                                    <i class="fas fa-globe"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="project-card">
+                                    <div class="project-image grayscale">
+                                        <img src="./assets/projects/asteroids-wallpaper.png" alt="Pol's Asteroids">
+                                        <div class="image-overlay">
+                                            <i class="fas fa-gamepad overlay-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-info">
+                                            <h3 class="project-title extra-bold">Pol's Asteroids</h3>
+                                            <p class="project-slogan italic">A modern take for the classics!</p>
+                                            <p class="project-description focus-line">In my journey as a developer, I chose to learn Python through reimagining the iconic Asteroids game. This modern interpretation offers both single and multiplayer experiences, leveraging the latest technologies and MongoDB integration for cross-device score tracking and competitive tournaments. Experience the nostalgia of a classic, enhanced with contemporary features.</p>
+                                        </div>
+                                        <div class="project-actions">
+                                            <div class="project-tags">
+                                                <span class="tag category-game"><i class="fas fa-gamepad"></i> Game</span>
+                                                <span class="tag tech-python"><i class="fab fa-python"></i> Python</span>
+                                                <span class="tag tech-mongo"><i class="fas fa-database"></i> MongoDB</span>
+                                            </div>
+                                            <div class="project-links">
+                                                <a href="https://pelusinni.craft.me/AsteroidsGame" class="project-link">
+                                                    <span>Documentation</span>
+                                                    <i class="fas fa-book"></i>
+                                                </a>
+                                                <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" class="project-link">
+                                                    <span>GitHub Repository</span>
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="project-card">
+                                    <div class="project-image grayscale">
+                                        <img src="./assets/projects/mycosmo-wallpaper.png" alt="MyCosmo">
+                                        <div class="image-overlay">
+                                            <i class="fab fa-apple overlay-icon"></i>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <div class="project-info">
+                                            <h3 class="project-title extra-bold">MyCosmo</h3>
+                                            <p class="project-slogan italic">Be your universe</p>
+                                            <p class="project-description focus-line">A space and astrology app for astronomy enthusiasts. Originally a school project that has evolved into something bigger and more dynamic. Like space itself, it's still growing and holds unknown potential.</p>
+                                        </div>
+                                        <div class="project-actions">
+                                            <div class="project-tags">
+                                                <span class="tag category-ios"><i class="fab fa-apple"></i> iOS</span>
+                                                <span class="tag tech-swift"><i class="fab fa-swift"></i> Swift</span>
+                                            </div>
+                                            <div class="project-links">
+                                                <a href="https://apps.apple.com/es/app/mycosmo/id6741042321?l=en-GB" class="project-link">
+                                                    <span>Download</span>
+                                                    <i class="fab fa-app-store-ios"></i>
+                                                </a>
+                                                <!--
+                                                <a href="https://testflight.apple.com/join/F6j65Nhp" class="project-link disabled">
+                                                    <span>Join the Beta</span>
+                                                    <i class="fab fa-app-store-ios"></i>
+                                                </a>
+                                                -->
+                                                <a href="https://pelusinni.craft.me/s0QQJ1BZo4A4Ai" class="project-link">
+                                                    <span>Documentation</span>
+                                                    <i class="fas fa-book"></i>
+                                                </a>
+                                                <a href="https://github.com/pelusinnidev/MyCosmo" class="project-link">
+                                                    <span>GitHub Repository</span>
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-button prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="carousel-indicators"></div>
+                            <button class="carousel-button next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack Section -->
+            <section class="tech-stack section" id="stack">
+                <div class="section-content">
+                    <div class="section-header fade-in">
+                        <div class="stack-symbol">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h2 class="section-title gradient-text fade-in delay-1">Tech Stack</h2>
+                        <p class="section-subtitle fade-in delay-2">A curated collection of technologies I work with</p>
+                    </div>
+                    
+                    <div class="stack-grid fade-in delay-3">
+                        <!-- Mobile Development Stack -->
+                        <div class="stack-card primary">
+                            <div class="stack-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Mobile Development</h3>
+                            <div class="stack-items">
+                                <div class="tech-item">
+                                    <i class="fab fa-swift"></i>
+                                    <span>Swift</span>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-android"></i>
+                                    <span>Android</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Web Development Stack -->
+                        <div class="stack-card">
+                            <div class="stack-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Web Development</h3>
+                            <div class="stack-items">
+                                <div class="tech-item">
+                                    <i class="fab fa-html5"></i>
+                                    <span>HTML5</span>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-css3-alt"></i>
+                                    <span>CSS3</span>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-php"></i>
+                                    <span>PHP</span>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-laravel"></i>
+                                    <span>Laravel</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tools & DevOps -->
+                        <div class="stack-card">
+                            <div class="stack-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Tools & DevOps</h3>
+                            <div class="stack-items">
+                                <div class="tech-item">
+                                    <i class="fab fa-git-alt"></i>
+                                    <span>Git</span>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-docker"></i>
+                                    <span>Docker</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Languages & Frameworks -->
+                        <div class="stack-card">
+                            <div class="stack-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <h3>Languages & Frameworks</h3>
+                            <div class="stack-items">
+                                <div class="tech-item">
+                                    <i class="fab fa-python"></i>
+                                    <span>Python</span>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-java"></i>
+                                    <span>Java</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="./assets/profile/ProfileAI-3.png" alt="PelusinniDev" class="footer-logo">
+                </div>
+                <div class="footer-center">
+                    <div class="social-links">
+                        <a href="https://github.com/pelusinnidev" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/pelusinnidev" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="http://linkedin.com/in/pol-hernàndez-319518299" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-year">2025</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="./js/shared/navigation.js"></script>
+        <script src="./js/main/main.js"></script>
+        <script>
+            // Remove loading state after everything is loaded
+            window.addEventListener('load', () => {
+                document.querySelector('.loading').classList.add('hidden');
+            });
+        </script>
     </body>
 </html>

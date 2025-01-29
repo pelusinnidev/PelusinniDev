@@ -1,76 +1,125 @@
 # <div align="center">
 
-![Header](https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:4F4F4F&height=200&section=header&text=PelusinniDev&fontSize=60&animation=fadeIn&fontColor=ffffff&fontAlignY=35&desc=🚀%20Crafting%20the%20Future%20of%20Mobile%20Experiences%20|%20🤖%20AI%20Innovator%20|%20☁️%20Cloud%20Architect&descAlignY=55&descAlign=50)
+<div align="center">
+
+![Header](https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:ffffff&height=200&section=header&text=PelusinniDev&fontSize=70&animation=fadeIn&fontColor=ffffff&fontAlignY=35&desc=Software%20Developer%20|%20iOS%20Expert%20|%20AI%20Enthusiast&descAlignY=55&descAlign=50)
+  
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=200&size=35&pause=1000&color=FFFFFF&center=true&vCenter=true&random=false&width=600&height=100&lines=Software+Developer;iOS+Development+Enthusiast;AI+%26+ML+Explorer;Cloud+Computing+Passionate)](https://git.io/typing-svg)
 
 </div>
 
-## 🎯 Mission Statement
-
-> "Passionate about mobile development with a growing interest in iOS development and robotics. Currently exploring new technologies and expanding my skills through continuous learning and hands-on projects."
-
-## 🧑‍🚀 Personal Manifesto
+## ⚡ About Me  
 
 ```yaml
 name: PelusinniDev
-philosophy: "Code is art, technology is the canvas"
-mantra: "Innovate, Integrate, Iterate"
-core_values: [
-  "Clean Code",
-  "User-Centric Design",
-  "Continuous Learning",
-  "Open Source Contribution"
+located_in: Spain
+current_focus: iOS Development
+fields_of_interests: [
+  "Mobile Development",
+  "Artificial Intelligence",
+  "Cloud Computing",
+  "Game Development",
+  "UI/UX"
 ]
-current_quest: "Building the next generation of intelligent mobile applications"
+hobbies: ["Gaming", "SimRacing", "Coding"]
 ```
 
-## 🌟 Tech Stack
+<br>
+
+## ✨ More About Me
+
+- 🌟 **Inspired by Creativity**: Transforming innovative ideas into interactive solutions
+- 📱 **Mobile Development Expert**: iOS specialist exploring AI/ML integration
+- 🌍 **Cloud Enthusiast**: Working with Oracle Cloud and Ubuntu Server
+- 🎮 **Minecraft Innovator**: Custom server and plugin development
+- 🏎️ **SimRacing Organizer**: League management with integrated web platform
+- 🚀 **Game Developer**: Creator of [Pol's Asteroids](https://github.com/pelusinnidev/Pols-Asteroids)
+- 🌌 **MyCosmo Developer**: Leading a Swift iOS 18 project focused on astrology and enhancing Swift skills.
+- 💡 **Philosophy**: "Think Different" - Breaking boundaries in software development
+
+<br>
+
+## 🎯 Featured Projects
 
 <div align="center">
 
-### 🛠️ Development Arsenal
-![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-
-### 💡 Additional Skills
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-
-</div>
-
-## 🚀 Featured Projects
-
-<div align="center">
-
-[![Pol's Asteroids](https://img.shields.io/badge/🛸_Pol's_Asteroids-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/Pols-Asteroids)
-[![Food4All](https://img.shields.io/badge/🍽️_Food4All-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/LaSalle---DAM-M04---Food4All)
+[![Pol's Asteroids](https://img.shields.io/badge/🎮_Pol's_Asteroids-000000?style=for-the-badge)](https://pelusinni.craft.me/AsteroidsGame)
+[![Bobbo App](https://img.shields.io/badge/🐕_Bobbo_App-000000?style=for-the-badge)](https://bobbo.framer.website)
 [![MyCosmo](https://img.shields.io/badge/🌌_MyCosmo-4F4F4F?style=for-the-badge)](https://github.com/pelusinnidev/MyCosmo)
 
-### Pol's Asteroids
-> A modern take on the classic arcade game, built with advanced gaming technologies.
-
-### Food4All
-> My first web project - A nostalgic journey into web development #nostalgia
-
-### MyCosmo
-> Be your universe - An educational Swift app to learn and improve together
-
 </div>
 
-## 🌐 Let's Connect
+<br>
+
+## 💻 Tech Stack
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/pol-hernàndez-319518299)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/pelusinnidev)
+### 📱 Mobile Development  
+![Swift](https://img.shields.io/badge/Swift-000000?style=for-the-badge&logo=swift&logoColor=white)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-000000?style=for-the-badge&logo=swift&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-000000?style=for-the-badge&logo=kotlin&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-000000?style=for-the-badge&logo=flutter&logoColor=white)
+![Android](https://img.shields.io/badge/Android-000000?style=for-the-badge&logo=android&logoColor=white)
+
+<br>
+
+### 🌐 Web Development
+![HTML5](https://img.shields.io/badge/HTML5-000000?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-000000?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-000000?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-000000?style=for-the-badge&logo=laravel&logoColor=white)
+
+<br>
+
+### 🐍 Python & Data
+![Python](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-000000?style=for-the-badge&logo=mongodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-000000?style=for-the-badge&logo=mysql&logoColor=white)
+
+<br>
+
+### 🛠️ Tools & Technologies
+![Git](https://img.shields.io/badge/Git-000000?style=for-the-badge&logo=git&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/VS_Code-000000?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![Xcode](https://img.shields.io/badge/Xcode-000000?style=for-the-badge&logo=xcode&logoColor=white)
 
 </div>
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:4F4F4F,100:000000&height=100&section=footer)
+<br>
+
+## 📊 GitHub Stats
+
+<div align="center" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+
+<img width="400" src="https://github-readme-stats.vercel.app/api?username=PelusinniDev&show_icons=true&theme=graywhite&hide_border=true&count_private=true" alt="GitHub Stats">
+
+<img width="400" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PelusinniDev&layout=compact&theme=graywhite&hide_border=true" alt="Top Languages">
+
+</div>
+
+<br>
+
+## 🤝 Connect with Me
+
+<div align="center">
+  
+<a href="https://twitter.com/pelusinnidev" style="text-decoration: none; margin: 0 10px;">
+  <img src="https://img.shields.io/badge/-%40pelusinnidev-000000?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
+</a>
+
+<a href="https://github.com/pelusinnidev" style="text-decoration: none; margin: 0 10px;">
+  <img src="https://img.shields.io/badge/-PelusinniDev-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+</a>
+
+<a href="https://www.linkedin.com/in/pol-hernàndez-319518299" style="text-decoration: none; margin: 0 10px;">
+  <img src="https://img.shields.io/badge/-LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+</a>
+
+</div>
+
+<br>
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:ffffff,100:000000&height=100&section=footer)

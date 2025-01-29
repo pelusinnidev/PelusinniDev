@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="PelusinniDev Tech Stack - Skills & Expertise">
+        <meta name="theme-color" content="#000000">
+        
+        <title>Pelusinni's Tech Stack</title>
+        
+        <!-- Preload fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="../styles/main/main.css">
+        <link rel="stylesheet" href="../styles/shared/navigation.css">
+        <link rel="stylesheet" href="../styles/tech/tech.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <!-- Chart.js for beautiful graphs -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <!-- Loading State -->
+        <div class="loading">
+            <div class="loading-content">
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-content">
+                <a href="../index.html" class="nav-logo">
+                    <img src="../assets/profile/ProfileAI-3.png" alt="PelusinniDev">
+                    <span>Pelusinni</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="./projects.html" class="nav-link">Projects</a>
+                    <a href="./tech.html" class="nav-link">Tech Stack</a>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="tech-hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Tech Stack</h1>
+                    <p class="hero-subtitle">My digital toolbox and expertise</p>
+                </div>
+            </section>
+
+            <!-- Tech Overview Grid -->
+            <section class="tech-overview">
+                <div class="tech-grid">
+                    <!-- Recent Trends -->
+                    <div class="tech-card trends">
+                        <h2>Recent Focus</h2>
+                        <div class="trend-list">
+                            <div class="trend-item">
+                                <i class="fab fa-swift"></i>
+                                <div class="trend-info">
+                                    <h3>Swift</h3>
+                                    <div class="trend-bar">
+                                        <div class="trend-progress" data-progress="95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-item">
+                                <i class="fab fa-html5"></i>
+                                <div class="trend-info">
+                                    <h3>HTML/CSS</h3>
+                                    <div class="trend-bar">
+                                        <div class="trend-progress" data-progress="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-item">
+                                <i class="fab fa-python"></i>
+                                <div class="trend-info">
+                                    <h3>Python</h3>
+                                    <div class="trend-bar">
+                                        <div class="trend-progress" data-progress="70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proficiency Chart -->
+                    <div class="tech-card proficiency">
+                        <h2>Skill Distribution</h2>
+                        <canvas id="proficiencyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Language Trends Section -->
+                <div class="trends-section">
+                    <div class="tech-card trends-chart">
+                        <h2>Language Usage Trends</h2>
+                        <div class="chart-container">
+                            <canvas id="languageTrendsChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- GitHub Stats -->
+                    <div class="tech-card github-card">
+                        <h2>GitHub Activity</h2>
+                        <div id="github-stats" class="github-stats-container">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                        <div class="github-link">
+                            <a href="https://github.com/pelusinnidev" target="_blank" class="github-profile-link">
+                                <i class="fab fa-github"></i>
+                                <span>View GitHub Profile</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Timeline -->
+                <div class="tech-timeline">
+                    <h2>Technology Experience</h2>
+                    <div class="timeline-grid">
+                        <!-- Mobile Development -->
+                        <div class="timeline-card" data-category="mobile">
+                            <div class="card-header">
+                                <i class="fab fa-apple"></i>
+                                <h3>Mobile Development</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">SwiftUI</span>
+                                <span class="tech-tag">UIKit</span>
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Flutter</span>
+                            </div>
+                            <div class="project-references">
+                                <span class="reference-label">Used in:</span>
+                                <div class="reference-links">
+                                    <a href="project-detail/mycosmo.html" class="project-link">MyCosmo</a>
+                                    <a href="project-detail/bobbo.html" class="project-link">Bobbo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Web Development -->
+                        <div class="timeline-card" data-category="web">
+                            <div class="card-header">
+                                <i class="fas fa-globe"></i>
+                                <h3>Web Development</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                            </div>
+                            <div class="project-references">
+                                <span class="reference-label">Used in:</span>
+                                <div class="reference-links">
+                                    <a href="project-detail/first-website.html" class="project-link">Personal Portfolio</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backend & Server -->
+                        <div class="timeline-card" data-category="backend">
+                            <div class="card-header">
+                                <i class="fas fa-server"></i>
+                                <h3>Backend & Server</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                            <div class="project-references">
+                                <span class="reference-label">Used in:</span>
+                                <div class="reference-links">
+                                    <a href="project-detail/minecraft.html" class="project-link">Minecraft Server</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Game Development -->
+                        <div class="timeline-card" data-category="game">
+                            <div class="card-header">
+                                <i class="fas fa-gamepad"></i>
+                                <h3>Game Development</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pygame</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">OpenGL</span>
+                            </div>
+                            <div class="project-references">
+                                <span class="reference-label">Used in:</span>
+                                <div class="reference-links">
+                                    <a href="project-detail/asteroids.html" class="project-link">Pol's Asteroids</a>
+                                    <a href="project-detail/racing.html" class="project-link">Racing Adventure</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tools & DevOps -->
+                        <div class="timeline-card" data-category="tools">
+                            <div class="card-header">
+                                <i class="fas fa-tools"></i>
+                                <h3>Tools & DevOps</h3>
+                            </div>
+                            <div class="tech-list">
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">VS Code</span>
+                                <span class="tech-tag">Xcode</span>
+                                <span class="tech-tag">Linux</span>
+                            </div>
+                            <div class="project-references">
+                                <span class="reference-label">Used across all projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="../assets/profile/ProfileAI-3.png" alt="PelusinniDev" class="footer-logo">
+                </div>
+                <div class="footer-center">
+                    <div class="social-links">
+                        <a href="https://github.com/pelusinnidev" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/pelusinnidev" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="http://linkedin.com/in/pol-hernàndez-319518299" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-year">2025</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="../js/shared/navigation.js"></script>
+        <script src="../js/tech/tech.js"></script>
+    </body>
+</html>
