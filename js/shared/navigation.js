@@ -27,6 +27,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Mobile menu handling
+    const mobileMenuButton = document.createElement('button');
+    mobileMenuButton.className = 'mobile-menu-button';
+    mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+    nav.querySelector('.nav-content').appendChild(mobileMenuButton);
+
+    mobileMenuButton.addEventListener('click', () => {
+        nav.classList.toggle('menu-open');
+        const isOpen = nav.classList.contains('menu-open');
+        mobileMenuButton.innerHTML = isOpen ? 
+            '<i class="fas fa-times"></i>' : 
+            '<i class="fas fa-bars"></i>';
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (nav.classList.contains('menu-open') && 
+            !nav.contains(e.target)) {
+            nav.classList.remove('menu-open');
+            mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('menu-open');
+            mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+
     // Initialize
     window.addEventListener('scroll', handleScroll);
     setActiveLink();

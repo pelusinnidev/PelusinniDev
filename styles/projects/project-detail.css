@@ -12,14 +12,14 @@
     align-items: center;
 }
 
-.hero-image-container {
+.hero-image {
     width: 100%;
-    height: 100vh;
-    position: relative;
+    height: 60vh;
     overflow: hidden;
+    position: relative;
 }
 
-.hero-image-container img {
+.hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -143,7 +143,11 @@
 }
 
 .content-section {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+}
+
+.content-section:last-child {
+    margin-bottom: 2rem;
 }
 
 .content-section h2 {
@@ -168,6 +172,42 @@
     line-height: 1.8;
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
+}
+
+/* Back to Projects Button */
+.back-to-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 4rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-button i {
+    font-size: 0.9rem;
 }
 
 /* Features Grid */
@@ -262,6 +302,16 @@
 
     .tag {
         background: rgba(255, 255, 255, 0.1);
+    }
+
+    .back-button {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .back-button:hover {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.4);
     }
 }
 

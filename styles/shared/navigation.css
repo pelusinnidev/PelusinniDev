@@ -88,6 +88,52 @@
     transform: scaleX(1);
 }
 
+/* Back to Projects Button */
+.back-to-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 0;
+    margin-top: 48px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.back-button i {
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+}
+
 /* Scroll behavior */
 .nav.scrolled::before {
     background: rgba(255, 255, 255, 0.8);
@@ -103,47 +149,63 @@
     .nav.scrolled::before {
         background: rgba(0, 0, 0, 0.8);
     }
-}
 
-/* Project Detail Navigation */
-.nav.detail-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-back {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.nav-back:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.nav-back i {
-    font-size: 0.8rem;
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    .nav::before {
+    .back-button {
         background: rgba(0, 0, 0, 0.2);
-    }
-    
-    .nav.scrolled::before {
-        background: rgba(0, 0, 0, 0.8);
+        border-color: rgba(255, 255, 255, 0.05);
     }
 
-    .nav-back:hover {
-        background: rgba(255, 255, 255, 0.05);
+    .back-button:hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 16px;
+        flex-direction: column;
+        gap: 16px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav.menu-open .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .nav-link::before {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .nav-logo span {
+        display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .nav-links {
+            background: rgba(0, 0, 0, 0.98);
+        }
     }
 }

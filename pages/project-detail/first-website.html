@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="My First Website - Where it all began">
+        <meta name="description" content="First Website - Where it all began">
         <meta name="theme-color" content="#000000">
         
         <title>First Website | PelusinniDev</title>
@@ -15,6 +15,7 @@
         
         <!-- Styles -->
         <link rel="stylesheet" href="../../styles/main/main.css">
+        <link rel="stylesheet" href="../../styles/shared/navigation.css">
         <link rel="stylesheet" href="../../styles/projects/project-detail.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
@@ -28,26 +29,33 @@
 
         <!-- Navigation -->
         <nav class="nav">
-            <a href="../projects.html" class="nav-back">
-                <i class="fas fa-chevron-left"></i>
-                <span>Back to Projects</span>
-            </a>
+            <div class="nav-content">
+                <a href="../../index.html" class="nav-logo">
+                    <img src="../../assets/profile/ProfileAI-3.png" alt="PelusinniDev">
+                </a>
+                <div class="nav-links">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="../projects.html" class="nav-link">Projects</a>
+                    <a href="../tech.html" class="nav-link">Tech Stack</a>
+                </div>
+            </div>
         </nav>
 
         <main>
             <!-- Hero Section -->
             <section class="project-hero">
+                <div class="hero-image">
+                    <img src="../../assets/projects/first-website-wallpaper.png" alt="First Website">
+                </div>
                 <div class="hero-content">
                     <h1 class="project-title">First Website</h1>
                     <p class="project-slogan">Where it all began</p>
                     <div class="project-tags">
+                        <span class="tag category-web"><i class="fas fa-globe"></i> Web</span>
                         <span class="tag tech-html"><i class="fab fa-html5"></i> HTML</span>
                         <span class="tag tech-css"><i class="fab fa-css3"></i> CSS</span>
                         <span class="tag tech-js"><i class="fab fa-js"></i> JavaScript</span>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <img src="../../assets/projects/first-website-wallpaper.png" alt="First Website">
                 </div>
             </section>
 
@@ -57,86 +65,51 @@
                     <!-- Overview -->
                     <article class="content-section">
                         <h2>Overview</h2>
-                        <p>My first step into web development. This simple yet meaningful project taught me the fundamentals of HTML, CSS, and JavaScript. It represents the beginning of my journey in software development and laid the foundation for all my future projects.</p>
-                        <p>While the design may be basic by today's standards, it holds a special place as the project that sparked my passion for web development and user interface design.</p>
+                        <p>My first venture into web development, featuring responsive design, interactive elements, and basic animations. A milestone project that sparked my passion for web development.</p>
                     </article>
 
-                    <!-- Learning Journey -->
+                    <!-- Features -->
                     <article class="content-section">
-                        <h2>Learning Journey</h2>
+                        <h2>Key Features</h2>
                         <div class="features-grid">
-                            <div class="feature-card">
-                                <i class="fab fa-html5"></i>
-                                <h3>HTML Structure</h3>
-                                <p>Learned about semantic markup and the importance of well-structured content.</p>
-                            </div>
-                            <div class="feature-card">
-                                <i class="fab fa-css3"></i>
-                                <h3>CSS Styling</h3>
-                                <p>Explored the basics of styling, layout, and responsive design principles.</p>
-                            </div>
-                            <div class="feature-card">
-                                <i class="fab fa-js"></i>
-                                <h3>JavaScript Basics</h3>
-                                <p>Implemented simple interactivity and learned about DOM manipulation.</p>
-                            </div>
                             <div class="feature-card">
                                 <i class="fas fa-mobile-alt"></i>
                                 <h3>Responsive Design</h3>
-                                <p>First experience with making websites work across different screen sizes.</p>
+                                <p>Adapts seamlessly to any screen size or device.</p>
                             </div>
-                        </div>
-                    </article>
-
-                    <!-- Key Features -->
-                    <article class="content-section">
-                        <h2>Project Features</h2>
-                        <div class="tech-details">
-                            <ul class="tech-list">
-                                <li><i class="fas fa-layer-group"></i> Simple and clean layout</li>
-                                <li><i class="fas fa-palette"></i> Basic color scheme and typography</li>
-                                <li><i class="fas fa-mouse-pointer"></i> Interactive elements and hover effects</li>
-                                <li><i class="fas fa-mobile-alt"></i> Mobile-friendly design</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Reflection -->
-                    <article class="content-section">
-                        <h2>Looking Back</h2>
-                        <div class="reflection-content">
-                            <blockquote class="reflection-quote">
-                                <p>"Every expert was once a beginner. This project, despite its simplicity, was my first step into the vast world of web development. It taught me that the journey of learning is just as important as the destination."</p>
-                            </blockquote>
-                            <div class="growth-metrics">
-                                <div class="metric">
-                                    <i class="fas fa-code"></i>
-                                    <span>First Lines of Code</span>
-                                </div>
-                                <div class="metric">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <span>Sparked Interest in UI/UX</span>
-                                </div>
-                                <div class="metric">
-                                    <i class="fas fa-rocket"></i>
-                                    <span>Started the Journey</span>
-                                </div>
+                            <div class="feature-card">
+                                <i class="fas fa-magic"></i>
+                                <h3>Animations</h3>
+                                <p>Smooth transitions and interactive elements.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-paint-brush"></i>
+                                <h3>Modern UI</h3>
+                                <p>Clean and intuitive user interface design.</p>
                             </div>
                         </div>
                     </article>
 
                     <!-- Links -->
                     <article class="content-section">
-                        <h2>Project Archive</h2>
+                        <h2>Try It Out</h2>
                         <div class="project-links">
-                            <a href="#" class="project-link primary disabled">
-                                <i class="fas fa-archive"></i>
-                                <span>Archived Project</span>
+                            <a href="https://github.com/pelusinnidev/first-website" class="project-link primary">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub Repository</span>
                             </a>
                         </div>
                     </article>
                 </div>
             </section>
+
+            <!-- Back to Projects -->
+            <div class="back-to-projects">
+                <a href="../projects.html" class="back-button">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Back to Projects</span>
+                </a>
+            </div>
         </main>
 
         <!-- Footer -->
@@ -144,7 +117,6 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <img src="../../assets/profile/ProfileAI-3.png" alt="PelusinniDev" class="footer-logo">
-                    <span class="footer-name">Pelusinni</span>
                 </div>
                 <div class="footer-center">
                     <div class="social-links">
@@ -166,6 +138,7 @@
         </footer>
 
         <!-- Scripts -->
+        <script src="../../js/shared/navigation.js"></script>
         <script>
             // Remove loading state after everything is loaded
             window.addEventListener('load', () => {

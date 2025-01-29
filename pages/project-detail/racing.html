@@ -15,6 +15,7 @@
         
         <!-- Styles -->
         <link rel="stylesheet" href="../../styles/main/main.css">
+        <link rel="stylesheet" href="../../styles/shared/navigation.css">
         <link rel="stylesheet" href="../../styles/projects/project-detail.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
@@ -28,26 +29,32 @@
 
         <!-- Navigation -->
         <nav class="nav">
-            <a href="../projects.html" class="nav-back">
-                <i class="fas fa-chevron-left"></i>
-                <span>Back to Projects</span>
-            </a>
+            <div class="nav-content">
+                <a href="../../index.html" class="nav-logo">
+                    <img src="../../assets/profile/ProfileAI-3.png" alt="PelusinniDev">
+                </a>
+                <div class="nav-links">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="../projects.html" class="nav-link">Projects</a>
+                    <a href="../tech.html" class="nav-link">Tech Stack</a>
+                </div>
+            </div>
         </nav>
 
         <main>
             <!-- Hero Section -->
             <section class="project-hero">
+                <div class="hero-image">
+                    <img src="../../assets/projects/racing-wallpaper.png" alt="Racing Game">
+                </div>
                 <div class="hero-content">
-                    <h1 class="project-title">Racing Adventure</h1>
-                    <p class="project-slogan">Speed through the pixels!</p>
+                    <h1 class="project-title">Racing Game</h1>
+                    <p class="project-slogan">Race against time!</p>
                     <div class="project-tags">
                         <span class="tag category-game"><i class="fas fa-gamepad"></i> Game</span>
                         <span class="tag tech-python"><i class="fab fa-python"></i> Python</span>
-                        <span class="tag tech-pygame"><i class="fas fa-gamepad"></i> Pygame</span>
+                        <span class="tag tech-pygame"><i class="fas fa-code"></i> Pygame</span>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <img src="../../assets/projects/racing-wallpaper.png" alt="Racing Adventure Game">
                 </div>
             </section>
 
@@ -57,8 +64,7 @@
                     <!-- Overview -->
                     <article class="content-section">
                         <h2>Overview</h2>
-                        <p>My first venture into game development using Python and Pygame. A retro-style racing game that combines classic arcade mechanics with modern twists, featuring multiple tracks, car customization, and local multiplayer support.</p>
-                        <p>This project showcases the perfect blend of nostalgic pixel art aesthetics with contemporary gaming features, creating an engaging racing experience for players of all ages.</p>
+                        <p>A retro-style racing game with custom pixel art graphics, multiple tracks, and challenging AI opponents. Features different game modes and local multiplayer.</p>
                     </article>
 
                     <!-- Features -->
@@ -66,65 +72,43 @@
                         <h2>Key Features</h2>
                         <div class="features-grid">
                             <div class="feature-card">
-                                <i class="fas fa-road"></i>
+                                <i class="fas fa-car"></i>
                                 <h3>Multiple Tracks</h3>
-                                <p>Race through diverse environments with unique challenges and obstacles.</p>
-                            </div>
-                            <div class="feature-card">
-                                <i class="fas fa-car-side"></i>
-                                <h3>Car Customization</h3>
-                                <p>Personalize your vehicle with different colors, upgrades, and performance tweaks.</p>
+                                <p>Race through various pixel-perfect tracks with unique challenges.</p>
                             </div>
                             <div class="feature-card">
                                 <i class="fas fa-users"></i>
                                 <h3>Local Multiplayer</h3>
-                                <p>Challenge your friends in split-screen races for ultimate bragging rights.</p>
+                                <p>Challenge your friends in split-screen racing action.</p>
                             </div>
                             <div class="feature-card">
-                                <i class="fas fa-trophy"></i>
-                                <h3>Championship Mode</h3>
-                                <p>Compete in a series of races to become the ultimate racing champion.</p>
+                                <i class="fas fa-robot"></i>
+                                <h3>Smart AI</h3>
+                                <p>Compete against intelligent AI opponents that adapt to your skill level.</p>
                             </div>
-                        </div>
-                    </article>
-
-                    <!-- Technical Details -->
-                    <article class="content-section">
-                        <h2>Technical Stack</h2>
-                        <div class="tech-details">
-                            <ul class="tech-list">
-                                <li><i class="fab fa-python"></i> Python for core game logic</li>
-                                <li><i class="fas fa-gamepad"></i> Pygame for graphics and input handling</li>
-                                <li><i class="fas fa-palette"></i> Custom pixel art and animations</li>
-                                <li><i class="fas fa-music"></i> Original chiptune soundtrack</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Development Status -->
-                    <article class="content-section">
-                        <h2>Development Status</h2>
-                        <div class="status-info">
-                            <div class="status-badge">
-                                <i class="fas fa-clock"></i>
-                                <span>In Development</span>
-                            </div>
-                            <p>This project is actively being developed with new features and improvements added regularly. Stay tuned for the upcoming release!</p>
                         </div>
                     </article>
 
                     <!-- Links -->
                     <article class="content-section">
-                        <h2>Coming Soon</h2>
+                        <h2>Try It Out</h2>
                         <div class="project-links">
-                            <a href="#" class="project-link primary disabled">
-                                <i class="fas fa-clock"></i>
-                                <span>Release Coming Soon</span>
+                            <a href="https://github.com/pelusinnidev/racing-adventure" class="project-link primary">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub Repository</span>
                             </a>
                         </div>
                     </article>
                 </div>
             </section>
+
+            <!-- Back to Projects -->
+            <div class="back-to-projects">
+                <a href="../projects.html" class="back-button">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Back to Projects</span>
+                </a>
+            </div>
         </main>
 
         <!-- Footer -->
@@ -132,7 +116,6 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <img src="../../assets/profile/ProfileAI-3.png" alt="PelusinniDev" class="footer-logo">
-                    <span class="footer-name">Pelusinni</span>
                 </div>
                 <div class="footer-center">
                     <div class="social-links">
@@ -154,6 +137,7 @@
         </footer>
 
         <!-- Scripts -->
+        <script src="../../js/shared/navigation.js"></script>
         <script>
             // Remove loading state after everything is loaded
             window.addEventListener('load', () => {
