@@ -132,25 +132,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (category === 'all') {
             Object.keys(languageData).forEach((cat, catIndex) => {
                 Object.entries(languageData[cat]).forEach(([lang, data], index) => {
-                    const dashedData = [...data];
-                    // La predicción es el índice 5
-                    dashedData[5] = {
-                        value: dashedData[5],
-                        borderDash: [5, 5],
-                        borderColor: colorSchemes[cat][index] + '80'
-                    };
-
                     datasets.push({
                         label: lang,
-                        data: dashedData,
+                        data: data,
                         borderColor: colorSchemes[cat][index],
                         backgroundColor: 'transparent',
                         tension: 0.4,
                         borderWidth: 3,
                         fill: false,
                         segment: {
-                            borderDash: (ctx) => ctx.p1DataIndex === 5 ? [5, 5] : undefined,
-                            borderColor: (ctx) => ctx.p1DataIndex === 5 ? colorSchemes[cat][index] + '80' : colorSchemes[cat][index]
+                            borderDash: (ctx) => {
+                                // El último segmento (entre el último punto y la predicción)
+                                return ctx.p1DataIndex === data.length - 1 ? [5, 5] : undefined;
+                            },
+                            borderColor: (ctx) => {
+                                // El último segmento más transparente
+                                return ctx.p1DataIndex === data.length - 1 ? 
+                                    colorSchemes[cat][index] + '80' : 
+                                    colorSchemes[cat][index];
+                            }
                         },
                         animation: {
                             y: {
@@ -164,24 +164,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else {
             Object.entries(languageData[category]).forEach(([lang, data], index) => {
-                const dashedData = [...data];
-                dashedData[5] = {
-                    value: dashedData[5],
-                    borderDash: [5, 5],
-                    borderColor: colorSchemes[category][index] + '80'
-                };
-
                 datasets.push({
                     label: lang,
-                    data: dashedData,
+                    data: data,
                     borderColor: colorSchemes[category][index],
                     backgroundColor: 'transparent',
                     tension: 0.4,
                     borderWidth: 3,
                     fill: false,
                     segment: {
-                        borderDash: (ctx) => ctx.p1DataIndex === 5 ? [5, 5] : undefined,
-                        borderColor: (ctx) => ctx.p1DataIndex === 5 ? colorSchemes[category][index] + '80' : colorSchemes[category][index]
+                        borderDash: (ctx) => {
+                            // El último segmento (entre el último punto y la predicción)
+                            return ctx.p1DataIndex === data.length - 1 ? [5, 5] : undefined;
+                        },
+                        borderColor: (ctx) => {
+                            // El último segmento más transparente
+                            return ctx.p1DataIndex === data.length - 1 ? 
+                                colorSchemes[category][index] + '80' : 
+                                colorSchemes[category][index];
+                        }
                     },
                     animation: {
                         y: {
