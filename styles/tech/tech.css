@@ -459,7 +459,7 @@
 .tech-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -476,6 +476,10 @@
     font-weight: 500;
     letter-spacing: 0.02em;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .tech-tag:hover {
@@ -484,6 +488,26 @@
     transform: translateY(-2px);
     border-color: transparent;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.confidence-rating {
+    display: flex;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: #FFD700;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover .confidence-rating {
+    color: white;
+}
+
+.confidence-rating i {
+    transition: transform 0.3s ease;
+}
+
+.tech-tag:hover .confidence-rating i {
+    transform: scale(1.2);
 }
 
 .timeline-card p {
@@ -564,6 +588,15 @@
         height: 40px;
         font-size: 1.25rem;
     }
+
+    .tech-tag {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .confidence-rating {
+        font-size: 0.7rem;
+    }
 }
 
 /* Loading Animation */
@@ -601,15 +634,18 @@
 
 .trends-chart {
     position: relative;
+    margin-bottom: 4rem;
 }
 
 .chart-container {
-    height: 400px;
     position: relative;
+    height: 400px;
+    margin-top: 1rem;
 }
 
 /* GitHub Stats */
 .github-card {
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
 }
@@ -748,6 +784,57 @@
         grid-template-columns: 1fr;
     }
 
+    .chart-container {
+        height: 300px;
+    }
+}
+
+/* Trend Filters */
+.trend-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.trend-filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--section-border);
+    background: var(--card-background);
+    border-radius: 100px;
+    color: var(--text-color);
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.trend-filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--progress-fill);
+}
+
+.trend-filter-btn.active {
+    background: var(--gradient-main);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .trend-filters {
+        justify-content: center;
+    }
+    
+    .trend-filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
     .chart-container {
         height: 300px;
     }

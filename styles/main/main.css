@@ -1148,11 +1148,6 @@ body {
     object-fit: cover;
 }
 
-.footer-name {
-    font-weight: 500;
-    color: var(--text-color);
-}
-
 .footer-center {
     flex: 1;
     display: flex;
@@ -1213,10 +1208,6 @@ body {
     .footer-logo {
         width: 32px;
         height: 32px;
-    }
-
-    .footer-name {
-        display: none;
     }
 
     .social-link {

@@ -10,23 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const chartGridColor = isLightMode ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.5)';
     const chartBackgroundColor = isLightMode ? 'rgba(0, 122, 255, 0.1)' : 'rgba(0, 122, 255, 0.2)';
 
-    // Initialize proficiency chart with improved visibility
+    // Initialize proficiency chart with improved visibility and icons
     const ctx = document.getElementById('proficiencyChart').getContext('2d');
     
-    // Chart configuration with data from README and index.html
     const proficiencyChart = new Chart(ctx, {
         type: 'radar',
         data: {
             labels: [
-                'Mobile Development',
-                'Web Development',
-                'Backend & Server',
-                'Game Development',
-                'Tools & DevOps'
+                '📱', // Mobile Dev
+                '🌐', // Web Dev
+                '🖥️', // Backend
+                '🎮', // Game Dev
+                '🛠️'  // Tools
             ],
             datasets: [{
                 label: 'Skill Level',
-                data: [95, 85, 75, 80, 70],
+                data: [95, 85, 75, 65, 70],
                 backgroundColor: chartBackgroundColor,
                 borderColor: '#007AFF',
                 pointBackgroundColor: '#007AFF',
@@ -53,23 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     pointLabels: {
                         color: chartTextColor,
                         font: {
-                            family: "'SF Pro Display', sans-serif",
-                            size: 16,
-                            weight: '600'
+                            size: 24,
+                            family: "'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif"
                         },
                         padding: 25
                     },
                     ticks: {
-                        color: chartTextColor,
-                        backdropColor: 'transparent',
-                        font: {
-                            size: 14,
-                            weight: '500'
-                        },
-                        stepSize: 20,
-                        showLabelBackdrop: false,
-                        z: 1,
-                        count: 5
+                        display: false  // Ocultar los números
                     },
                     suggestedMin: 0,
                     suggestedMax: 100,
@@ -80,111 +69,245 @@ document.addEventListener('DOMContentLoaded', () => {
                 legend: {
                     display: false
                 }
-            },
-            elements: {
-                line: {
-                    borderWidth: 3,
-                    tension: 0.1
-                }
-            },
-            animation: {
-                duration: 2000,
-                easing: 'easeInOutQuart'
             }
         }
     });
 
-    // Initialize language trends chart with improved visibility
+    // Initialize language trends chart with filtering functionality
     const trendsCtx = document.getElementById('languageTrendsChart').getContext('2d');
     
-    const languageTrendsChart = new Chart(trendsCtx, {
-        type: 'line',
-        data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [
-                {
-                    label: 'Swift',
-                    data: [65, 75, 85, 90, 95, 95],
-                    borderColor: '#FF3B30',
-                    backgroundColor: isLightMode ? 'rgba(255, 59, 48, 0.1)' : 'rgba(255, 59, 48, 0.2)',
-                    tension: 0.4,
-                    borderWidth: 3,
-                    fill: true
-                },
-                {
-                    label: 'HTML/CSS/JS',
-                    data: [40, 45, 60, 75, 80, 85],
-                    borderColor: '#5856D6',
-                    backgroundColor: isLightMode ? 'rgba(88, 86, 214, 0.1)' : 'rgba(88, 86, 214, 0.2)',
-                    tension: 0.4,
-                    borderWidth: 3,
-                    fill: true
-                },
-                {
-                    label: 'Python',
-                    data: [70, 65, 60, 55, 50, 45],
-                    borderColor: '#FFD60A',
-                    backgroundColor: isLightMode ? 'rgba(255, 214, 10, 0.1)' : 'rgba(255, 214, 10, 0.2)',
-                    tension: 0.4,
-                    borderWidth: 3,
-                    fill: true
-                }
-            ]
+    const languageData = {
+        mobile: {
+            Swift: [82, 85, 87, 89, 92, 95],
+            'SwiftUI': [80, 82, 85, 87, 90, 93],
+            Kotlin: [45, 42, 40, 38, 35, 32]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'top',
-                    labels: {
-                        color: chartTextColor,
-                        font: {
-                            family: "'SF Pro Display', sans-serif",
-                            size: 14,
-                            weight: '500'
+        web: {
+            'HTML/CSS': [65, 67, 69, 70, 72, 75],
+            JavaScript: [55, 57, 60, 62, 65, 68],
+            Laravel: [50, 52, 55, 58, 60, 65]
+        },
+        backend: {
+            Python: [60, 63, 65, 68, 70, 75],
+            Java: [45, 43, 42, 40, 38, 35],
+            Linux: [40, 42, 45, 47, 50, 52]
+        }
+    };
+
+    const colorSchemes = {
+        mobile: ['#FF3B30', '#FF9500', '#FFCC00'],
+        web: ['#5856D6', '#007AFF', '#64D2FF'],
+        backend: ['#32D74B', '#BF5AF2', '#FF2D55']
+    };
+
+    let currentCategory = 'all';
+    let languageTrendsChart;
+
+    // Función para obtener los últimos 5 meses y el siguiente
+    function getMonthLabels() {
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+        const labels = [];
+        
+        // Añadir los 4 meses anteriores
+        for (let i = 4; i >= 0; i--) {
+            const monthIndex = (currentMonth - i + 12) % 12;
+            labels.push(months[monthIndex]);
+        }
+        
+        // Mes siguiente (predicción)
+        const nextMonth = (currentMonth + 1) % 12;
+        labels.push(`${months[nextMonth]}*`);
+
+        // Marcar el mes actual con un estilo especial (será el penúltimo)
+        labels[4] = `${months[currentMonth]}`;
+        
+        return labels;
+    }
+
+    function updateTrendsChart(category) {
+        const datasets = [];
+        
+        if (category === 'all') {
+            Object.keys(languageData).forEach((cat, catIndex) => {
+                Object.entries(languageData[cat]).forEach(([lang, data], index) => {
+                    datasets.push({
+                        label: lang,
+                        data: data,
+                        borderColor: colorSchemes[cat][index],
+                        backgroundColor: 'transparent',
+                        tension: 0.4,
+                        borderWidth: 3,
+                        fill: false,
+                        segment: {
+                            borderDash: (ctx) => {
+                                // El último segmento (entre el último punto y la predicción)
+                                return ctx.p1DataIndex === data.length - 1 ? [5, 5] : undefined;
+                            },
+                            borderColor: (ctx) => {
+                                // El último segmento más transparente
+                                return ctx.p1DataIndex === data.length - 1 ? 
+                                    colorSchemes[cat][index] + '80' : 
+                                    colorSchemes[cat][index];
+                            }
                         },
-                        padding: 20,
-                        usePointStyle: true,
-                        pointStyle: 'circle'
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100,
-                    grid: {
-                        color: chartGridColor,
-                        lineWidth: 1
+                        animation: {
+                            y: {
+                                duration: 2000,
+                                delay: index * 300,
+                                easing: 'easeInOutQuart'
+                            }
+                        }
+                    });
+                });
+            });
+        } else {
+            Object.entries(languageData[category]).forEach(([lang, data], index) => {
+                datasets.push({
+                    label: lang,
+                    data: data,
+                    borderColor: colorSchemes[category][index],
+                    backgroundColor: 'transparent',
+                    tension: 0.4,
+                    borderWidth: 3,
+                    fill: false,
+                    segment: {
+                        borderDash: (ctx) => {
+                            // El último segmento (entre el último punto y la predicción)
+                            return ctx.p1DataIndex === data.length - 1 ? [5, 5] : undefined;
+                        },
+                        borderColor: (ctx) => {
+                            // El último segmento más transparente
+                            return ctx.p1DataIndex === data.length - 1 ? 
+                                colorSchemes[category][index] + '80' : 
+                                colorSchemes[category][index];
+                        }
                     },
-                    ticks: {
-                        color: chartTextColor,
-                        font: {
-                            family: "'SF Pro Display', sans-serif",
-                            size: 12,
-                            weight: '500'
-                        },
-                        padding: 10
+                    animation: {
+                        y: {
+                            duration: 2000,
+                            delay: index * 300,
+                            easing: 'easeInOutQuart'
+                        }
+                    }
+                });
+            });
+        }
+
+        if (languageTrendsChart) {
+            languageTrendsChart.destroy();
+        }
+
+        languageTrendsChart = new Chart(trendsCtx, {
+            type: 'line',
+            data: {
+                labels: getMonthLabels(),
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 2000,
+                    easing: 'easeInOutQuart'
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: chartTextColor,
+                            font: {
+                                family: "'SF Pro Display', sans-serif",
+                                size: 14,
+                                weight: '500'
+                            },
+                            padding: 20,
+                            usePointStyle: true,
+                            pointStyle: 'circle'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || '';
+                                const value = context.parsed.y;
+                                if (context.dataIndex === 5) {
+                                    return `${label}: ${value} (Prediction)`;
+                                } else if (context.dataIndex === 4) {
+                                    return `${label}: ${value} (Current)`;
+                                }
+                                return `${label}: ${value}`;
+                            }
+                        }
                     }
                 },
-                x: {
-                    grid: {
-                        color: chartGridColor,
-                        lineWidth: 1
-                    },
-                    ticks: {
-                        color: chartTextColor,
-                        font: {
-                            family: "'SF Pro Display', sans-serif",
-                            size: 12,
-                            weight: '500'
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            color: chartGridColor,
+                            lineWidth: 1
                         },
-                        padding: 10
+                        ticks: {
+                            color: chartTextColor,
+                            font: {
+                                family: "'SF Pro Display', sans-serif",
+                                size: 12,
+                                weight: '500'
+                            },
+                            padding: 10
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: chartGridColor,
+                            lineWidth: 1
+                        },
+                        ticks: {
+                            color: chartTextColor,
+                            font: {
+                                family: "'SF Pro Display', sans-serif",
+                                size: 12,
+                                weight: '500'
+                            },
+                            padding: 10,
+                            callback: function(value, index) {
+                                return this.getLabelForValue(value);
+                            }
+                        }
                     }
                 }
             }
-        }
+        });
+    }
+
+    // Helper function to convert hex to rgb
+    function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? 
+            `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : 
+            null;
+    }
+
+    // Initialize with all data
+    updateTrendsChart('all');
+
+    // Add event listeners for filter buttons
+    document.querySelectorAll('.trend-filter-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const category = e.target.dataset.category;
+            currentCategory = category;
+            
+            // Update active state of buttons
+            document.querySelectorAll('.trend-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            e.target.classList.add('active');
+            
+            updateTrendsChart(category);
+        });
     });
 
     // GitHub Stats Integration
@@ -220,9 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set up trend bars with actual data
     const trends = [
-        { tech: 'Swift', progress: '95%', icon: 'fab fa-swift', description: 'Primary focus - iOS Development' },
-        { tech: 'HTML/CSS/JS', progress: '85%', icon: 'fab fa-html5', description: 'Current project stack' },
-        { tech: 'Python', progress: '70%', icon: 'fab fa-python', description: 'Used in specific projects' }
+        { tech: 'Swift', progress: '93%', icon: 'fab fa-swift', description: 'Primary focus - iOS Development' },
+        { tech: 'Python', progress: '74%', icon: 'fab fa-python', description: 'Used in projects and also in AI/ML investigation' },
+        { tech: 'HTML/CSS', progress: '60%', icon: 'fab fa-html5', description: 'Current project stack' }
     ];
 
     const trendList = document.querySelector('.trend-list');
