@@ -98,26 +98,30 @@
                 </div>
 
                 <!-- Language Trends Section -->
-                <div class="trends-section">
-                    <div class="tech-card trends-chart">
-                        <h2>Language Usage Trends</h2>
-                        <div class="chart-container">
-                            <canvas id="languageTrendsChart"></canvas>
-                        </div>
+                <div class="tech-card trends-chart">
+                    <h2>Language Usage Trends</h2>
+                    <div class="trend-filters">
+                        <button class="trend-filter-btn active" data-category="all">All</button>
+                        <button class="trend-filter-btn" data-category="mobile">Mobile</button>
+                        <button class="trend-filter-btn" data-category="web">Web</button>
+                        <button class="trend-filter-btn" data-category="backend">Backend</button>
                     </div>
-                    
-                    <!-- GitHub Stats -->
-                    <div class="tech-card github-card">
-                        <h2>GitHub Activity</h2>
-                        <div id="github-stats" class="github-stats-container">
-                            <!-- Will be populated by JavaScript -->
-                        </div>
-                        <div class="github-link">
-                            <a href="https://github.com/pelusinnidev" target="_blank" class="github-profile-link">
-                                <i class="fab fa-github"></i>
-                                <span>View GitHub Profile</span>
-                            </a>
-                        </div>
+                    <div class="chart-container">
+                        <canvas id="languageTrendsChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- GitHub Stats -->
+                <div class="tech-card github-card">
+                    <h2>GitHub Activity</h2>
+                    <div id="github-stats" class="github-stats-container">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                    <div class="github-link">
+                        <a href="https://github.com/pelusinnidev" target="_blank" class="github-profile-link">
+                            <i class="fab fa-github"></i>
+                            <span>View GitHub Profile</span>
+                        </a>
                     </div>
                 </div>
 
