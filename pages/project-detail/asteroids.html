@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Pol's Asteroids - A modern take for the classics">
+        <meta name="description" content="Pol's Asteroids - A modern take for the classics!">
         <meta name="theme-color" content="#000000">
         
         <title>Pol's Asteroids | PelusinniDev</title>
@@ -15,6 +15,7 @@
         
         <!-- Styles -->
         <link rel="stylesheet" href="../../styles/main/main.css">
+        <link rel="stylesheet" href="../../styles/shared/navigation.css">
         <link rel="stylesheet" href="../../styles/projects/project-detail.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
@@ -27,19 +28,26 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="nav">
-            <a href="../projects.html" class="nav-back">
-                <i class="fas fa-chevron-left"></i>
-                <span>Back to Projects</span>
-            </a>
+        <nav class="nav detail-nav">
+            <div class="nav-content">
+                <a href="../projects.html" class="nav-back">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Back to Projects</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="../projects.html" class="nav-link">Projects</a>
+                    <a href="../tech.html" class="nav-link">Tech Stack</a>
+                </div>
+            </div>
         </nav>
 
         <main>
             <!-- Hero Section -->
             <section class="project-hero">
                 <div class="hero-content">
-                    <h1 class="project-title">Asteroids</h1>
-                    <p class="project-slogan">Survive the space!</p>
+                    <h1 class="project-title">Pol's Asteroids</h1>
+                    <p class="project-slogan">A modern take for the classics!</p>
                     <div class="project-tags">
                         <span class="tag category-game"><i class="fas fa-gamepad"></i> Game</span>
                         <span class="tag tech-python"><i class="fab fa-python"></i> Python</span>
@@ -58,7 +66,7 @@
                     <article class="content-section">
                         <h2>Overview</h2>
                         <p>In my journey as a developer, I chose to learn Python through reimagining the iconic Asteroids game. This modern interpretation offers both single and multiplayer experiences, leveraging the latest technologies and MongoDB integration for cross-device score tracking and competitive tournaments.</p>
-                        <p>Experience the nostalgia of a classic, enhanced with contemporary features that bring new life to this timeless arcade game.</p>
+                        <p>Experience the nostalgia of a classic, enhanced with contemporary features.</p>
                     </article>
 
                     <!-- Features -->
@@ -67,51 +75,33 @@
                         <div class="features-grid">
                             <div class="feature-card">
                                 <i class="fas fa-users"></i>
-                                <h3>Multiplayer Mode</h3>
-                                <p>Challenge your friends in local multiplayer battles or compete online in tournaments.</p>
+                                <h3>Multiplayer</h3>
+                                <p>Compete with friends in local and online multiplayer modes.</p>
                             </div>
                             <div class="feature-card">
                                 <i class="fas fa-trophy"></i>
-                                <h3>Global Leaderboard</h3>
-                                <p>Track your progress and compete with players worldwide through MongoDB-powered leaderboards.</p>
+                                <h3>Leaderboards</h3>
+                                <p>Global rankings and tournament support with MongoDB.</p>
                             </div>
                             <div class="feature-card">
                                 <i class="fas fa-paint-brush"></i>
                                 <h3>Modern Graphics</h3>
-                                <p>Enjoy smooth animations and polished visuals while maintaining the classic arcade feel.</p>
+                                <p>Enhanced visuals while maintaining the classic feel.</p>
                             </div>
-                            <div class="feature-card">
-                                <i class="fas fa-cogs"></i>
-                                <h3>Custom Controls</h3>
-                                <p>Personalize your gaming experience with fully customizable controls and settings.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Technical Details -->
-                    <article class="content-section">
-                        <h2>Technical Stack</h2>
-                        <div class="tech-details">
-                            <ul class="tech-list">
-                                <li><i class="fab fa-python"></i> Python with Pygame for game engine</li>
-                                <li><i class="fas fa-database"></i> MongoDB for data persistence</li>
-                                <li><i class="fas fa-network-wired"></i> Socket.io for real-time multiplayer</li>
-                                <li><i class="fas fa-palette"></i> Custom pixel art and animations</li>
-                            </ul>
                         </div>
                     </article>
 
                     <!-- Links -->
                     <article class="content-section">
-                        <h2>Play Now</h2>
+                        <h2>Try It Out</h2>
                         <div class="project-links">
-                            <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" class="project-link primary">
-                                <i class="fab fa-github"></i>
-                                <span>View Source</span>
-                            </a>
-                            <a href="https://pelusinni.craft.me/AsteroidsGame" class="project-link secondary">
+                            <a href="https://pelusinni.craft.me/AsteroidsGame" class="project-link primary">
                                 <i class="fas fa-book"></i>
                                 <span>Documentation</span>
+                            </a>
+                            <a href="https://github.com/pelusinnidev/Asteroids-by-Pelusinni" class="project-link secondary">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub Repository</span>
                             </a>
                         </div>
                     </article>
@@ -146,6 +136,7 @@
         </footer>
 
         <!-- Scripts -->
+        <script src="../../js/shared/navigation.js"></script>
         <script>
             // Remove loading state after everything is loaded
             window.addEventListener('load', () => {

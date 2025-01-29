@@ -15,6 +15,7 @@
         
         <!-- Styles -->
         <link rel="stylesheet" href="../../styles/main/main.css">
+        <link rel="stylesheet" href="../../styles/shared/navigation.css">
         <link rel="stylesheet" href="../../styles/projects/project-detail.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
@@ -27,11 +28,18 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="nav">
-            <a href="../projects.html" class="nav-back">
-                <i class="fas fa-chevron-left"></i>
-                <span>Back to Projects</span>
-            </a>
+        <nav class="nav detail-nav">
+            <div class="nav-content">
+                <a href="../projects.html" class="nav-back">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Back to Projects</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <a href="../projects.html" class="nav-link">Projects</a>
+                    <a href="../tech.html" class="nav-link">Tech Stack</a>
+                </div>
+            </div>
         </nav>
 
         <main>
@@ -39,11 +47,10 @@
             <section class="project-hero">
                 <div class="hero-content">
                     <h1 class="project-title">MyCosmo</h1>
-                    <p class="project-slogan">Your personal space assistant</p>
+                    <p class="project-slogan">Be your universe</p>
                     <div class="project-tags">
                         <span class="tag category-ios"><i class="fab fa-apple"></i> iOS</span>
                         <span class="tag tech-swift"><i class="fab fa-swift"></i> Swift</span>
-                        <span class="tag tech-api"><i class="fas fa-satellite"></i> NASA API</span>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -58,7 +65,6 @@
                     <article class="content-section">
                         <h2>Overview</h2>
                         <p>A space and astrology app for astronomy enthusiasts. Originally a school project that has evolved into something bigger and more dynamic. Like space itself, it's still growing and holds unknown potential.</p>
-                        <p>MyCosmo brings the wonders of the cosmos to your fingertips, offering real-time space data, celestial events, and personalized astronomical insights.</p>
                     </article>
 
                     <!-- Features -->
@@ -66,26 +72,26 @@
                         <h2>Key Features</h2>
                         <div class="features-grid">
                             <div class="feature-card">
-                                <i class="fas fa-satellite"></i>
-                                <h3>Live Space Data</h3>
-                                <p>Real-time updates from NASA's API about celestial events and space phenomena.</p>
-                            </div>
-                            <div class="feature-card">
                                 <i class="fas fa-star"></i>
-                                <h3>Star Maps</h3>
-                                <p>Interactive star maps showing constellations and celestial bodies visible from your location.</p>
+                                <h3>Daily Astronomy</h3>
+                                <p>Explore NASA's astronomy picture of the day with detailed explanations.</p>
                             </div>
                             <div class="feature-card">
-                                <i class="fas fa-bell"></i>
-                                <h3>Event Alerts</h3>
-                                <p>Get notified about upcoming astronomical events like meteor showers and eclipses.</p>
+                                <i class="fas fa-moon"></i>
+                                <h3>Moon Phases</h3>
+                                <p>Track lunar phases and celestial events in your area.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-satellite"></i>
+                                <h3>Space News</h3>
+                                <p>Stay updated with the latest discoveries and space missions.</p>
                             </div>
                         </div>
                     </article>
 
                     <!-- Links -->
                     <article class="content-section">
-                        <h2>Experience MyCosmo</h2>
+                        <h2>Try It Out</h2>
                         <div class="project-links">
                             <a href="https://apps.apple.com/es/app/mycosmo/id6741042321?l=en-GB" class="project-link primary">
                                 <i class="fab fa-app-store-ios"></i>
@@ -97,7 +103,7 @@
                             </a>
                             <a href="https://github.com/pelusinnidev/MyCosmo" class="project-link secondary">
                                 <i class="fab fa-github"></i>
-                                <span>View Source</span>
+                                <span>GitHub Repository</span>
                             </a>
                         </div>
                     </article>
@@ -132,6 +138,7 @@
         </footer>
 
         <!-- Scripts -->
+        <script src="../../js/shared/navigation.js"></script>
         <script>
             // Remove loading state after everything is loaded
             window.addEventListener('load', () => {
