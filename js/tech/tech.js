@@ -13,20 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize proficiency chart with improved visibility and icons
     const ctx = document.getElementById('proficiencyChart').getContext('2d');
     
-    // Chart configuration with icons instead of text labels
     const proficiencyChart = new Chart(ctx, {
         type: 'radar',
         data: {
             labels: [
-                '📱', // Mobile Development
-                '🌐', // Web Development
-                '🖥️', // Backend & Server
-                '🎮', // Game Development
-                '🛠️'  // Tools & DevOps
+                'Mobile Dev',
+                'Web Dev',
+                'Backend',
+                'Game Dev',
+                'Tools & DevOps'
             ],
             datasets: [{
                 label: 'Skill Level',
-                data: [95, 85, 75, 80, 70],
+                data: [95, 85, 75, 65, 70],
                 backgroundColor: chartBackgroundColor,
                 borderColor: '#007AFF',
                 pointBackgroundColor: '#007AFF',
@@ -53,14 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     pointLabels: {
                         color: chartTextColor,
                         font: {
-                            family: "'SF Pro Display', sans-serif",
-                            size: 24, // Increased size for icons
-                            weight: '400'
+                            size: 14,
+                            weight: '500'
                         },
-                        padding: 25,
-                        callback: function(value) {
-                            return value; // Return the emoji directly
-                        }
+                        padding: 25
                     },
                     ticks: {
                         color: chartTextColor,
@@ -82,31 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             plugins: {
                 legend: {
                     display: false
-                },
-                tooltip: {
-                    callbacks: {
-                        title: function(context) {
-                            const labels = [
-                                'Mobile Development',
-                                'Web Development',
-                                'Backend & Server',
-                                'Game Development',
-                                'Tools & DevOps'
-                            ];
-                            return labels[context[0].dataIndex];
-                        }
-                    }
                 }
-            },
-            elements: {
-                line: {
-                    borderWidth: 3,
-                    tension: 0.1
-                }
-            },
-            animation: {
-                duration: 2000,
-                easing: 'easeInOutQuart'
             }
         }
     });
@@ -116,19 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const languageData = {
         mobile: {
-            Swift: [65, 75, 85, 90, 95, 95],
-            'SwiftUI': [60, 70, 80, 85, 90, 92],
-            Kotlin: [40, 45, 50, 55, 60, 65]
+            Swift: [82, 85, 87, 89, 92, 95],
+            'SwiftUI': [80, 82, 85, 87, 90, 93],
+            Kotlin: [45, 42, 40, 38, 35, 32]
         },
         web: {
-            'HTML/CSS': [40, 45, 60, 75, 80, 85],
-            JavaScript: [35, 40, 55, 70, 75, 80],
-            PHP: [30, 35, 40, 45, 50, 55]
+            'HTML/CSS': [65, 67, 69, 70, 72, 75],
+            JavaScript: [55, 57, 60, 62, 65, 68],
+            Laravel: [50, 52, 55, 58, 60, 65]
         },
         backend: {
-            Python: [70, 65, 60, 55, 50, 45],
-            Java: [60, 55, 50, 45, 40, 35],
-            'Node.js': [30, 35, 40, 45, 50, 55]
+            Python: [60, 63, 65, 68, 70, 75],
+            Java: [45, 43, 42, 40, 38, 35],
+            'Node.js': [40, 42, 45, 47, 50, 52]
         }
     };
 
@@ -305,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const trends = [
         { tech: 'Swift', progress: '95%', icon: 'fab fa-swift', description: 'Primary focus - iOS Development' },
         { tech: 'HTML/CSS/JS', progress: '85%', icon: 'fab fa-html5', description: 'Current project stack' },
-        { tech: 'Python', progress: '70%', icon: 'fab fa-python', description: 'Used in specific projects' }
+        { tech: 'Python', progress: '80%', icon: 'fab fa-python', description: 'Used in projects and also in AI/ML investigation' }
     ];
 
     const trendList = document.querySelector('.trend-list');
