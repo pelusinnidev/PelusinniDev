@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         type: 'radar',
         data: {
             labels: [
-                'Mobile Dev',
-                'Web Dev',
-                'Backend',
-                'Game Dev',
-                'Tools & DevOps'
+                '📱', // Mobile Dev
+                '🌐', // Web Dev
+                '🖥️', // Backend
+                '🎮', // Game Dev
+                '🛠️'  // Tools
             ],
             datasets: [{
                 label: 'Skill Level',
@@ -52,22 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     pointLabels: {
                         color: chartTextColor,
                         font: {
-                            size: 14,
-                            weight: '500'
+                            size: 24,
+                            family: "'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif"
                         },
                         padding: 25
                     },
                     ticks: {
-                        color: chartTextColor,
-                        backdropColor: 'transparent',
-                        font: {
-                            size: 14,
-                            weight: '500'
-                        },
-                        stepSize: 20,
-                        showLabelBackdrop: false,
-                        z: 1,
-                        count: 5
+                        display: false  // Ocultar los números
                     },
                     suggestedMin: 0,
                     suggestedMax: 100,
@@ -99,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backend: {
             Python: [60, 63, 65, 68, 70, 75],
             Java: [45, 43, 42, 40, 38, 35],
-            'Node.js': [40, 42, 45, 47, 50, 52]
+            Linux: [40, 42, 45, 47, 50, 52]
         }
     };
 
@@ -112,37 +103,93 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCategory = 'all';
     let languageTrendsChart;
 
+    // Función para obtener los últimos 5 meses y el siguiente
+    function getMonthLabels() {
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+        const labels = [];
+        
+        // Añadir los 4 meses anteriores
+        for (let i = 4; i >= 0; i--) {
+            const monthIndex = (currentMonth - i + 12) % 12;
+            labels.push(months[monthIndex]);
+        }
+        
+        // Mes siguiente (predicción)
+        const nextMonth = (currentMonth + 1) % 12;
+        labels.push(`${months[nextMonth]}*`);
+
+        // Marcar el mes actual con un estilo especial (será el penúltimo)
+        labels[4] = `${months[currentMonth]}`;
+        
+        return labels;
+    }
+
     function updateTrendsChart(category) {
         const datasets = [];
         
         if (category === 'all') {
             Object.keys(languageData).forEach((cat, catIndex) => {
                 Object.entries(languageData[cat]).forEach(([lang, data], index) => {
+                    const dashedData = [...data];
+                    // La predicción es el índice 5
+                    dashedData[5] = {
+                        value: dashedData[5],
+                        borderDash: [5, 5],
+                        borderColor: colorSchemes[cat][index] + '80'
+                    };
+
                     datasets.push({
                         label: lang,
-                        data: data,
+                        data: dashedData,
                         borderColor: colorSchemes[cat][index],
-                        backgroundColor: isLightMode ? 
-                            `rgba(${hexToRgb(colorSchemes[cat][index])}, 0.1)` : 
-                            `rgba(${hexToRgb(colorSchemes[cat][index])}, 0.2)`,
+                        backgroundColor: 'transparent',
                         tension: 0.4,
                         borderWidth: 3,
-                        fill: true
+                        fill: false,
+                        segment: {
+                            borderDash: (ctx) => ctx.p1DataIndex === 5 ? [5, 5] : undefined,
+                            borderColor: (ctx) => ctx.p1DataIndex === 5 ? colorSchemes[cat][index] + '80' : colorSchemes[cat][index]
+                        },
+                        animation: {
+                            y: {
+                                duration: 2000,
+                                delay: index * 300,
+                                easing: 'easeInOutQuart'
+                            }
+                        }
                     });
                 });
             });
         } else {
             Object.entries(languageData[category]).forEach(([lang, data], index) => {
+                const dashedData = [...data];
+                dashedData[5] = {
+                    value: dashedData[5],
+                    borderDash: [5, 5],
+                    borderColor: colorSchemes[category][index] + '80'
+                };
+
                 datasets.push({
                     label: lang,
-                    data: data,
+                    data: dashedData,
                     borderColor: colorSchemes[category][index],
-                    backgroundColor: isLightMode ? 
-                        `rgba(${hexToRgb(colorSchemes[category][index])}, 0.1)` : 
-                        `rgba(${hexToRgb(colorSchemes[category][index])}, 0.2)`,
+                    backgroundColor: 'transparent',
                     tension: 0.4,
                     borderWidth: 3,
-                    fill: true
+                    fill: false,
+                    segment: {
+                        borderDash: (ctx) => ctx.p1DataIndex === 5 ? [5, 5] : undefined,
+                        borderColor: (ctx) => ctx.p1DataIndex === 5 ? colorSchemes[category][index] + '80' : colorSchemes[category][index]
+                    },
+                    animation: {
+                        y: {
+                            duration: 2000,
+                            delay: index * 300,
+                            easing: 'easeInOutQuart'
+                        }
+                    }
                 });
             });
         }
@@ -154,12 +201,16 @@ document.addEventListener('DOMContentLoaded', () => {
         languageTrendsChart = new Chart(trendsCtx, {
             type: 'line',
             data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                labels: getMonthLabels(),
                 datasets: datasets
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                animation: {
+                    duration: 2000,
+                    easing: 'easeInOutQuart'
+                },
                 plugins: {
                     legend: {
                         position: 'top',
@@ -173,6 +224,20 @@ document.addEventListener('DOMContentLoaded', () => {
                             padding: 20,
                             usePointStyle: true,
                             pointStyle: 'circle'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || '';
+                                const value = context.parsed.y;
+                                if (context.dataIndex === 5) {
+                                    return `${label}: ${value} (Prediction)`;
+                                } else if (context.dataIndex === 4) {
+                                    return `${label}: ${value} (Current)`;
+                                }
+                                return `${label}: ${value}`;
+                            }
                         }
                     }
                 },
@@ -206,7 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 size: 12,
                                 weight: '500'
                             },
-                            padding: 10
+                            padding: 10,
+                            callback: function(value, index) {
+                                return this.getLabelForValue(value);
+                            }
                         }
                     }
                 }
@@ -274,9 +342,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set up trend bars with actual data
     const trends = [
-        { tech: 'Swift', progress: '95%', icon: 'fab fa-swift', description: 'Primary focus - iOS Development' },
-        { tech: 'HTML/CSS/JS', progress: '85%', icon: 'fab fa-html5', description: 'Current project stack' },
-        { tech: 'Python', progress: '80%', icon: 'fab fa-python', description: 'Used in projects and also in AI/ML investigation' }
+        { tech: 'Swift', progress: '93%', icon: 'fab fa-swift', description: 'Primary focus - iOS Development' },
+        { tech: 'Python', progress: '74%', icon: 'fab fa-python', description: 'Used in projects and also in AI/ML investigation' },
+        { tech: 'HTML/CSS', progress: '60%', icon: 'fab fa-html5', description: 'Current project stack' }
     ];
 
     const trendList = document.querySelector('.trend-list');

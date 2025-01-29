@@ -634,6 +634,7 @@
 
 .trends-chart {
     position: relative;
+    margin-bottom: 4rem;
 }
 
 .chart-container {
@@ -644,6 +645,7 @@
 
 /* GitHub Stats */
 .github-card {
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
 }
