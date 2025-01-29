@@ -13,6 +13,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
 }
 
 body {
@@ -83,7 +91,7 @@ body {
     height: 150px;
     margin: 2rem 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     background: var(--background-color);
     padding: 20px 0;
     box-sizing: border-box;
@@ -122,6 +130,7 @@ body {
     align-items: center;
     width: 100%;
     position: relative;
+    overflow: visible;
 }
 
 .tools-animation-content {
@@ -131,6 +140,7 @@ body {
     align-items: center;
     padding: 0;
     width: max-content;
+    overflow: visible;
 }
 
 .tools-animation i {
@@ -332,17 +342,22 @@ h1 {
 
 @media (max-width: 768px) {
     body {
-        min-height: 100dvh;
-    }
-
-    .container {
-        padding: 1rem;
-        height: 100vh;
         overflow: hidden;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
     }
-
+    
+    .container {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        padding: 1rem;
+    }
+    
     .content {
-        transform: scale(0.9);
+        overflow: hidden;
+        max-height: 100vh;
     }
 
     .logo {
@@ -389,19 +404,28 @@ h1 {
 }
 
 @media (max-width: 480px) {
+    body {
+        overflow: hidden;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .container {
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+        padding: 0.5rem;
+    }
+    
+    .content {
+        overflow: hidden;
+        max-height: 100vh;
+    }
+
     .logo-container {
         width: 150px;
         height: 150px;
-    }
-
-    .container {
-        padding: 0.5rem;
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    .content {
-        transform: scale(0.8);
     }
 
     .animation-container {
